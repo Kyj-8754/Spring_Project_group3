@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+
+	<div class="container">
+		<div th:replace="fragments/bodyHeader :: bodyHeader" />
+		<div>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>이름</th>
+						<th>도시</th>
+						<th>주소</th>
+						<th>우편번호</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="members : ${members}">
+						<td th:text="${members.id}"></td>
+						<td th:text="${members.name}"></td>
+						<!-- 테이블을 임베디드 해놨기 때문에 address문은 다르게 써줘야 한다. -->
+						<td th:text="${members.address?.city}"></td>
+						<td th:text="${members.address?.street}"></td>
+						<td th:text="${members.address?.zipcode}"></td>
+					</tr>
+				</tbody>
+
+			</table>
+		</div>
+
+		<div th:replace="fragments/footer :: footer" />
+
+	</div>
+	<!-- /container -->
+
+</body>
+</html>
