@@ -1,14 +1,17 @@
 package com.codingbox.group3.controller;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.codingbox.group3.domain.Member;
+import com.codingbox.group3.dto.LoginForm;
 import com.codingbox.group3.dto.MemberForm;
 import com.codingbox.group3.service.Joinservice;
 import com.codingbox.group3.service.Loginservice;
@@ -21,21 +24,29 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class LogjoinController {
 
-	private final Loginservice loginsevice;
+	private final Loginservice loginservice;
 	private final Joinservice joinservice;
 	
 	@GetMapping("login")
-	public String LoginForm(Model model) {
-		model.addAttribute("loginform",new com.codingbox.group3.dto.LoginForm());
+	public String Login(Model model) {
+		model.addAttribute("loginform",new LoginForm());
 		return "LoginForm";
 	}
 	
 	@PostMapping("login")
-	public String Login(@Valid com.codingbox.group3.dto.LoginForm form, Model model) {
-		loginsevice.
-		
-		model.addAttribute(memberId);
-		return "redirect:/";
+	public String Login (@RequestParam String userId,
+			@RequestParam String userPw, Model model) {
+		List<Member> memberlist = loginservice.login(userId);
+		String result = "redirect:login";
+			for(Member member : memberlist) {
+				if(member.getUserPw().equals(userPw)) {
+					System.out.println("비밀번호 확인 성공");
+					result = "redirect:/";
+				}else {
+					result = "redirect:login";
+				}
+			}
+		return result;
 	}
 	
 	@GetMapping("join")
@@ -48,8 +59,8 @@ public class LogjoinController {
 	@PostMapping("join")
 	public String addjoin(@Valid MemberForm form, BindingResult result) {
 		Member member = new Member();
-		member.setMemberId(form.getMemberId());
-		member.setMemberPw(form.getMemberPw());
+		member.setUserId(form.getUserId());
+		member.setUserPw(form.getUserPw());
 		member.setName(form.getName());
 		member.setBirth(form.getBirth());
 		member.setGender(form.getGender());

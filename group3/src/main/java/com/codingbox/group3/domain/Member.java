@@ -19,8 +19,8 @@ public class Member {
 	@Id @GeneratedValue
 	@Column(name = "MEMBER_ID")
 	private Long id;
-	private String memberId;
-	private String memberPw;
+	private String userId;
+	private String userPw;
 	private String name;
 	private String phone;
 	private String email;

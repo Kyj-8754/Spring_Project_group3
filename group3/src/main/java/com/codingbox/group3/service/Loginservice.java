@@ -1,11 +1,23 @@
 package com.codingbox.group3.service;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-@Service
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.codingbox.group3.domain.Member;
+import com.codingbox.group3.repository.LoginRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Service @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class Loginservice {
 
-//	public String login() {
-//		
-//	}
+	private final LoginRepository loginRepository;
+	
+	public List<Member> login(String memberid) {
+		return loginRepository.find(memberid);
+	}
+
 }
