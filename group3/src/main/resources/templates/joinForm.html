@@ -1,12 +1,12 @@
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0">
     <title>Join</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" >
     <style type="text/css"></style>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" ></script>
     <script type="text/javascript"></script>
     <style>
       @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
@@ -67,10 +67,22 @@
         line-height: 0.7rem;
       }
 
-      a:link { color: #666; text-decoration: none;}
-      a:visited { color: #666;}
-      a:hover { color: red;}
-      a:active { color: red;}
+      a:link {
+        color: #666;
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: #666;
+      }
+
+      a:hover {
+        color: red;
+      }
+
+      a:active {
+        color: red;
+      }
 
       button {
         font-size: 0.7rem;
@@ -93,7 +105,7 @@
         color: #bbb;
       }
 
-      .join-c> div {
+      .join-c > div {
         width: 1000px;
         margin: 0 auto;
       }
@@ -151,24 +163,24 @@
         background: #c97d50;
       }
 
-      .join-t tr> :nth-child(1), .join-t2 tr>:nth-child(1), .join-t3 tr>:nth-child(1) {
+      .join-t tr > :nth-child(1), .join-t2 tr > :nth-child(1), .join-t3 tr > :nth-child(1) {
         width: 150px;
       }
 
-      .join-t tr> :nth-child(2) {
+      .join-t tr > :nth-child(2) {
         width: 140px;
       }
 
-      .join-t tr> :nth-child(3) {
+      .join-t tr > :nth-child(3) {
         width: 30px;
         text-align: center;
       }
 
-      .join-t tr> :nth-child(4) {
+      .join-t tr > :nth-child(4) {
         width: 160px;
       }
 
-      .join-t tr> :nth-child(5) {
+      .join-t tr > :nth-child(5) {
         width: 140px;
       }
 
@@ -179,7 +191,7 @@
         border: 1px solid silver;
       }
 
-      .join-t2 tr> :nth-child(2) {
+      .join-t2 tr > :nth-child(2) {
         width: 212px;
       }
 
@@ -193,14 +205,14 @@
 
       .radiobox {
         margin-right: 1rem;
-        cursor:pointer;
+        cursor: pointer;
       }
 
       .fm {
         vertical-align: 3px;
       }
 
-      .join-t3 tr> :nth-child(2) {
+      .join-t3 tr > :nth-child(2) {
         width: 330px;
       }
 
@@ -214,21 +226,20 @@
 <body>
 
 
-<form class="join-c">
-
+<form class="join-c" method="post" th:object="${userform}">
     <div>
         <table class="join-t2">
             <tr>
-                <td class="id_input">아이디 <span style="color:red;">*</span></td>
-                <td><input type="text" name="user_id"></td>
+                <td class="id_input">아이디</td>
+                <td><input type="text" name="uesrId" th:field="*{userId}"></td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
             </tr>
             <tr>
-                <td>비밀번호 <span style="color:red;">*</span></td>
-                <td><input type="password" name="user_pwd1"></td>
+                <td>비밀번호</td>
+                <td><input type="password" name="uesrPw" th:field="*{userPw}"></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -236,8 +247,8 @@
             </tr>
 
             <tr>
-                <td>비밀번호 확인 <span style="color:red;">*</span></td>
-                <td><input type="password" name="user_pwd2"></td>
+                <td>비밀번호 확인</td>
+                <td><input type="password" name="uesrPw2"></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -245,12 +256,11 @@
             </tr>
         </table>
         <table class="join-t">
-
             <tr class="e-mail">
-                <td>E-mail <span style="color:red;">*</span></td>
+                <td>E-mail</td>
                 <td><input type="email" name="user_email1"></td>
                 <td>@</td>
-                <td><input type="email" name="user_email1"></td>
+                <td><input type="email" name="user_email2"></td>
                 <td>
                     <select class="email-select">
                         <option value="직접입력" selected>직접입력</option>
@@ -268,8 +278,8 @@
         </table>
         <table class="join-t2">
             <tr>
-                <td>이름 <span style="color:red;">*</span></td>
-                <td class="name-box"><input type="text" name="user_name"></td>
+                <td>이름</td>
+                <td class="name-box"><input type="text" name="user_name" th:field="*{name}"></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -277,9 +287,9 @@
             </tr>
 
             <tr>
-                <td>생년월일 <span style="color:red;">*</span></td>
+                <td>생년월일</td>
                 <td class="birth-box"><input type="text" name="user_birth"
-                                             placeholder="8자 ex) 19880808"></td>
+                                             placeholder="8자 ex) 19880808" th:field="*{birth}"></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -287,12 +297,12 @@
             </tr>
 
             <tr>
-                <td>성별 <span style="color:red;">*</span></td>
-                <td><label class="radiobox"><input type="radio" name="fruit" value="apple"
-                                                   style="width:15px;height:15px;cursor:pointer;">
+                <td>성별</td>
+                <td><label class="radiobox"><input type="radio" name="fruit" value="male"
+                                                   style="width:15px;height:15px;cursor:pointer;" th:field="*{gender}">
                     <span class="fm">남</span></label>
-                    <label class="radiobox2"><input type="radio" name="fruit" value="banana"
-                                                    style="width:15px;height:15px;cursor:pointer;">
+                    <label class="radiobox2"><input type="radio" name="fruit" value="female"
+                                                    style="width:15px;height:15px;cursor:pointer;" th:field="*{gender}">
                         <span class="fm">여</span></label></td>
                 <td></td>
                 <td></td>
@@ -302,23 +312,7 @@
 
             <tr>
                 <td>핸드폰 번호</td>
-                <td><input type="text" name="user_phone" placeholder="ex) 010-1234-5678"></td>
-                <td>
-                    <button>인증번호 전송</button>
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-
-            <tr>
-                <td>결혼여부</td>
-                <td><select>
-                    <option value="선택" selected>선택</option>
-                    <option value="미혼">미혼</option>
-                    <option value="기혼">기혼</option>
-                </select></td>
-                <td></td>
+                <td><input type="text" name="user_phone" placeholder="ex) 010-1234-5678" th:field="*{phone}"></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -326,32 +320,36 @@
 
         </table>
 
-        <table class="join-t3">
+        <!--        <table class="join-t3">-->
 
-            <tr class="join-way">
-                <td>가입경로</td>
-                <td><label class="way"><input type="checkbox" value="검색"
-                                              style="width:15px;height:15px;cursor:pointer;"> <span
-                      class="sea">검색</span></label>
-                    <label class="way"><input type="checkbox" value="페이스북"
-                                              style="width:15px;height:15px;cursor:pointer;"> <span
-                          class="sea">페이스북</span></label>
-                    <label class="way"><input type="checkbox" value="주변추천"
-                                              style="width:15px;height:15px;cursor:pointer;"> <span
-                          class="sea">주변추천</span></label>
-                    <label class="way2"><input type="checkbox" value="기타"
-                                               style="width:15px;height:15px;cursor:pointer;"> <span
-                          class="sea">기타</span></label>
+        <!--            <tr class="join-way">-->
+        <!--                <td>가입경로</td>-->
+        <!--                <td><label class="way"><input type="checkbox" value="검색"-->
+        <!--                                              style="width:15px;height:15px;cursor:pointer;"> <span-->
+        <!--                      class="sea">검색</span></label>-->
+        <!--                    <label class="way"><input type="checkbox" value="페이스북"-->
+        <!--                                              style="width:15px;height:15px;cursor:pointer;"> <span-->
+        <!--                          class="sea">페이스북</span></label>-->
+        <!--                    <label class="way"><input type="checkbox" value="주변추천"-->
+        <!--                                              style="width:15px;height:15px;cursor:pointer;"> <span-->
+        <!--                          class="sea">주변추천</span></label>-->
+        <!--                    <label class="way2"><input type="checkbox" value="기타"-->
+        <!--                                               style="width:15px;height:15px;cursor:pointer;"> <span-->
+        <!--                          class="sea">기타</span></label>-->
 
-                <td><input type="text" name="etc" class="etc" placeholder="가입경로를 적어주세요!"></td>
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+        <!--                <td><input type="text" name="etc" class="etc" placeholder="가입경로를 적어주세요!"></td>-->
+        <!--                </td>-->
+        <!--                <td></td>-->
+        <!--                <td></td>-->
+        <!--                <td></td>-->
+        <!--            </tr>-->
 
-        </table>
+        <!--        </table>-->
 
+        <div style="text-align: center; margin-top: 20px;">
+            <button type="reset">다시 쓰기</button>
+            <button type="submit">제출하기</button>
+        </div>
     </div>
 
 </form>
