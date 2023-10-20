@@ -13,6 +13,12 @@ public class Controllerapi {
 	public String test1() {
 		return "storedetail";
 	}
+//	@GetMapping("/reservation")
+//	public String test2() {
+//		return "reservation";
+//	
+//	}
+	
 	
 	
 	

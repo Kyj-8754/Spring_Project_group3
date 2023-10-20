@@ -1,0 +1,1631 @@
+@charset "EUC-KR";section {
+    display: block;
+}
+
+div {
+    display: block;
+}
+
+span {
+    font-style: normal;
+}
+
+li {
+    display: list-item;
+    list-style: none;
+    text-align: -webkit-match-parent;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    border: 0 none;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+    font-family: NotoSans, sans-serif;
+    border: 0 none;
+    margin: 0;
+    background-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 400;
+}
+
+body {
+    font-family: NotoSans, sans-serif;
+    width: 100%;
+    background-color: #1b1b1b;
+    letter-spacing: -.5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* header(화면 맨 위) - nav */
+.header {
+    position: fixed;
+    /* 위치 고정 */
+    z-index: 1750;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 1240px;
+    background-color: #1b1b1b;
+}
+
+.header-main {
+    position: relative;
+    width: 1240px;
+    height: 65px;
+    margin: 0 auto;
+    font-size: 0
+}
+
+.header-main h1 {
+    display: inline-block;
+    height: 100%;
+    margin-right: 78px;
+    line-height: 70px;
+    vertical-align: middle;
+}
+
+.header-main h1 a {
+   display: inline-block;
+    height: 100%;
+    margin-right: 78px;
+    line-height: 65px;
+    vertical-align: middle;
+}
+
+.header-main h1 img {
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+}
+
+.header-main .menu1 {
+    font-size: 0
+}
+
+.header-main .menu1,
+.header-main .menu1>ul>li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header-main .menu1>ul>li:first-child {
+    margin-left: 0;
+}
+
+.header-main .menu1>ul>li {
+    margin-right: 20px;
+}
+
+.category-list {
+    position: relative;
+}
+
+.header-main .menu1>ul>li:hover>a {
+    color: #fff;
+}
+
+.header-main .menu1>ul>li>a {
+    display: block;
+    padding: 0 10px;
+    font-size: 20px;
+    line-height: 90px;
+    color: #a5a5a5;
+    text-decoration-line: none;
+}
+
+.menu-top{
+    position: relative;
+    width: 1240px;
+    height: 30px;
+    margin-left: 230px;
+    font-size: 0;
+    border-bottom: 1px solid #2f2f2f;
+    margin: 0 auto;
+}
+
+.menu1 ul{
+margin-left:150px;
+}
+
+
+.menu2 {
+    font-size: 0;
+    margin-left: 0px;
+    float: right;
+}
+.menu2, .menu2>ul>li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.menu2>ul>li>a {
+    display: block;
+    padding: 0px 10px;
+    font-size: 13px;
+    line-height: 35px;
+    color: #a5a5a5;
+    text-decoration-line: none;
+}
+
+.menu2>ul>li:first-child {
+    margin-left: 0;
+}
+
+.menu2>ul>li:hover>a {
+    color: #fff;
+}
+
+
+/* 장르 메뉴 */
+.category-list-line {
+    display: block;
+}
+
+.category-list:hover .categorty-list-menu {
+    display: block;
+}
+
+
+
+.categorty-list-menu {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: -20px;
+    z-index: 1;
+    min-width: 210px;
+    background-color: #101010;
+    height: 290px;
+}
+
+.categorty-list-menu>ul>li:hover>a {
+    color: #fff;
+}
+
+.categorty-list-menu>ul>li>a {
+    font-family: NotoSans, sans-serif;
+    font-size: 14px;
+    line-height: 34px;
+    color: #a5a5a5;
+    text-decoration-line: none;
+}
+
+.categorty-list-menu .ul1{
+    margin-left: 30px;
+    padding-top: 30px;
+}
+
+.categorty-menu-line {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+}
+
+
+
+/* 메뉴2 */
+.header-main .menu2 {
+    font-size: 0;
+    margin-left: 300px;
+}
+
+.header-main .menu2,
+.header-main .menu2>ul>li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.header-main .menu2>ul>li:first-child {
+    margin-left: 0;
+}
+
+
+.header-main .menu2>ul>li:hover>a {
+    color: #fff;
+} 
+
+
+.search-box .search-main-box>.search>.search-submit {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.search-main-box {
+    position: relative;
+    width: 1240px;
+    height: 30px;
+    margin-left: 230px;
+    font-size: 0;
+    margin: 0 auto;
+}
+
+.search-submit {
+    float: right;
+    background-color: #1b1b1b;
+}
+
+.search-submit img{
+    margin-top: -30px;
+}
+
+.search {
+    border-radius: 4px;
+    width: 300px;
+    height: 35px;
+    background-color: #030303;
+    color: #fff;
+    border: 1px solid #232323;
+    float: right;
+    margin-right: 15px;
+    margin-top: -35px;
+    text-indent: 10px;
+}
+.search-main-box .submitbutton {
+    position: absolute;
+    width: 17px;
+    top: 10px;
+    right: 12px;
+    margin: 0;
+    margin-top: -35px;
+    margin-right: 15px;
+}
+
+.button-top button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+/*헤더 끝*/
+
+/*메인페이지*/
+.main {
+    width: 100%;
+    z-index: 10;
+    /*   margin: 109px auto 0; maring-top 값 수정 */
+    margin: 100px auto 0;
+    padding-bottom: 50px;
+    height: 100%;
+    min-height: 1080px;
+    overflow: hidden;
+    min-width: 1240px;
+    background-color: #1b1b1b;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.slidebox {
+    max-width: 1300px;
+    width: 100%;
+    height: 667px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+}
+
+.slidebox>input {
+    display: none;
+}
+
+.slidebox .slidelist {
+    white-space: nowrap;
+    font-size: 0;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.5s ease;
+}
+
+.slidebox .slidelist .slideitem {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    transition: all 0.5s;
+}
+
+.slidebox .slidelist .slideitem>a {
+    display: block;
+    width: auto;
+    position: relative;
+    text-align: center;
+}
+
+
+.slidebox .slidelist .slideitem>a img {
+    width: 1000px;
+    height: 580px;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    cursor:pointer ;
+}
+
+.next {
+    position: absolute;
+    top: 40%;
+    left: 20px;
+    z-index: 20;
+    font-size: 0;
+    background-repeat: no-repeat;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIBAMAAABfdrOtAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAeUExURUdwTP///wAAAAAAAAUFBQsLC7a2tuPj4/T09Pz8/LPTuEIAAAAKdFJOUwCAAgUKESdFYHSA0quHAAADsElEQVR42u2cvW7bMBSFBb0BFzvZBOUNbKMvYDJpd9L1KtQZMgp1gK4BnAAdvbTo21YUf0TSSpfew6IJ7wPk4CN17qHFXFVVqVKlSpUq9V6qdYWTqL1G22TQgKlEGiCRWAMkov/yzXqoFW7rNcja1AqGYjm+/XqxKg1M44Ex9nW9xojYxfowaLClQWlAILzXIuwLRsSAbO5GDbteDQBk0NgYEHaCiNRmsT4yL7KiFzEg/MmKHLcAEQuytxrsgBAxILdnq7HkABEL8uBATgCROgG5kgAR68POgTxKSS5iF+vOaSwVgMQ+vr0HAYikIAulOKd2fOLD63uASNJQ2A/lVotQxICIGIRYJPXhswbhxMmY+lCZ1SIVaS9Bxm1fER6JXEOZfBiAtDAfmh2hPBFdNpQQpMGA3IcgLcyHMJDQhyiQfQaQxIcYkMSHtB6p/wjSkDaULvChAi1WXh/mAFlEu47zocrRUEAgIgfIKz7M0VBofRiBSFBDye1D+SYaSgn2Euy4YFf/b7BvSrCXYC/B/g8bSjUb7Jx2sarwVTzIh3q14A3FrBY22M1qTSCQPDSrte2QwW5F+BkKEq9WnId0N31ahH9C+nAUGR7gDhjsdkt8kDyq6YUpJUgogmkoo8iw73wCkQAQIyLOzuyIHTEi3NpkofzLeNqL6lFEPCVXF7QglqRPLmEQIqLz10lAkn1yMQYh2fl8B/QU5xPVTyj0XnQi0484mBm5UP70eIC0lXYUwaKMwciV3xV9T02O4kQ+s/iimji0zKZMKEdEaunzo1RqF6IQe6V266WCS3fAkciu187/dsCciRKUZ8zpbkQJHAk4pzqUwJH0J+68KN6RCyTK5MgcKPSOtChapYM1F4sisI4MdgXXXNyuRCgSiIJzZIACdGTwgKFREkciUG42F46kR5lpLiBHapRdluaCd6TK0VywcR+gvA1HZkTBxf2rjmwB/zqWJ+5FjrjnJe7fbdyLEvcl7kvc/01GAnbl0pFNDpQGgHIZ9xXUkdSvpufjnnoYbPbXPfWEwJwjl9Qic3F/faCe2piL+yP5MNhMRp5Q4zph3J8gg0cJyhEyQpXEPWLiLHXkFWjizDuyt9dRsAE9/b5NfWc/JUQkbC7THTe1iHuMRxUJEvEoXEkp6IfB4sd48KRw/9pALmJQ9ILpQonUgcoWNVzsxqQ3ekNQY9LBUPkWN/A9jsfb0fU1bgp/UgF+f8F8TsBJoD7ykOObBYkKSiRSqXCVQ6NUqVKlkvoNcocsg65cP1oAAAAASUVORK5CYII=");
+    background-size: 100px auto;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+
+}
+
+
+.right1 {
+    position: absolute;
+    top: 40%;
+    right: 20px;
+    z-index: 20;
+    font-size: 0;
+    background-repeat: no-repeat;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIBAMAAABfdrOtAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAeUExURUdwTP///wAAAAAAAAUFBQsLC7a2tuPj4/T09P39/dwN06IAAAAKdFJOUwCAAQUKESdFYHQOXaxkAAAEd0lEQVR42u2cTW7bMBSEBd1AGzveCfINJCM9gKk4BxDTdBkgAZplgHTRZYEGXQdogva2Ff+eSFvpakYIWvIAHnx8fDMUZaoo8sgjjzzy+K9HE0a9gAZRpWn4KmUi0iyhwUE5FqGoOJGtGbwJ8xrdONqWhFJOGkaGg2JFxp///PuHsNQMkbbrDlVVvRoWCooRGSfrYRSpbkeRLQOltBU5NxrVWpGqUtqSfLAi1eOeg1LaklxWgtIRlnFpS+JFqu8qrDC8yO7gRc7UnoFSmpLsLrxI9UJBcSTqwYtsbhkojkSFolSvDBRH0vffmCiepP8YUFYEFF+TXoeqVI+h72u0iNaCslah78G2okaVmxOUBtvxRuTqOe5IqIU5qzdF0fdVbC5IFDddO4OiA8pmAKP4+LUi10lHAlF8Mtr50klHIlGaxpe+J6I0ja/KSDJ1JBjFblcCStqROJRSUIYY5TFYWA2br9Y3pL46RamxKGaBpR2Jc+MU5ZkT9ynKJ1LcN/EC06yMFJRTc2mhy1iqwkUJKqy4tzYptWfFfXiomzGXLcFcDAor7pvY8llxn1aFFfcJCivuUxRWRpYJCivu51FWBJTTjsSjTBZGjft23lxajk/y417luM9xHzryX4n7PSnudY77HPfLxz3suftvcV9Dl7F6I+4LsBunHelRgOc67ay5bLFHLlNHxijoIyo5qLiPUKwZF4SqiLmsPEpREHwyxP1GuaIUcJS4I818Ic+MZ+P+p7JFgYnMxr0vCu702y/jXdyRJlbQR+zWwlR0dAgXCXGfoChbeaCIWH4vu/wNXKSIzfjGiyi0iF9g0auPM46I73rvxOveNgqFRF5HrZgkwVaeFJzER5dSkvN3cBKJegFZaziJNKOE1pNG94lEyoVsiPWAFpkDGcDeJTsWece91qYkJhqhodXGr7irL04E/HLQuuMhArElAZLI9k5A7gyIy3hsLHbRq3rtZ6vF71PlyeFOhwUMfWlnQK6PQXCblWn5ytOcdiAd4Vwi6kMPsoUfFEaGEoE0SEPp1E3UhxMI9PE36cMIpIZVpDsylAmkgYEkhrLSrtlxINOTSdyHYBCp+pGhUED6JUCkD194IEd9SAZ5SkBowR6BwPrQPiie9iEWZDtvKC0U5DjYByzIfLBjQd4Kdg7I9QIgR8HOAZnpQx7IWQJSQw3lJNgdCPRcOwd7DvYc7O8u2Pc52HOwv/9gL5YI9nKBYA/Xm6jBLn+vJgZ7CERqsMtf3onBHu5p7YjBXsg1hAdeHnqRbnfOC/YwXe5+Hg/EX3K5jIJ9wN/VSkQIwR6JHCZDAR/PBRHJdsITe0ziogQf7AmJzRJCsKck/dfql2aByI0z8+IVHiNHJPbvFsPAAZHLYH3fq54E4u+YjihqcBqM67JyT8uOjgJiSbZBhXNXdrqL3dm5QptWvFkZ15e/Vs65ux42qV6DAhK+vRBx4EHCVtjINI6D8TkB90xq3ob5jxbUNBEnw/uQRLPAxyqW+ezGMh8QiT6KwdPII488Fhx/AJYxYWH8m9PAAAAAAElFTkSuQmCC");
+    background-size: 100px auto;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+
+[id="slide01"]:checked~.slidelist .slideitem {
+    transform: translateX(0%);
+    animation: slide01 20s infinite;
+}
+
+[id="slide02"]:checked~.slidelist .slideitem {
+    transform: translateX(-100%);
+    animation: slide02 20s infinite;
+}
+
+[id="slide03"]:checked~.slidelist .slideitem {
+    transform: translateX(-200%);
+    animation: slide03 20s infinite;
+}
+
+[id="slide04"]:checked~.slidelist .slideitem {
+    transform: translateX(-300%);
+    animation: slide04 20s infinite;
+}
+
+/* 중간 배너 */
+
+.pickmovie {
+    height: 70px;
+    width: 100%;
+    color: #a5a5a5;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 400px;
+}
+
+.pickmovie>a {
+    color: #a5a5a5;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0;
+}
+
+.pickmovie-container {
+    display: flex;
+    flex-direction: column;
+    color: #a5a5a5;
+    font-size: 24px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.slide-container {
+    overflow: auto;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    /* 이미지를 가운데 정렬 */
+    align-items: center;
+
+}
+
+.main .slidebox+.slide-container {
+    margin-top: 20px;
+    /* 원하는 간격 크기, 예: 20px */
+}
+
+.slide-container a {
+    width: 240px;
+    height: 400px;
+    vertical-align: middle;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+
+.slide-container img {
+    width: 240px;
+    /* 원하는 너비 */
+    height: 360px;
+    /* 원하는 높이 */
+}
+
+.slide-container span {
+    position: relative;
+    left: 30%;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* 풋터 */
+.footer {
+    background-color: #1b1b1b;
+    width: 100%;
+    border-top: 1px solid #2f2f2f;
+    min-width: 1240px;
+    overflow: hidden;
+}
+
+.footer-box {
+    width: 100%;
+    border-bottom: 1px solid #2f2f2f;
+}
+
+.footer-box-inner {
+    width: 1240px;
+    margin: 0 auto;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    z-index: 1000;
+}
+
+.gongi {
+    margin-right: 23px;
+    float: left;
+    vertical-align: middle;
+}
+
+.gongi a {
+    display: block;
+    font-size: 18px;
+    color: #a5a5a5;
+}
+
+.footer-arrow-left,
+.footer-arrow-right {
+    display: block;
+}
+
+.footer-box .footer-arrow-left {
+    position: absolute;
+    top: 0;
+    right: 54px;
+    border-left: 1px solid #2f2f2f;
+    height: 50px;
+    z-index: 50;
+    cursor: pointer;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+.footer-box .footer-arrow-right {
+    position: absolute;
+    z-index: 50;
+    cursor: pointer;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    top: 0;
+    right: 0;
+    border-right: 1px solid #2f2f2f;
+    border-left: 1px solid #2f2f2f;
+    height: 50px
+}
+
+.footer-box .footer-arrow-left,
+.footer-box .footer-arrow-right {
+    vertical-align: top;
+}
+
+.gongi-list-line {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    height: 50px;
+}
+
+.gongili {
+    height: 50px;
+    float: flex;
+    vertical-align: middle;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 100%;
+    position: relative;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+}
+
+.gongia {
+    font-size: 16px;
+    color: #a5a5a5;
+}
+
+.footer-menu {
+    width: 1240px;
+    margin: 0 auto;
+    padding: 0 0 100px;
+    position: relative;
+    overflow: hidden;
+    color: #717171;
+}
+
+.footer-info {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.footer-info ul::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.footer-info li {
+    float: left;
+    margin-right: 24px;
+}
+
+.footer-info a {
+    display: block;
+    padding: 10px 0;
+    color: #717171;
+}
+
+.footer-info-area {
+    font-size: 12px;
+    line-height: 20px;
+    color: #717171;
+}
+
+.footer-info-area span {
+    display: inline-block;
+    border-right: 1px solid #717171;
+    padding-right: 6px;
+    margin-right: 6px;
+    line-height: 11px;
+}
+
+/* 위로가기 버튼 */
+
+.btn-float-box {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 1200;
+    display: block;
+}
+
+.button-top {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.button-top a {
+    display: block;
+}
+
+.button-top button {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: url(data:image/png;base64,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)100% 100% no-repeat;
+}
+
+.ally-hidden {
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+
+@keyframes slide01 {
+    0% { left: 0%;}
+    23% { left: 0%;}
+    25% { left: -100%;}
+    48% { left: -100%;}
+    50% { left: -200%;}
+    73% { left: -200%;}
+    75% { left: -300%;}
+    98% { left: -300%;}
+    100% { left: 0%;}
+}
+
+@keyframes slide02 {
+    0% { left: 0%;}
+    23% { left: 0%;}
+    25% { left: -100%;}
+    48% { left: -100%;}
+    50% { left: -200%;}
+    73% { left: -200%;}
+    75% { left: 100%;}
+    98% { left: 100%;}
+    100% { left: 0%;}
+}
+
+@keyframes slide03 {
+    0% { left: 0%;}
+    23% { left: 0%;}
+    25% { left: -100%;}
+    48% { left: -100%;}
+    50% { left: 200%;}
+    73% { left: 200%;}
+    75% { left: 100%;}
+    98% { left: 100%;}
+    100% { left: 0%;}
+}
+
+@keyframes slide04 {
+    0% { left: 0%;}
+    23% { left: 0%;}
+    25% { left: 300%;}
+    48% { left: 300%;}
+    50% { left: 200%;}
+    73% { left: 200%;}
+    75% { left: 100%;}
+    98% { left: 100%;}
+    100% { left: 0%;}
+}
+
+
+/* 드로그바 */
+.main {
+    height: 100%;
+    background-color: #1b1b1b;
+    box-sizing: border-box;
+    overflow-y: auto;
+    scrollbar-face-color: #a5a5a5;
+    scrollbar-track-color: #1b1b1b;
+    scrollbar-arrow-color: #a5a5a5;
+    scrollbar-3dlight-color: none;
+    scrollbar-shadow-color: #a5a5a5;
+    scrollbar-darkshadow-color: none;
+    scrollbar-color: #a5a5a5 #1b1b1b;
+}
+
+/* 화준님 코드 중 제외된 코드*/
+
+/* 
+.toggle-button {
+    
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #a5a5a5;
+    font-size: 18px; 
+    margin-top: 1px; 
+    margin-bottom: 1px;
+    margin-left: 88%;
+}
+
+.main .slidebox + .slide-container {
+    margin-top: 20px; /* 원하는 간격 크기, 예: 20px
+}
+
+ ::-webkit-scrollbar {
+   width: 8px;
+   height: 8px;
+   background-color: transparent;
+ }
+ ::-webkit-scrollbar-track {
+   -webkit-border-radius: 0;
+   -moz-border-radius: 0;
+   border-radius: 0;
+   background-color: transparent;
+ }
+ ::-webkit-scrollbar-thumb {
+   height: 8px;
+   -webkit-border-radius: 0;
+   -moz-border-radius: 0;
+   border-radius: 0;
+   background-color: #a5a5a5;
+ }
+ */
+
+
+/* 페이지 타이틀 및 텍스트 스타일 설정 */
+.title-box h1{
+    font-size: 28px;
+    margin-left: 8%;
+}
+
+
+
+.page-title {
+    color: #fff;
+    margin-top: 20px;
+    background-color: #252525;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 40px 300px;
+    line-height: 36px;
+}
+
+.page-text {
+    color: #a5a5a5;
+    margin-left: 380px;
+    /* 텍스트를 오른쪽으로 이동 */
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: 24px;
+}
+
+.panel-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.panel.active .panel-trigger {
+    transform: translateX(-50%) rotate(180deg);
+}
+
+.panel .panel-trigger {
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    text-indent: -999999px;
+    transition: transform .25s linear;
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    background-image: url(../img/element-icons-40-x-40-all-dropdown-arrow.1dbee09a.svg);
+    background-color: transparent;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+.product-name {
+    display: block;
+    width: auto;
+    padding: 0;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+}
+
+/*테이블 양쪽 테두리 제거*/
+.cs-table01-wrap table td, th{
+    border-left: 0px;
+   border-right: 0px;
+}
+.cs-table01-wrap table td{
+    border-top: 0px;
+}
+.cs-table-02 thead{
+    text-align: center;
+}
+
+/*테이블 크기*/
+.cs-table01-wrap table{
+    width: 1040px;
+    border-collapse: collapse;
+}
+
+.cs-table-02 .view-count ,.noti-type, .noti-date{
+   text-align: center;
+}
+
+
+/* 이용권 표를 가운데로 정렬 */
+.ticket-event-desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    /* 화면 높이에 맞추기 위해 사용 */
+    background-color: #333;
+    /* 배경 색상을 변경하고자 할 경우 */
+    color: #fff;
+    /* 글자 색상을 하얀색으로 변경 */
+}
+
+
+/* 이용권 표 내부의 테이블 스타일 수정 */
+.voucher-table {
+    border-collapse: collapse;
+    /* 테이블 셀 경계 제거 */
+    width: 100%;
+    /* 테이블 폭을 100%로 설정 */
+}
+
+.voucher-table th,
+.voucher-table td {
+    padding: 10px;
+    /* 셀 안의 여백 설정 */
+    text-align: center;
+    /* 텍스트 가운데 정렬 */
+    border: 1px solid #fff;
+    /* 테두리 스타일 및 색상 설정 */
+}
+
+.voucher-table caption {
+    font-size: 26px;
+    /* 캡션 글자 크기 설정 */
+    margin-bottom: 30px;
+    /* 아래 여백 추가 */
+    font-weight: bold;
+}
+
+.button-container {
+    display: inline-block;
+    /* 인라인 블록 요소로 설정하여 컨테이너가 컨텐츠에 맞게 크기가 조절되도록 함 */
+}
+
+.button-container .btn {
+    background-color: transparent;
+    /* 배경색을 투명으로 설정 */
+    border: 1px solid #ccc;
+    /* 버튼 테두리 스타일 설정 */
+    padding: 10px 20px;
+    /* 버튼 내부 여백 설정 */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* 배경색 변경에 애니메이션 효과 추가 */
+}
+
+.button-container .btn:hover {
+    background-color: #3498db;
+    /* 마우스 호버 시 배경색 변경 */
+    color: #fff;
+    /* 텍스트 색상 변경 */
+}
+
+.month,
+.price,
+.summary {
+    font-size: 19px;
+    color: #fff;
+}
+
+.bt-noti-tit {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #717171;
+}
+
+.dot-text {
+    font-size: 14px;
+    color: #717171;
+    letter-spacing: -.5px;
+    line-height: 20px;
+}
+
+/*새로추가3*/
+
+.cs-table-01, .cs-table-02 {
+    text-align: center;
+    /* 표를 가운데 정렬 */
+    margin: 50px auto;
+    /* 표를 수평으로 가운데 정렬 */
+    font-size: 15px;
+    color: #717171;
+}
+
+.noti {
+
+    font-size: 15px;
+    color: #ffffff;
+
+}
+
+.noti-content {
+
+    font-size: 15px;
+    color: #ffffff;
+
+}
+.noti .view-count{
+    text-align: center;
+}
+
+.noti .noti-type{
+    text-align: center;
+}
+
+.noti .noti-date{
+    text-align: center;
+}
+
+
+.paging-type02 {
+    text-align: center;
+
+}
+
+
+/* 표의 제목 배경색 및 텍스트 색상 수정 */
+.cs-table-01, .cs-table-02 th {
+    background-color: #333; /* 제목 셀 배경색을 설정합니다. */
+    color: white; /* 제목 텍스트 색상을 흰색으로 설정합니다. */
+}
+
+
+
+.cs-table-01 td, .cs-table-01 th,
+.cs-table-02 td, .cs-table-02 th {
+    padding: 10px; /* 내용과 셀 경계 사이의 간격을 조절합니다. */
+    text-align: left; /* 텍스트를 가운데 정렬합니다. */
+    height: 50px;
+    border: 1px solid #a5a5a5; 
+}
+
+.paging-type02 a, .arrow img {
+    font-size: 20px; /* 숫자 크기를 조절합니다. */
+    margin: 5px; /* 간격을 조절합니다. */
+    padding: 5px 5px; /* 숫자 주변의 여백을 설정합니다. */
+    color : #717171;
+    height: 20px;
+    vertical-align: middle;
+}
+
+
+
+.writebutton {
+    text-align: right;
+    margin: 0 15%;
+}
+
+#write-button {
+    background-color: #333; /* 버튼 배경색 */
+    color: #fff; /* 버튼 텍스트 색상 */
+    padding: 10px 20px; /* 버튼 내부 여백 설정 */
+    border: white; /* 테두리 없음 */
+    border-radius: 5px; /* 버튼 모서리 둥글게 */
+    cursor: pointer; /* 포인터 커서로 변경 */
+    transition: background-color 0.3s ease; /* hover 시 배경색 전환 효과 */
+    display: inline-block;
+    margin-left: auto;
+}
+
+#write-button:hover {
+    background-color: #717171; /* hover 시 배경색 변경 */
+}
+
+/*상단 항목*/
+.notification, .usernote{
+    text-align: left;
+    color: #fff;
+}
+
+.notification, .usernote h3{
+    margin: 30px;
+    margin-left: 20%;
+}
+
+
+
+
+section {
+    display: block;
+}
+
+div {
+    display: block;
+}
+
+span {
+    font-style: normal;
+}
+
+li {
+    display: list-item;
+    list-style: none;
+    text-align: -webkit-match-parent;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    border: 0 none;
+    padding: 0;
+    margin: 0;
+    border-radius: 15px;
+}
+
+button {
+    cursor: pointer;
+    font-family: NotoSans, sans-serif;
+    border: 0 none;
+    margin: 0;
+    background-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 400;
+}
+
+body {
+    font-family: NotoSans, sans-serif;
+    width: 100%;
+    background-color: #1b1b1b;
+    letter-spacing: -.5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+/* 드로그바 */
+.main {
+    height: 100%;
+    background-color: #1b1b1b;
+    box-sizing: border-box;
+    overflow-y: auto;
+    scrollbar-face-color: #a5a5a5;
+    scrollbar-track-color: #1b1b1b;
+    scrollbar-arrow-color: #a5a5a5;
+    scrollbar-3dlight-color: none;
+    scrollbar-shadow-color: #a5a5a5;
+    scrollbar-darkshadow-color: none;
+    scrollbar-color: #a5a5a5 #1b1b1b;
+}
+
+*/
+
+
+
+/*새로추가2*/
+
+/* 페이지 타이틀 및 텍스트 스타일 설정 */
+.page-title {
+
+    color: white;
+    /* 글자 색상을 하얀색으로 변경 */
+    margin-left: 380px;
+    /* 텍스트를 오른쪽으로 이동 */
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.page-text {
+    color: #a5a5a5;
+    margin-left: 380px;
+    /* 텍스트를 오른쪽으로 이동 */
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: 24px;
+}
+
+.panel-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.panel.active .panel-trigger {
+    transform: translateX(-50%) rotate(180deg);
+}
+
+.panel .panel-trigger {
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    text-indent: -999999px;
+    transition: transform .25s linear;
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    background-image: url(../img/element-icons-40-x-40-all-dropdown-arrow.1dbee09a.svg);
+    background-color: transparent;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+.product-name {
+    display: block;
+    width: auto;
+    padding: 0;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+}
+
+/* 이용권 표를 가운데로 정렬 */
+.ticket-event-desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    /* 화면 높이에 맞추기 위해 사용 */
+    background-color: #333;
+    /* 배경 색상을 변경하고자 할 경우 */
+    color: #fff;
+    /* 글자 색상을 하얀색으로 변경 */
+}
+
+
+/* 이용권 표 내부의 테이블 스타일 수정 */
+.voucher-table {
+    border-collapse: collapse;
+    /* 테이블 셀 경계 제거 */
+    width: 100%;
+    /* 테이블 폭을 100%로 설정 */
+}
+
+.voucher-table th,
+.voucher-table td {
+    padding: 10px;
+    /* 셀 안의 여백 설정 */
+    text-align: center;
+    /* 텍스트 가운데 정렬 */
+    border: 1px solid #fff;
+    /* 테두리 스타일 및 색상 설정 */
+}
+
+.voucher-table caption {
+    font-size: 26px;
+    /* 캡션 글자 크기 설정 */
+    margin-bottom: 30px;
+    /* 아래 여백 추가 */
+    font-weight: bold;
+}
+
+.button-container {
+    display: inline-block;
+    /* 인라인 블록 요소로 설정하여 컨테이너가 컨텐츠에 맞게 크기가 조절되도록 함 */
+}
+
+.button-container .btn {
+    background-color: transparent;
+    /* 배경색을 투명으로 설정 */
+    border: 1px solid #ccc;
+    /* 버튼 테두리 스타일 설정 */
+    padding: 10px 20px;
+    /* 버튼 내부 여백 설정 */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* 배경색 변경에 애니메이션 효과 추가 */
+}
+
+.button-container .btn:hover {
+    background-color: #3498db;
+    /* 마우스 호버 시 배경색 변경 */
+    color: #fff;
+    /* 텍스트 색상 변경 */
+}
+
+.month,
+.price,
+.summary {
+    font-size: 19px;
+    color: #fff;
+}
+
+.bt-noti-tit {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #717171;
+}
+
+.dot-text {
+    font-size: 14px;
+    color: #717171;
+    letter-spacing: -.5px;
+    line-height: 20px;
+}
+
+/*새로추가3*/
+
+
+
+.paging-type02 {
+    text-align: center;
+
+}
+
+
+
+
+/* 표의 제목 배경색 및 텍스트 색상 수정 */
+.cs-table-01, .cs-table-02 th {
+    background-color: #333;
+    /* 제목 셀 배경색을 설정합니다. */
+    color: white;
+    /* 제목 텍스트 색상을 흰색으로 설정합니다. */
+}
+
+
+
+.cs-table-01, .cs-table-02 td,
+.cs-table-01, .cs-table-02 th {
+    padding: 10px;
+    /* 텍스트를 가운데 정렬합니다. */
+    height: 50px;
+    
+}
+.cs-table-01, .cs-table-02 th {
+    text-align: center;
+    border: none;
+    
+}
+
+.paging-type02 a,
+.arrow img {
+    font-size: 20px;
+    /* 숫자 크기를 조절합니다. */
+    margin: 5px;
+    /* 간격을 조절합니다. */
+    padding: 5px 5px;
+    /* 숫자 주변의 여백을 설정합니다. */
+    color: #717171;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.write-button {
+    margin-top: 10px;
+    /* 원하는 여백을 추가합니다. */
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#write-button {
+    background-color: #333;
+    /* 배경색을 원하는 색상으로 설정합니다. */
+    color: white;
+    /* 텍스트 색상을 흰색으로 설정합니다. */
+    padding: 10px 20px;
+    /* 버튼의 패딩을 조절합니다. */
+    border: none;
+    /* 테두리를 없앱니다. */
+    cursor: pointer;
+    /* 커서를 포인터로 변경하여 버튼을 클릭 가능한 상태로 만듭니다. */
+    margin-top: 10px;
+    right: 0;
+    /* 표의 오른쪽에 위치 */
+}
+
+#write-button:hover {
+    background-color: #717171;
+    /* 마우스 호버 시 배경색 변경 */
+}
+
+
+/* 09/05 추가 */ 
+
+
+.popup-back {
+    
+    position: fixed; 
+    top: 0; 
+    padding-top: 100px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.8); /* 배경을 어둡게 표시 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* .popup {
+    max-width: 100%;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,.9);
+    
+} */
+
+.popup img {
+
+    max-width: 100%; 
+    height: auto;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+
+
+
+.popup-checkbox-check {
+   color: #ccc;
+   height: 10%;
+   margin-top: 100px;
+   margin-right: 210px;
+
+} 
+
+
+.popup-button-close img {
+    margin-left: 180px;
+    margin-top: 300px;
+    width: 20px;
+    height: auto;
+}
+
+/* 09/06 추가 */
+
+
+.popup-content-1 {
+    background-color: #717171;
+    width: 80%; /* 팝업 창 너비를 원하는 크기로 조정하세요 */
+    max-width: 400px; /* 최대 너비 설정 (원하는 값으로 조정) */
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 50%; /* 화면 상단에서 절반 높이에 위치 */
+    left: 50%; /* 화면 왼쪽에서 절반 너비에 위치 */
+    transform: translate(-50%, -50%); /* 수평 및 수직 가운데 정렬 */
+    border-radius: 10px;
+}
+
+/* 팝업 창 닫기 버튼 스타일 */
+.close-button {
+    top: 10px;
+    right: 10px;
+    font-size: 10px;
+    cursor: pointer;
+    color: white;
+} 
+
+/* 팝업 내용 스타일 (제목 및 정보) */
+.popup-product-name {
+   
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+/* 
+.popup-product-info { */
+    /* 팝업 내용 정보 스타일을 원하는대로 수정 */
+    /* font-size: 16px;
+} */
+
+.popup {
+    
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* 배경을 반투명으로 어둡게 처리 */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+#pay {
+    background-color: #333;
+    /* 배경색을 원하는 색상으로 설정합니다. */
+    color: white;
+    /* 텍스트 색상을 흰색으로 설정합니다. */
+    padding: 10px 20px;
+    /* 버튼의 패딩을 조절합니다. */
+    border: none;
+    /* 테두리를 없앱니다. */
+    cursor: pointer;
+    /* 커서를 포인터로 변경하여 버튼을 클릭 가능한 상태로 만듭니다. */
+    margin-top: 10px;
+    right: 0;
+    /* 표의 오른쪽에 위치 */
+    border-radius: 10px;
+}
+
+#pay:hover {
+    background-color: #717171; /* hover 시 배경색 변경 */
+}
+
+ /* footer  추가 */
+* {
+    word-break: break-all;
+    word-wrap: break-word;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: NotoSans, sans-serif;
+    width: 100%;
+    background-color: #1b1b1b;
+    letter-spacing: -.5px;
+  }
+  body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 400;
+  }
+  img {
+    vertical-align: middle;
+  }
+  button {
+    margin: 0;
+    background-color: transparent;
+    border: 0 none;
+    cursor: pointer;
+    font-family: NotoSans, sans-serif;
+  }
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .float-grid > * {
+      float: left;
+    box-sizing: border-box;
+  }
+  .float-grid::after {
+      content: "";
+    display: block;
+    clear: both;
+  }
+  .inline-grid {
+    font-size: 0;
+  }
+  .inline-grid > * {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1rem;
+  }
+  .img-box > img {
+    display: block;
+    width: 100%;
+  }
+  
+  footer {
+    display: block;
+  }
+  
+  
+  
+  
+  /* scroll bar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    height: 8px;
+    border-radius: 0;
+    background-color: #a5a5a5;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: transparent;
+  }
+  
+  
+  
+  
+  
+  
+  /* custom */
+  .container {
+    width: 1270px;
+  }
+  .body {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+  }
+  
+  
+  
+
+  /* footer */
+.footer-notice {
+    border-top: 1px solid #2f2f2f;
+    border-bottom: 1px solid #2f2f2f;
+    height: 50px;
+  }
+  .footer-notice > .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-title {
+    color: #a5a5a5;
+    line-height: 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-right: 20px;
+  }
+  .footer-notice .swiper {
+    height: 50px;
+    flex-grow: 2;
+  }
+  .footer-notice .swiper-slide > a {
+    display: block;
+    line-height: 50px;
+    color: #a5a5a5;
+  }
+  .footer-notice .swiper {
+    position: relative;
+  }
+  .footer-notice div[class^="swiper-button-"] {
+    position: absolute;
+    top: 45px;
+    transform: translatey(-50%);
+    width: 50px;
+    height: 50px;
+    padding: 0;
+  }
+  .footer-notice .swiper-button-prev {
+    border-left: 1px solid #2f2f2f;
+    border-right: 1px solid #2f2f2f;
+    left: 1077px;
+  }
+  .footer-notice .swiper-button-next {
+    border-right: 1px solid #2f2f2f;
+    right: 0;
+  }

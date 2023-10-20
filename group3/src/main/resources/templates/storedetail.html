@@ -1,159 +1,356 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #rs_view{
+        .rs_view{
+			
             position: relative;
             margin: auto;
-            left: 450px;
-            width: 1800px;
+            width: 1000px;
+            background-color: ghostwhite;
         }
-        .imgbox{
+        .rs_img_box{
             position: relative;
             margin: auto;
-            right: 0px;
+            left: 14px;
+        }
+        .urlandir{
+            position: relative;
+            margin: auto;
+            left: 780px;
+            width: 30px;
+            height: 30px;
+        }
+        .storeInfo{
+            position: relative;
+            margin: auto;
+            width: 800px;
+        }
+        th{
+            width: 200px;
+            height: 50px;
+        }
+        .store_menu{
+            display: -moz-flex;
+            display: -ms-flexbox;
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            -moz-flex-direction: row;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -webkit-flex-direction: row;
+            -webkit-box-direction: normal;
+            -webkit-box-orient: horizontal;
+            border-bottom: 1px solid #e9e9e9;
+            margin-bottom: 4px;
+        }
+        .emsp{
+            width: 100px;
+        }
+        #reservationButton{
+            left: 350px;
+            font-size: 30px;
+            position: relative;
+            margin: auto;
+            width: 200px;
+            height: 50px;
+            border-radius: 20px;
+            background-color: yellowgreen;
+            cursor: pointer;
+            border: 0;
+        }
+        #reservationButton:hover{
+            font-size: 30px;
+            color: yellowgreen;
+            background-color: orange;
+        }
+        .box{
+            height: 50px;
+        }
+        .mapAPI{
+            width: 400px;
+            height: 300px;
+            border: 1px solid black;
+        }
+        .smallbox{
+            height: 30px;
+        }
+        tbody{
+            width: 200px;
+            height: 30px;
+        }
+        .center{
+            font-size: 15px;
+            position: relative;
+            left: 75px;
+        }
+        .info{
+            padding: 5px;
+            border-width: 1px;
+        }
+        .line{
+            position: relative;
+            margin: auto;
+            background-color: rgb(192, 192, 192) ;
+            height: 1px;
+        }
+        .addrposition{
+            position: relative;
+            margin: auto;
+            left: 200px;
+            bottom: 300px;
             width: 300px;
-            
         }
+        .reviewTable{
+            padding: 5px;
+        }
+        .reviewTable{
+            border: 1px solid rgb(192, 192, 192) ;
+            border-right: none;
+            border-left: none;
+        }
+        .reviewAllTable{
+            border: 1px solid rgb(192, 192, 192) ;
+        }
+          #scrollToTopButton {
+        position: fixed;
+        bottom: 50px;
+        right: 10%; /* 가운데 정렬을 위해 50% 위치로 이동 */
+        transform: translate(50%); /* 정렬 기준점을 가운데로 이동 */
+        z-index: 1000; /* 다른 요소 위에 표시하기 위한 z-index 설정 */
+    }
     </style>
 </head>
 <body>
-    <form action="" id="rs_view">
-        <div id="rs_img_box">
+    <form action="" class="rs_view">
+        <div class="rs_img_box">
             <!-- 가게 음식메뉴 이미지 창 -->
             <!-- 3 ~ 4장 정도의 이미지 화면을 보이게 해야됨 -->
-            <img src="/Users/KITCOOP/Desktop/spring_jpa/img/menuimg1.jpg" width="320" height="320">
-            <img src="/Users/KITCOOP/Desktop/spring_jpa/img/menuimg1.jpg" width="320" height="320">
-            <img src="/Users/KITCOOP/Desktop/spring_jpa/img/menuimg1.jpg" width="320" height="320">
+            <img src="img/menuimg1.jpg" width="320" height="320">
+            <img src="img/menuimg1.jpg" width="320" height="320">
+            <img src="img/menuimg1.jpg" width="320" height="320">
         </div>
-        <div id="imgbox">
-            <a href="https://www.naver.com/"><img src="/Users/KITCOOP/Desktop/spring_jpa/img/share.jpg" id="shareimg" class="smallbox" width="30px" height="30px"></a> <!-- 공유 -->
-            <!-- 공유 버튼 누르면 URL복사 한 값이 alert창에 나오게 해야됨 -->
-            <img src="" alt=""> <!-- 관심 -->
-        </div>
-        <div>
-            <h1>가게이름</h1> <!-- db에서 불러온 가게 이름 (name)-->
-        </div>
-        <div>
-            <!-- 선으로 만들 박스 -->
-        </div>
-        <table id="가게설명">
-            <tr>
-                <th>
-                    전화번호 :
-                </th>
-                <td>
-                    <span id="phone">02-1234-5678</span>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    음식 종류 : <!-- keyword -->
-                </th>
-                <td>
-                    기타 한식
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    주차 : <!-- parking $$ -->
-                </th>
-                <td>
-                    주차 가능
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    영업 시간 : <!-- time -->
-                </th>
-                <td>
-                    09:00 ~ 19:00
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    쉬는 시간 :
-                </th>
-                <td>
-                    13:00 ~ 15:00
-                </td> 
-            </tr>
-            <tr>
-                <th>
-                    메뉴 <!-- table menu m-->
-                </th>
-                <td>
-                    <ul>
-                        <li>
-                            <span>장칼국수</span>
-                            <span>3000</span>
-                        </li>
-                        <li>
-                            <span>칼국수</span>
-                            <span>4000</span>
-                        </li>
-                        <li>
-                            <span>콩국수</span>
-                            <span>4000</span>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-        <div>
-            <input type="button" id="reservationButton" value="예약하기"> 
-        </div>
-        <div class="addr">
-            <h3>매장 위치</h3>
-            <p>
-                부산광역시 수영구 <!-- addr -->
-            </p>
+        <div class="storeInfo">
             <div>
-                api <!-- 용진님한테 -->
+                <a href="#" id="sns_urlCoby" class="btn_share_sns" title="새창" onclick="clip(); return false;">
+                    <img src="/img/share.jpg" id="shareimg" class="urlandir"></a> <!-- 공유 -->
+                    <!-- 공유 버튼 누르면 URL복사 한 값이 alert창에 나오게 해야됨 -->
+                    <img src="img/interest.jpg"  id="interestimg" class="urlandir"> <!-- 관심 -->
+                <h1><span id="name">가게이름</span></h1> <!-- db에서 불러온 가게 이름 (name)-->
+            </div>
+            <!-- <div>
+
+            </div> -->
+            <div class="line">
+                <!-- 선으로 만들 박스 -->
+            </div>
+            <div class="smallbox">
+                <!-- 1 TAP 느낌은 작은 빈 공간을 확보하기 위한 용도 -->
+            </div>
+            <table>
+                <tr>
+                    <th class="info_top">
+                        전화번호 
+                    </th>
+                    <td class="info_top">
+                        <span id="phone">02-1234-5678</span> <!-- phone -->
+                    </td>
+                </tr>
+                <tr>
+                    <th class="info">
+                        음식 종류  <!-- keyword -->
+                    </th>
+                    <td class="info">
+                        기타 한식
+                    </td>
+                </tr>
+                <tr>
+                    <th class="info">
+                        주차  <!-- parking $$ -->
+                    </th>
+                    <td class="info">
+                        주차 가능
+                    </td>
+                </tr>
+                <tr>
+                    <th class="info">
+                        영업 시간  <!-- time(쉬는 시간도 같이 해야할지 모르겠어서 주석 하나만 달아놓았습니다.) -->
+                    </th>
+                    <td class="info">
+                        09:00 ~ 19:00
+                    </td>
+                </tr>
+                <tr>
+                    <th class="info">
+                        쉬는 시간 
+                    </th>
+                    <td class="info">
+                        13:00 ~ 15:00
+                    </td> 
+                </tr>
+                <tr>
+                    <th class="info">
+                        메뉴 <!-- table menu m-->
+                    </th>
+                    <td class="info">
+                        <div class="store_menu">
+                            <span class="emsp">장칼국수</span><span>3000</span>
+                        </div>
+                        <div class="store_menu">
+                            <span class="emsp">칼국수</span><span>5000</span>
+                        </div>
+                        <div class="store_menu">
+                            <span class="emsp">콩국수</span><span>4000</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="smallbox">
+                <!-- 1 TAP 느낌은 작은 빈 공간을 확보하기 위한 용도 -->
+            </div>
+            <div class="line">
+                <!-- 선으로 만들 박스 -->
+            </div>
+            <div class="smallbox">
+                <!-- 1 TAP 느낌은 작은 빈 공간을 확보하기 위한 용도 -->
+            </div>
+            <div>
+                <input type="button" class="box3" value="예약하기" id="reservationButton" onclick="openReservationPopup()"> 
+            </div>
+            <div class="smallbox">
+                <!-- 1 TAP 느낌은 작은 빈 공간을 확보하기 위한 용도 -->
+            </div>
+            <div class="line">
+                <!-- 선으로 만들 박스 -->
+            </div>
+            <div class="smallbox">
+                <!-- 1 TAP 느낌은 작은 빈 공간을 확보하기 위한 용도 -->
+            </div>
+            <div class="addr">
+                <h3>매장 위치</h3>
+                <div class="mapAPI">
+                    <!-- ~~~~~~~~~~지도API 놓는 위치입니다.~~~~~~~~~~~~~~ -->
+                    <img src="img/map.jpg" alt="map" class="mapAPI">
+                </div>
+                <div class="smallbox">
+					 
+                    <!-- 1 TAP 느낌은 작은 빈 공간을 확보하기 위한 용도 -->
+                </div>
+                <div class="addrposition">
+                    <p><span id="addr">서울특별시</span></p> <!-- addr -->
+                    <span id="detail_addr">강남구 강남역</span>
+                </div>
+            </div>
+            
+            <div class="smallbox">
+                <!-- 1 TAP 느낌은 작은 빈 공간을 확보하기 위한 용도 -->
+            </div>
+            <div class="line">
+                <!-- 선으로 만들 박스 -->
+            </div>
+            <div class="smallbox">
+                <!-- 1 TAP 느낌은 작은 빈 공간을 확보하기 위한 용도 -->
+            </div>
+            <div>
+                <table class="reviewAllTable">
+                    <thead>
+                        <tr>
+                            <th>회원명</th>
+                            <th>제목</th>
+                            <th>별점</th>
+                            <th>일시</th>
+                        </tr>
+                    </thead>
+                        <tbody onclick="goToListPage()">
+                            <tr>
+                                <td class="reviewTable"><span class="center">김현</span></td> <!-- memberid_name -->
+                                <td class="reviewTable"><span class="center">맛있음</span></td>
+                                <td class="reviewTable"><span class="center">1</span></td>
+                                <td class="reviewTable"><span class="center">2023-10-18</span></td>
+                            </tr>
+                        </tbody>
+                        <tbody onclick="goToListPage()">
+                            <tr>
+                                <td class="reviewTable"><span class="center">김현</span></td> <!-- memberid_name -->
+                                <td class="reviewTable"><span class="center">맛있음</span></td>
+                                <td class="reviewTable"><span class="center">1</span></td>
+                                <td class="reviewTable"><span class="center">2023-10-18</span></td>
+                            </tr>
+                        </tbody>
+                </table>
+            </div>
+            <div>
+                목록버튼
+                <input type="button" id="listButton" value="다른식당 보기" onclick="goToListPage()"> <!-- 메인페이지로 이동 -->
             </div>
         </div>
+        <input type="image" src="img/up.jpg" id="scrollToTopButton" alt="맨 위로 이동" width=50 height=50>
     </form>
-    <form id="review">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>회원명</th>
-                    <th>제목</th>
-                    <th>별점</th>
-                    <th>일시</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>김현</td> <!-- memberid_name -->
-                    <td>맛있음</td>
-                    <td>1</td>
-                    <td>2023-10-18</td>
-                </tr>
-            </tbody>
-        </table>
-    </form>
+    
     <script>
-        
-        function openReservationPopup() {
-           
-            var reservationURL = "https://www.example.com/reservation";
-    
+
+// "예약하기" 버튼 클릭 이벤트 처리
+
+         function openReservationPopup() {
+    var reservationURL = "/reservation.html"; // The URL of your "reservation.html" file
+
+    var popupWidth = 800;
+    var popupHeight = 600;
+    var leftPosition = (screen.width - popupWidth) / 2;
+    var topPosition = (screen.height - popupHeight) / 2;
+
+    // Open the popup window
+    window.open(reservationURL, "ReservationPopup", "width=" + popupWidth + ",height=" + popupHeight + ",left=" + leftPosition + ",top=" + topPosition);
+}
+    document.getElementById("reservationButton").addEventListener("click", openReservationPopup);
+
+        function clip(){
+
+            var url = '';    // <a>태그에서 호출한 함수인 clip 생성
+            var textarea = document.createElement("textarea");  
+            //url 변수 생성 후, textarea라는 변수에 textarea의 요소를 생성
+
+            document.body.appendChild(textarea); //</body> 바로 위에 textarea를 추가(임시 공간이라 위치는 상관 없음)
+            url = window.document.location.href;  //url에는 현재 주소값을 넣어줌
+            textarea.value = url;  // textarea 값에 url를 넣어줌
+            textarea.select();  //textarea를 설정
+            document.execCommand("copy");   // 복사
+            document.body.removeChild(textarea); //extarea 요소를 없애줌
+
+            alert("URL이 복사되었습니다.")  // 알림창
+            }
             
-            var popupWidth = 600; 
-            var popupHeight = 400; 
-            var leftPosition = (screen.width - popupWidth) / 2;
-            var topPosition = (screen.height - popupHeight) / 2;
-    
-            // Open the popup window
-            window.open(reservationURL, "ReservationPopup", "width=" + popupWidth + ",height=" + popupHeight + ",left=" + leftPosition + ",top=" + topPosition);
+              // 목록으로 돌아가는 함수
+        function goToListPage() {
+            // 목록 페이지로 이동할 HTML 파일의 상대 경로를 설정
+            var listURL = "./mainpage.html";
+
+            // 실제 페이지 이동
+            window.location.href = listURL;
         }
-    
+        document.getElementById("scrollToTopButton").addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+
+
+        });
+        // window.addEventListener("scroll", function() {
+        //     var scrollToTopButton = document.getElementById("scrollToTopButton");
+        //     if (window.scrollY > 200) { // 스크롤이 200px 이상이면 버튼을 표시
+        //         scrollToTopButton.style.display = "block";
+        //     } else { // 그렇지 않으면 버튼을 숨김
+        //         scrollToTopButton.style.display = "none";
+        //     }
+        // });
         
-        document.getElementById("reservationButton").addEventListener("click", openReservationPopup);
     </script>
 </body>
 </html>

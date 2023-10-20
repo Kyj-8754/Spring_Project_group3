@@ -1,28 +1,27 @@
 server:
   port: 9090
-  address: 192.168.0.62
   servlet:
     encoding:
       charset: UTF-8
       enabled: true
-      force: true
-
-
+      force: true  
+      
 spring:
   thymeleaf:
     cache: false
   datasource:
-    url: jdbc:oracle:thin:@localhost:1521:XE
+    url: jdbc:oracle:thin:@localhost:1521:xe
     driver-class-name: oracle.jdbc.OracleDriver
-    username: group3
-    password: group3
+    username: springweb
+    password: springweb
+
   jpa:
     hibernate:
       ddl-auto: create
     properties:
       hibernate:
-       format_sql: true
-       show_sql: true
+        format_sql: true
+        show_sql: true
       
 logging:
   level:
@@ -30,3 +29,22 @@ logging:
       hibernate:
         SQL: debug
         type: trace
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
