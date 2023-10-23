@@ -11,9 +11,7 @@ import lombok.Setter;
 public class MemberForm {
 
   @NotEmpty(message = "회원 아이디는 필수입니다.") // userId가 비어있으면 안된다는 어노테이션
-  @Pattern(
-      regexp = "(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[가-힣])(?=\\S+$).{6,16}",
-      message = "아이디에 특수 문자를 사용할 수 없습니다.")
+  @Pattern(regexp = "^[A-Za-z0-9_\\-]{5,20}$", message = "아이디에 특수 문자를 사용할 수 없습니다.")
   private String userId;
 
   @NotEmpty(message = "비밀번호는 필수입니다.") // userPw가 비어 있으면 안된다는 어노테이션
@@ -33,7 +31,9 @@ public class MemberForm {
   @Email(regexp = "\\w+@\\w+\\.\\w+(\\.\\w+)?", message = "이메일 양식과 맞지 않습니다.")
   private String email;
 
-  @Pattern(regexp = "^[0-9]*$.{8}", message = "생년월일 양식과 맞지 않습니다.")
+  @Pattern(
+      regexp = "^(19|20)[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$",
+      message = "생년월일 양식과 맞지 않습니다.")
   private String birth;
 
   private String gender;
