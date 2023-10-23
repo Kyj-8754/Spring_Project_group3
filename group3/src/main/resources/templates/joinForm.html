@@ -226,8 +226,8 @@
         <td th:if="${#fields.hasErrors('userPw')}" th:errors="*{userPw}"></td>
       </tr>
       <tr>
-        <td class="label">비밀번호 확인</td>
-        <td><input type="password" name="uesrPw2"></td>
+        <td><label for="userPw_check">비밀번호 확인</label></td>
+        <td><input type="password" id="userPw_check" name="uesrPw2"></td>
 
       </tr>
       <tr class="e-mail">
@@ -275,8 +275,9 @@
       </tr>
       <tr class="tr-last">
         <!--        <td class="label">핸드폰 번호</td>-->
-        <td><label th:for="phone">휴대폰 번호</label></td>
+        <td><label for="phone">휴대폰 번호</label></td>
         <td><input type="text" name="user_phone"
+                   id="phone"
                    placeholder="ex) 010-1234-5678"
                    th:field="*{phone}"></td>
         <td></td>
