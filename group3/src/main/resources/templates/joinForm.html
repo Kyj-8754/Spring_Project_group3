@@ -1,359 +1,290 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0">
-    <title>Join</title>
-    <link rel="stylesheet" >
-    <style type="text/css"></style>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" ></script>
-    <script type="text/javascript"></script>
-    <style>
-      @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-      @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
-      @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=3.0">
+  <title>회원가입</title>
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        border: 0px solid silver;
-      }
 
-      img {
-        width: 100px;
-      }
+  <script type="text/javascript"
+          src="http://code.jquery.com/jquery-latest.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
 
-      body {
-        font-family: 'Roboto', sans-serif;
-        font-size: 0.9rem;
-        line-height: 1rem;
-        color: #999;
-        letter-spacing: 0.1px;
-      }
+    body {
+      background-color: #ffeded;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1rem;
+      color: #999;
+      letter-spacing: 0.1px;
+    }
 
-      h1, h2, h3 {
-        font-family: 'Oswald', sans-serif;
-      }
+    .join-container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 1200px; /* 너비 조절 */
+      height: 900px; /* 높이 조절 */
+      text-align: center;
+    }
 
-      h1 {
-        font-size: 4rem;
-        line-height: 4rem;
-        text-transform: uppercase;
-      }
+    h1, h2, h3 {
+      font-family: 'Oswald', sans-serif;
+    }
 
-      h2 {
-        font-size: 2.4rem;
-        line-height: 2.4rem;
-        text-transform: uppercase;
-      }
+    h1 {
+      font-size: 4rem;
+      line-height: 4rem;
+      text-transform: uppercase;
+    }
 
-      h3 {
-        font-size: 1.4rem;
-        line-height: 1.4rem;
-      }
+    h2 {
+      font-size: 2.4rem;
+      line-height: 2.4rem;
+      text-transform: uppercase;
+      color: #ff6b6b;
+    }
 
-      h4, h5 {
-        font-family: 'Playfair Display', serif;
-      }
+    h3 {
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+    }
 
-      h4 {
-        font-size: 1.1rem;
-        line-height: 1.1rem;
-      }
+    h4, h5 {
+      font-family: 'Playfair Display', serif;
+    }
 
-      h5 {
-        font-size: 0.7rem;
-        line-height: 0.7rem;
-      }
+    h4 {
+      font-size: 1.1rem;
+      line-height: 1.1rem;
+    }
 
-      a:link {
-        color: #666;
-        text-decoration: none;
-      }
+    h5 {
+      font-size: 0.7rem;
+      line-height: 0.7rem;
+    }
 
-      a:visited {
-        color: #666;
-      }
+    a:link {
+      color: #666;
+      text-decoration: none;
+    }
 
-      a:hover {
-        color: red;
-      }
+    a:visited {
+      color: #666;
+    }
 
-      a:active {
-        color: red;
-      }
+    a:hover {
+      color: red;
+    }
 
-      button {
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        padding: 10px 30px;
-        border: 1px solid #ccc;
-        background: white;
-        transition: 0.3s;
-      }
+    a:active {
+      color: red;
+    }
 
-      button:hover {
-        background: crimson;
-        color: white;
-        cursor: pointer;
-      }
+    button {
+      text-transform: uppercase;
+      transition: 0.3s;
+      background-color: #ff6b6b;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
 
-      /* start */
+    button:hover {
 
-      .join-c input::placeholder {
-        color: #bbb;
-      }
+      color: white;
+      cursor: pointer;
+      background-color: #e55b5b;
+    }
 
-      .join-c > div {
-        width: 1000px;
-        margin: 0 auto;
-      }
+    /* start */
 
-      .join-c td {
-        color: #222;
-      }
+    .join-c input::placeholder {
+      color: #bbb;
+    }
 
-      .join-t {
-        width: 1000px;
-        border-collapse: collapse;
-        border-top: 1px solid sliver;
-      }
+    .join-c > div {
+      width: 1200px;
+      margin: 50px auto;
+    }
 
-      .join-t2 {
-        width: 1000px;
-        border-collapse: collapse;
-      }
+    .join-c td {
+      color: #222;
+    }
 
-      .join-t3 {
-        width: 1000px;
-        border-collapse: collapse;
-        border-bottom: 3px solid #bbb;
-      }
+    .join-t2 {
+      width: 1200px;
+      border-collapse: collapse;
+    }
 
-      .join-c table tr td {
-        padding: 1.5rem 0;
-      }
+    .join-t2 tr {
+      border-bottom: 1px solid silver;
+    }
 
-      .join-c table tr td {
-        border-bottom: 1px solid #ccc;
-      }
+    .join-c table tr td {
+      padding: 1.5rem 0;
+    }
 
-      .join-c input {
-        height: 35px;
-        padding: 0 10px;
-        border: 1px solid silver;
-      }
+    .join-c table tr td:not(.tr-last td) {
+      border-bottom: 1px solid #ccc;
+    }
 
-      .join-c select {
-        width: 120px;
-        height: 35px;
-        padding: 0 2px;
-        border: 1px solid silver;
-      }
+    .join-c input {
+      height: 35px;
+      padding: 0 10px;
+      border: 1px solid silver;
+    }
 
-      .join-c button {
-        width: 150px;
-        height: 35px;
-        padding: 0 5px;
-        font-size: 0.8rem;
-      }
+    .join-c select {
+      width: 120px;
+      height: 35px;
+      padding: 0 2px;
+      border: 1px solid silver;
+    }
 
-      .join-c button:hover {
-        background: #c97d50;
-      }
+    .join-c button {
+      width: 150px;
+      height: 35px;
+      padding: 0 5px;
+      font-size: 0.8rem;
+    }
 
-      .join-t tr > :nth-child(1), .join-t2 tr > :nth-child(1), .join-t3 tr > :nth-child(1) {
-        width: 150px;
-      }
+    .join-c button:hover {
+      background: #c97d50;
+    }
 
-      .join-t tr > :nth-child(2) {
-        width: 140px;
-      }
+    .join-t2 tr > :nth-child(1) {
+      width: 150px;
+    }
 
-      .join-t tr > :nth-child(3) {
-        width: 30px;
-        text-align: center;
-      }
+    .join-t2 tr > :nth-child(2) {
+      width: 250px;
+    }
 
-      .join-t tr > :nth-child(4) {
-        width: 160px;
-      }
+    .name-box input {
+      width: 120px;
+    }
 
-      .join-t tr > :nth-child(5) {
-        width: 140px;
-      }
+    .birth-box input {
+      width: 170px;
+    }
 
-      .join-t input {
-        width: 140px;
-        height: 35px;
-        padding: 0 10px;
-        border: 1px solid silver;
-      }
+    .radiobox {
+      margin-right: 1rem;
+      cursor: pointer;
+    }
 
-      .join-t2 tr > :nth-child(2) {
-        width: 212px;
-      }
+    .fm {
+      vertical-align: 3px;
+    }
 
-      .name-box input {
-        width: 120px;
-      }
+    div.join-button {
+      width: 700px;
+    }
 
-      .birth-box input {
-        width: 170px;
-      }
+    .join-button {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
 
-      .radiobox {
-        margin-right: 1rem;
-        cursor: pointer;
-      }
 
-      .fm {
-        vertical-align: 3px;
-      }
-
-      .join-t3 tr > :nth-child(2) {
-        width: 330px;
-      }
-
-      .sea {
-        margin-right: 1rem;
-        vertical-align: 3px;
-      }
-    </style>
+  </style>
 </head>
 
 <body>
 
+<div class="join-container">
+  <h2>회원가입</h2>
+  <form class="join-c" method="post" th:object="${userform}">
+    <table class="join-t2">
+      <tr>
+        <td><label th:for="userId">아이디</label></td>
+        <td><input type="text" name="uesrId" th:field="*{userId}">
+        <td>
+          <button>중복확인</button>
+        </td>
+        <td th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}"></td>
+      </tr>
+      <tr>
+        <td><label th:for="userPw">비밀번호</label></td>
+        <td><input type="password" name="uesrPw" th:field="*{userPw}"></td>
+        <td></td>
+        <td th:if="${#fields.hasErrors('userPw')}" th:errors="*{userPw}"></td>
+      </tr>
+      <tr>
+        <td class="label">비밀번호 확인</td>
+        <td><input type="password" name="uesrPw2"></td>
 
-<form class="join-c" method="post" th:object="${userform}">
-    <div>
-        <table class="join-t2">
-            <tr>
-                <td class="id_input">아이디</td>
-                <td><input type="text" name="uesrId" th:field="*{userId}"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>비밀번호</td>
-                <td><input type="password" name="uesrPw" th:field="*{userPw}"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+      </tr>
+      <tr class="e-mail">
+        <td><label th:for="email">이메일</label></td>
+        <td><input type="text"
+                   placeholder="ex) xxx@xxx.com"
+                   th:field="*{email}"
+                   name="email"></td>
+        <td></td>
+        <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
+      </tr>
+      <tr>
+        <td><label th:for="name">이름</label></td>
+        <td class="name-box"><input type="text" name="user_name"
+                                    th:field="*{name}"></td>
+        <td></td>
+        <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
+      </tr>
+      <tr>
+        <td><label th:for="birth">생년월일</label></td>
+        <td class="birth-box"><input type="text" name="user_birth"
+                                     placeholder="8자 ex) 19880808"
+                                     th:field="*{birth}"></td>
+        <td></td>
+        <td th:if="${#fields.hasErrors('birth')}" th:errors="*{birth}"></td>
+      </tr>
+      <tr>
+        <td><label th:for="gender">성별</label></td>
+        <td><label class="radiobox"><input type="radio" name="gender"
+                                           value="male"
+                                           style="width:15px;height:15px;cursor:pointer;"
+                                           th:field="*{gender}">
+          <span class="fm">남</span></label>
+          <label class="radiobox2"><input type="radio" name="gender"
+                                          value="female"
+                                          style="width:15px;height:15px;cursor:pointer;"
+                                          th:field="*{gender}">
+            <span class="fm">여</span></label></td>
+      </tr>
+      <tr class="tr-last">
+        <!--        <td class="label">핸드폰 번호</td>-->
+        <td><label th:for="phone">휴대폰 번호</label></td>
+        <td><input type="text" name="user_phone"
+                   placeholder="ex) 010-1234-5678"
+                   th:field="*{phone}"></td>
+        <td></td>
+        <td th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></td>
+      </tr>
+    </table>
 
-            <tr>
-                <td>비밀번호 확인</td>
-                <td><input type="password" name="uesrPw2"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-        <table class="join-t">
-            <tr class="e-mail">
-                <td>E-mail</td>
-                <td><input type="email" name="user_email1"></td>
-                <td>@</td>
-                <td><input type="email" name="user_email2"></td>
-                <td>
-                    <select class="email-select">
-                        <option value="직접입력" selected>직접입력</option>
-                        <option value="naver.com">naver.com</option>
-                        <option value="nate.com">nate.com</option>
-                        <option value="gmail.com">gmail.com</option>
-                        <option value="hotmail.com">hotmail.com</option>
-                    </select>
-                </td>
-                <td>
-                    <button>중복확인</button>
-                </td>
-            </tr>
 
-        </table>
-        <table class="join-t2">
-            <tr>
-                <td>이름</td>
-                <td class="name-box"><input type="text" name="user_name" th:field="*{name}"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-
-            <tr>
-                <td>생년월일</td>
-                <td class="birth-box"><input type="text" name="user_birth"
-                                             placeholder="8자 ex) 19880808" th:field="*{birth}"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-
-            <tr>
-                <td>성별</td>
-                <td><label class="radiobox"><input type="radio" name="fruit" value="male"
-                                                   style="width:15px;height:15px;cursor:pointer;" th:field="*{gender}">
-                    <span class="fm">남</span></label>
-                    <label class="radiobox2"><input type="radio" name="fruit" value="female"
-                                                    style="width:15px;height:15px;cursor:pointer;" th:field="*{gender}">
-                        <span class="fm">여</span></label></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-
-            <tr>
-                <td>핸드폰 번호</td>
-                <td><input type="text" name="user_phone" placeholder="ex) 010-1234-5678" th:field="*{phone}"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-
-        </table>
-
-        <!--        <table class="join-t3">-->
-
-        <!--            <tr class="join-way">-->
-        <!--                <td>가입경로</td>-->
-        <!--                <td><label class="way"><input type="checkbox" value="검색"-->
-        <!--                                              style="width:15px;height:15px;cursor:pointer;"> <span-->
-        <!--                      class="sea">검색</span></label>-->
-        <!--                    <label class="way"><input type="checkbox" value="페이스북"-->
-        <!--                                              style="width:15px;height:15px;cursor:pointer;"> <span-->
-        <!--                          class="sea">페이스북</span></label>-->
-        <!--                    <label class="way"><input type="checkbox" value="주변추천"-->
-        <!--                                              style="width:15px;height:15px;cursor:pointer;"> <span-->
-        <!--                          class="sea">주변추천</span></label>-->
-        <!--                    <label class="way2"><input type="checkbox" value="기타"-->
-        <!--                                               style="width:15px;height:15px;cursor:pointer;"> <span-->
-        <!--                          class="sea">기타</span></label>-->
-
-        <!--                <td><input type="text" name="etc" class="etc" placeholder="가입경로를 적어주세요!"></td>-->
-        <!--                </td>-->
-        <!--                <td></td>-->
-        <!--                <td></td>-->
-        <!--                <td></td>-->
-        <!--            </tr>-->
-
-        <!--        </table>-->
-
-        <div style="text-align: center; margin-top: 20px;">
-            <button type="reset">다시 쓰기</button>
-            <button type="submit">제출하기</button>
-        </div>
+    <div class="join-button">
+      <button type="reset">다시쓰기</button>
+      <button type="submit">제출하기</button>
     </div>
 
-</form>
-
+  </form>
+</div>
 </body>
 
 </html>
