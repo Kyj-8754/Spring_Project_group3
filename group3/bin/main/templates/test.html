@@ -5,12 +5,21 @@
 <title>Insert title here</title>
 </head>
 <body>
+	
  	<button onclick="location.href='login'">로그인 버튼</button>
  	<button onclick="location.href='join'">회원 가입 버튼</button>
  	<div>
- 	<a onclick="location.href='store'">가게 클릭</a>
+<!-- 	<a onclick="location.href='store'">가게 클릭</a>-->
+ 	<a href="store?addrsearch=서울특별시 강남구 강남대로 406">강남 버거킹 바로가기</a>
  	</div>
  	
- 	
+ 	<!-- 주소를 넣으면 맵을 보여주도록 할 예정 -->
+ 	<form method="get" action="store">
+        <label for="addrsearch">주소 검색</label>
+        <input type="text" id="addrsearch" name="addrsearch" />
+        <input type="submit" value="검색" />
+    </form>
+
 </body>
+
 </html>
