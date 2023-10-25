@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.codingbox.group3.dto.StoreForm;
@@ -13,7 +14,7 @@ public class Controllerapi {
 	
 
 	@GetMapping("/")
-	public String test(){return "storeList";}
+	public String home(){return "home";}
 	
 	@GetMapping("/store/{storeid}")
 	public String Store(@PathVariable String storeid,@RequestParam String storeName, @RequestParam String storeAddr,
@@ -26,10 +27,13 @@ public class Controllerapi {
 		model.addAttribute("store",storeForm);
 		return "storedetail";
 	}
-//	@GetMapping("/store")
-//	public String test1() {
-//		return "storedetail";
-//	}
+	
+	@PostMapping("/storeList")
+	public String search(@RequestParam("searchbox") String searchbox, Model model){
+		model.addAttribute("searchbox", searchbox);
+		System.out.println(searchbox);
+		return "storeList";
+	}
 	
 	@GetMapping("/store")
 	public String test2(@RequestParam("addrsearch") String address, Model model) {

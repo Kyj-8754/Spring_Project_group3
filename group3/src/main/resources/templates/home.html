@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>C&C 예약사이트</title>
+	<link rel="stylesheet" type="text/css" href="CSS/body.css">
+	<!-- header -->
+	<div th:replace="/fragments/header.html :: header"></div>
+</head>
+<body>
+	<!-- 홈페이지 만드는중 -->
+	<div class="main-container">
+		<!-- 이미지 배너 -->
+		<div class="banner">
+			<div class="image-slideshow">
+				<div class="slide">
+					<a
+						href="https://kr.freepik.com/free-vector/set-of-delicious-food-banners_1041849.htm#query=%EC%9D%8C%EC%8B%9D%20%EB%B0%B0%EB%84%88%20%EB%94%94%EC%9E%90%EC%9D%B8%20png&position=45&from_view=keyword&track=ais">
+						<img src="img/banner1.jpg" alt="Banner 1">
+					</a>
+				</div>
+				<div class="slide">
+					<a
+						href="https://kr.freepik.com/free-vector/set-of-delicious-food-banners_1041849.htm#query=%EC%9D%8C%EC%8B%9D%20%EB%B0%B0%EB%84%88%20%EB%94%94%EC%9E%90%EC%9D%B8%20png&position=45&from_view=keyword&track=ais">
+						<img src="img/banner2.jpg" alt="Banner 2">
+					</a>
+				</div>
+				<div class="slide">
+					<a
+						href="https://kr.freepik.com/free-vector/set-of-delicious-food-banners_1041849.htm#query=%EC%9D%8C%EC%8B%9D%20%EB%B0%B0%EB%84%88%20%EB%94%94%EC%9E%90%EC%9D%B8%20png&position=45&from_view=keyword&track=ais">
+						<img src="img/banner3.jpg" alt="Banner 3">
+					</a>
+				</div>
+				<!-- 추가 이미지 추가 -->
+			</div>
+		</div>
+		<div class="recommendations">
+			<h2>#서울 맛집추천</h2>
+			<!-- 서울 맛집 목록 -->
+			<ul class="restaurant-list">
+				<li onclick="location.href='레스토랑1'">레스토랑 1</li>
+				<li onclick="location.href='레스토랑1'">레스토랑 2</li>
+				<li onclick="location.href='레스토랑1'">레스토랑 3</li>
+				<!-- 레스토랑 목록 추가 -->
+			</ul>
+		</div>
+
+		<div class="recommendations">
+			<h2>#SNS 맛집</h2>
+			<!-- SNS 맛집 목록 -->
+			<ul class="restaurant-list">
+				<li onclick="location.href='레스토랑1'">인스타그램 맛집 1</li>
+				<li onclick="location.href='레스토랑1'">페이스북 맛집 2</li>
+				<li onclick="location.href='레스토랑1'">트위터 맛집 3</li>
+				<!-- SNS 맛집 목록 추가 -->
+			</ul>
+		</div>
+		<div class="recommendations">
+			<h2>#20,30대 추천 맛집</h2>
+			<!-- 20,30대 추천 맛집 목록 -->
+			<ul class="restaurant-list">
+				<li onclick="location.href='레스토랑1'"><img src="" />20대 추천 맛집 1</li>
+				<li onclick="location.href='레스토랑1'">30대 추천 맛집 2</li>
+				<li onclick="location.href='레스토랑1'">20,30대 공동 추천 맛집 3</li>
+				<!-- 20,30대 추천 맛집 목록 추가 -->
+			</ul>
+		</div>
+	</div>
+</body>
+<!-- footer -->
+<div th:replace="/fragments/footer.html :: footer"></div>
+</html>
