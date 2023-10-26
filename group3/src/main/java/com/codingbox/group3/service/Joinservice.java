@@ -8,17 +8,25 @@ import com.codingbox.group3.repository.MemberRepository;
 
 import lombok.RequiredArgsConstructor;
 
-@Service @RequiredArgsConstructor
+@Service
+@RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class Joinservice {
 
-	private final MemberRepository userRepository;
-	
-	@Transactional
-	public Long saveMember(Member member) {
-		userRepository.save(member);
-		return member.getId();
-	}
-	
+  private final MemberRepository memberRepository;
 
+  @Transactional
+  public Long saveMember(Member member) {
+    memberRepository.save(member);
+    return member.getId();
+  }
+
+  public boolean isUserIdAvailable(String userId) {
+    Member existingMember = memberRepository.findMemberByUserId(userId);
+    return existingMember == null;
+  }
+
+  public Member findMemberByUserId(String userId) {
+    return memberRepository.findMemberByUserId(userId);
+  }
 }
