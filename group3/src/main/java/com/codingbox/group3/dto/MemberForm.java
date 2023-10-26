@@ -17,7 +17,7 @@ public class MemberForm {
   @NotEmpty(message = "비밀번호는 필수입니다.") // userPw가 비어 있으면 안된다는 어노테이션
   @Pattern(
       regexp = "(?=.*[0-9])(?=.*[a-zA-Z])(?=.*\\W)(?=\\S+$).{8,16}",
-      message = "숫자, 대소문자, 특수문자를 1개 이상씩 포함해야 합니다.")
+      message = "숫자,소문자,특수문자 하나 이상 포함 6자리 이상 입력해주세요.")
   private String userPw;
 
   @NotEmpty(message = "회원 이름은 필수입니다.") // name이 비어 있으면 안된다는 어노테이션
