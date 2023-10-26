@@ -5,9 +5,11 @@ import com.codingbox.group3.dto.LoginForm;
 import com.codingbox.group3.dto.MemberForm;
 import com.codingbox.group3.service.Joinservice;
 import com.codingbox.group3.service.Loginservice;
+import com.codingbox.group3.session.SessionConst;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import java.time.LocalDateTime;
-import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequiredArgsConstructor
@@ -25,24 +29,35 @@ public class LogjoinController {
   private final Joinservice joinservice;
 
   @GetMapping("login")
-  public String Login(Model model) {
-    model.addAttribute("loginform", new LoginForm());
+  public String Login(@ModelAttribute("loginForm") LoginForm form) {
+
     return "LoginForm";
   }
 
   @PostMapping("login")
-  public String Login(@RequestParam String userId, @RequestParam String userPw) {
-    List<Member> memberlist = loginservice.login(userId);
-    String result = "redirect:login";
-    for (Member member : memberlist) {
-      if (member.getUserPw().equals(userPw)) {
-        System.out.println("비밀번호 확인 성공");
-        result = "redirect:/";
-      } else {
-        result = "redirect:login";
-      }
+  public String loginV3(
+      @ModelAttribute LoginForm form,
+      Model model,
+      RedirectAttributes redirectAttrs,
+      HttpServletRequest request,
+      @RequestParam(defaultValue = "/") String redirectURL) {
+
+    HttpSession session = request.getSession(); // 세션 생성
+    Member loginMember = loginservice.login(form.getMemberId(), form.getMemberPw(), session);
+    System.out.println("loginMember : " + loginMember);
+    if (loginMember == null) {
+      // 로그인 실패
+      model.addAttribute("msg", "로그인 실패");
+      return "LoginForm";
+    } else {
+      // 로그인 성공
+      // 세션에 로그인 회원 정보 보관
+      session.setAttribute(SessionConst.LOGIN_MEMBER, loginMember);
+
+      redirectAttrs.addFlashAttribute("msg", "로그인 성공");
+      System.out.println(session.toString());
+      return "redirect:" + redirectURL;
     }
-    return result;
   }
 
   @GetMapping("join")
@@ -69,6 +84,33 @@ public class LogjoinController {
     member.setReg_date(LocalDateTime.now());
 
     joinservice.saveMember(member);
+    return "redirect:/login";
+  }
+
+  @PostMapping("logout")
+  public String logoutV2(HttpServletRequest request) {
+    // 세션을 삭제
+    HttpSession session = request.getSession(false);
+    if (session != null) {
+      session.invalidate();
+    }
     return "redirect:/";
+  }
+
+  @PostMapping("checkId")
+  @ResponseBody
+  public String checkId(@RequestParam String userId) {
+    boolean isIdAvailable = isUserIdAvailable(userId);
+    if (isIdAvailable) {
+      return "available";
+    } else {
+      return "exists";
+    }
+  }
+
+  // 아이디 중복 확인 메서드는 이제 컨트롤러에서 처리합니다.
+  private boolean isUserIdAvailable(String userId) {
+    Member existingMember = joinservice.findMemberByUserId(userId);
+    return existingMember == null;
   }
 }
