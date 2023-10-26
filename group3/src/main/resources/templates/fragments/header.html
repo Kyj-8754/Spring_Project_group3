@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="header">
+  <meta charset="UTF-8">
+  <title>Insert title here</title>
+  <link rel="stylesheet" type="text/css" href="CSS/header.css">
+  <header style="margin: auto; display: block;">
+    <div class="header">
+      <div class="logo_box">
+        <a href="/">
+          <img src="./img/LOGO.jpg" id="logoimg" class="logoimg">
+        </a>
+      </div>
+    </div>
+    <div class="search">
+      <input type="text" class="searchbox" placeholder="검색어를 입력해주세요">
+      <button class="searchbutton">검색</button>
+    </div>
+    <div class="login">
+      <table>
+        <tr th:object="${loginForm}">
+
+          <td>
+            <div th:if="${session.loginMember == null}">
+              <a href="login">로그인</a>
+            </div>
+            <div th:if="${session.loginMember != null}">
+              <a th:text="'환영합니다 ' + ${session.loginMember?.name ?: '사용자 이름 없음'} + '님'">로그인
+                사용자 이름</a>
+            </div>
+          </td>
+          <td>
+            <div class="loginline"><!-- 구분선 --></div>
+          </td>
+          <td>
+            <div th:if="${session.loginMember == null}">
+              <a href="join">회원가입</a>
+            </div>
+            <div th:if="${session.loginMember != null}">
+              <form method="post" action="logout">
+                <input type="submit" class="logout" value="로그아웃">
+              </form>
+            </div>
+          </td>
+          <td>
+            <div class="loginline">
+              <!-- 구분선 --></div>
+          </td>
+          <td>
+            <div>
+              <a href="mypage">마이페이지</a>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="navigation">
+      <div class="allnavigationbox">
+        <span class="title">메뉴</span> <!-- 전체 메뉴화면을 만들게 되면 필요할거 같아 만들어봄-->
+      </div>
+      <div class="addrnavigationbox">
+        <span class="title">지역</span> <!-- 지역별 메뉴검색 -->
+      </div>
+      <div class="foodnavigationbox">
+        <span class="title">음식종류</span> <!-- 음식별 메뉴검색 -->
+      </div>
+      <div class="moneynavigationbox"> <!-- 가격대별 메뉴검색 -->
+        <span class="title">예약</span>
+      </div>
+      <div class="reviewnavigationbox"> <!-- 별점(리뷰)별 메뉴검색 -->
+        <span class="title">마이페이지</span>
+      </div>
+      <div class="navigation2">
+        <div class="allnavigationbox2"></div>
+        <!-- 메뉴 아래는 나올게 없기에 자리 정렬용 빈 박스 -->
+        <div class="addrnavigationbox2">
+          <div class="br"><!-- br대용--></div>
+          <div class="childmenu"><span>서울</span></div>
+          <div class="childmenu"><span>부산</span></div>
+          <div class="childmenu"><span>광주</span></div>
+          <div class="childmenu"><span>인천</span></div>
+          <div class="childmenu"><span>대구</span></div>
+        </div>
+        <div class="foodnavigationbox2">
+          <div class="br"><!-- br대용--></div>
+          <div class="childmenu"><span>한식</span></div>
+          <div class="childmenu"><span>중식</span></div>
+          <div class="childmenu"><span>일식</span></div>
+          <div class="childmenu"><span>양식</span></div>
+          <div class="childmenu"><span>하이</span></div>
+        </div>
+        <div class="moneynavigationbox2">
+          <div class="br"><!-- br대용--></div>
+          <div class="childmenu"><span>10000 ~ 20000</span></div>
+          <div class="childmenu"><span>20000 ~ 30000</span></div>
+          <div class="childmenu"><span>30000 ~ 40000</span></div>
+          <div class="childmenu"><span>40000 ~ 50000</span></div>
+          <div class="childmenu"><span>50000 ~ 60000</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+</head>
+
+</html>
