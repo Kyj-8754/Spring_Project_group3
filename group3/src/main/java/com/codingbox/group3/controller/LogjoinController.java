@@ -7,8 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.codingbox.group3.domain.Member;
 import com.codingbox.group3.dto.LoginForm;
@@ -55,20 +57,42 @@ public class LogjoinController {
 		return "joinForm";
 	}
 	
-	
 	@PostMapping("join")
-	public String addjoin(@Valid MemberForm form, BindingResult result) {
-		Member member = new Member();
-		member.setUserId(form.getUserId());
-		member.setUserPw(form.getUserPw());
-		member.setName(form.getName());
-		member.setBirth(form.getBirth());
-		member.setGender(form.getGender());
-		member.setPhone(form.getPhone());
-		member.setEmail(form.getEmail());
-		member.setReg_date(LocalDateTime.now());
-		
-		joinservice.saveMember(member);
-		return "redirect:/";
+	  public String addjoin(
+	      @ModelAttribute("userform") @Valid MemberForm userform, BindingResult result) {
+
+	    if (result.hasErrors()) {
+	      return "joinForm";
+	    }
+	    Member member = new Member();
+	    member.setUserId(userform.getUserId());
+	    member.setUserPw(userform.getUserPw());
+	    member.setName(userform.getName());
+	    member.setBirth(userform.getBirth());
+	    member.setGender(userform.getGender());
+	    member.setPhone(userform.getPhone());
+	    member.setEmail(userform.getEmail());
+	    member.setReg_date(LocalDateTime.now());
+
+	    joinservice.saveMember(member);
+	    return "LoginForm";
+	  }
+	 @PostMapping("checkId")
+	  @ResponseBody
+	  public String checkId(@RequestParam String userId) {
+	      boolean isIdAvailable = isUserIdAvailable(userId);
+	      if (isIdAvailable) {
+	          return "available";
+	      } else {
+	          return "exists";
+	      }
+	  }
+
+	  private boolean isUserIdAvailable(String userId) {
+	      Member existingMember = joinservice.findMemberByUserId(userId);
+	      return existingMember == null;
+	  }
+
 	}
-}
+	 
+

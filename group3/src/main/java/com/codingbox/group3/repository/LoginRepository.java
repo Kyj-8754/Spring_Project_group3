@@ -25,4 +25,12 @@ public class LoginRepository {
 	    return result.getResultList();
 	}
 
+	public boolean isUserIdAvailable(String userId) {
+	    TypedQuery<Long> query = em.createQuery("SELECT COUNT(m) FROM Member m WHERE m.userId = :userId", Long.class);
+	    query.setParameter("userId", userId);
+	    Long count = query.getSingleResult();
+	    return count == 0; 
+	}
+
 }
+
