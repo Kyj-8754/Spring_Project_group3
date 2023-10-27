@@ -1,0 +1,227 @@
+/* header 파트*/
+.logo_box{
+	position: relative;
+	margin: auto;
+	width: 1400px;
+}
+
+.logoimg {
+	position: relative;
+	top: 10px;
+	width: 200px;
+	height: 70px;
+}
+
+.search {
+	position: relative;
+	margin: auto;
+	bottom: 50px;
+	width: 500px;
+	height: 50px;
+	padding-left: 15px;
+}
+
+.searchbox {
+	width: 442px;
+	height: 40px;
+	font-size: 25px;
+	border-radius: 30px;
+	border: 2px solid rgb(255, 171, 102);
+}
+
+.searchbox:focus {
+	outline: 0.5px solid #ff7100;
+}
+
+.login {
+	position: relative;
+	margin: auto;
+	width: 300px;
+	left: 750px;
+	bottom: 110px;
+}
+
+.loginline {
+	position: relative;
+	border: 1px solid rgb(179, 179, 179);
+	height: 16px;
+	top: 1px;
+}
+
+.searchbutton {
+	position: absolute;
+	top: 0px;
+	right: 50px;
+	width: 110px;
+	color: #ffffff;
+	line-height: 48px;
+	border-radius: 50px;
+	background-color: #ff7100;
+	height: 46px;
+	border: white;
+	font-size: 17px;
+}
+
+a {
+	text-decoration: none;
+	color: darksalmon;
+}
+
+a:hover {
+	color: #ff7100;
+}
+
+.navigation {
+	/* border: 1px solid red; */
+	border: 1px;
+	height: 50px;
+	background-color: rgb(213, 213, 213);
+	color: black;
+	margin-top: 0px;
+	transition: all 0.3s;
+	z-index: 1;
+	width: 100%;
+}
+.navigationbox{
+	text-align: center;
+	position: relative;
+	margin: auto;
+	width: 1500px;
+	left: 150px;
+}
+
+.navigation2 {
+	position: relative;
+	/* border: 1px solid red; */
+	border: 1px;
+	bottom: 82px;
+	height: 200px;
+	background-color: rgb(255, 211, 129);
+	display: none;
+	transition: all 0.3s;
+}
+.navigationbox2{
+	position: relative;
+	width: 1500px;
+	left: 200px;
+}
+
+.navigation:hover .navigation2 {
+	display: block;
+	z-index: 2;
+}
+
+.allnavigationbox {
+	position: relative;
+	left: 500px;
+	width: 148px;
+	/* border: 1px solid black; */
+	border: 1px;
+	height: 30px;
+	/* bottom: 30px; */
+	top: 3px;
+	text-align: center;
+}
+
+.allnavigationbox2 {
+	position: relative;
+	left: 500px;
+	width: 148px;
+	/* border: 1px solid black; */
+	border: 1px;
+	height: 25px;
+}
+
+.title {
+	font-size: 30px;
+}
+
+.addrnavigationbox {
+	position: relative;
+	left: 650px;
+	width: 148px;
+	/* border: 1px solid black; */
+	border: 1px;
+	height: 27px;
+	bottom: 26px;
+	text-align: center;
+}
+
+.addrnavigationbox2 {
+	position: relative;
+	left: 650px;
+	width: 148px;
+	/* border: 1px solid black; */
+	border: 1px;
+	height: 200px;
+	bottom: 27px;
+}
+
+.foodnavigationbox {
+	position: relative;
+	left: 800px;
+	width: 148px;
+	/* border: 1px solid black; */
+	border: 1px;
+	height: 25px;
+	bottom: 53px;
+	text-align: center;
+}
+
+.foodnavigationbox2 {
+	position: relative;
+	left: 800px;
+	width: 148px;
+	/* border: 1px solid black; */
+	border: 1px;
+	height: 200px;
+	bottom: 227px;
+}
+
+.moneynavigationbox {
+	position: relative;
+	left: 950px;
+	width: 148px;
+	/* border: 1px solid black; */
+	border: 1px;
+	height: 25px;
+	bottom: 79px;
+	text-align: center;
+}
+
+.moneynavigationbox2 {
+	position: relative;
+	left: 950px;
+	width: 148px;
+	/* border: 1px solid black; */
+	border: 1px;
+	height: 200px;
+	bottom: 427px;
+}
+
+.reviewnavigationbox {
+	position: relative;
+	left: 1100px;
+	width: 148px;
+	/* border: 1px solid black; */
+	border: 1px;
+	height: 25px;
+	bottom: 104px;
+	text-align: center;
+}
+
+.childmenu:hover {
+	background-color: beige;
+}
+
+ul {
+	list-style: none;
+}
+
+.childmenu {
+	height: 30px;
+}
+
+.br {
+	height: 10px;
+}

@@ -1,0 +1,390 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="ko"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=3.0">
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <title>회원가입</title>
+
+
+ <style>
+  body {
+    background-color: #ffeded;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1rem;
+    color: #999;
+    letter-spacing: 0.1px;
+    margin-top: 70px;
+  }
+
+  .join-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 1000px;
+    height: 750px;
+    text-align: center;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+  }
+
+  h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    text-transform: uppercase;
+    color: #ff6b6b;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+  }
+
+  h4, h5 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+  }
+
+  h5 {
+    font-size: 0.7rem;
+    line-height: 0.7rem;
+  }
+
+  a:link {
+    color: #666;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: #666;
+  }
+
+  a:hover {
+    color: red;
+  }
+
+  a:active {
+    color: red;
+  }
+
+  button {
+    text-transform: uppercase;
+    transition: 0.3s;
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    color: white;
+    cursor: pointer;
+    background-color: #e55b5b;
+  }
+
+  .join-c input::placeholder {
+    color: #bbb;
+  }
+
+  .join-c > div {
+    width: 1200px;
+    margin: 50px auto;
+  }
+
+  .join-t2 {
+    width: 1000px;
+    border-collapse: collapse;
+  }
+
+  .join-t2 tr {
+    border-bottom: 1px solid silver;
+  }
+
+  .join-c table tr td {
+    padding: 1.5rem 0;
+  }
+
+  .join-c table tr td:not(.tr-last td) {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .join-c input {
+    height: 35px;
+    padding: 0 10px;
+    border: 1px solid silver;
+  }
+
+  .join-c select {
+    width: 120px;
+    height: 35px;
+    padding: 0 2px;
+    border: 1px solid silver;
+  }
+
+  .join-c button {
+    width: 150px;
+    height: 35px;
+    padding: 0 5px;
+    font-size: 0.8rem;
+  }
+
+  .join-c button:hover {
+    background: #c97d50;
+  }
+
+  .join-t2 tr > :nth-child(1) {
+    width: 150px;
+  }
+
+  .join-t2 tr > :nth-child(2) {
+    width: 250px;
+  }
+
+  .name-box input {
+    width: 120px;
+  }
+
+  .birth-box input {
+    width: 170px;
+  }
+
+  .radiobox {
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+
+  .fm {
+    vertical-align: 3px;
+  }
+
+  div.join-button {
+    width: 700px;
+  }
+
+  .join-button {
+    text-align: center;
+    padding-bottom: 100px;
+  }
+
+  .join-c input[name="user_phone"] {
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<!--	<th:block th:replace="fragments/header :: headerFragment"></th:block> 헤더~-->
+<div class="join-container">
+  <h2>회원가입</h2>
+  <form class="join-c" method="post" th:object="${userform}">
+    <table class="join-t2">
+   <tr>
+  <td><label for="userId">아이디 <sup style="color: red">*</sup></label></td>
+  <td>
+    <input type="text" id="userId" name="userId" th:field="*{userId}"
+           oninput="toggleCheckButton()">
+  </td>
+  <td>
+    <button id="checkButton" type="button" onclick="checkId()" disabled>
+      중복확인
+    </button>
+    <!-- 중복 확인 결과를 표시할 스팬 추가 -->
+    <span id="idCheckedMessage" style="color: red; margin-left: 20px;"></span>
+  </td>
+</tr>
+
+      <tr>
+        <td><label for="userPw">비밀번호 <sup style="color: red">*</sup></label>
+        </td>
+        <td><input type="password" id="userPw" name="userPw"
+                   th:field="*{userPw}"></td>
+        <td></td>
+        <td th:if="${#fields.hasErrors('userPw')}" th:errors="*{userPw}"></td>
+      </tr>
+      <tr>
+        <td><label for="userPw_check">비밀번호 확인 <sup
+            style="color: red">*</sup></label></td>
+        <td><input type="password" id="userPw_check" name="userPw2"></td>
+      </tr>
+      <tr>
+        <td><label for="name">이름 <sup style="color: red">*</sup></label></td>
+        <td class="name-box"><input type="text" id="name" name="user_name"
+                                    th:field="*{name}"></td>
+        <td></td>
+        <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
+      </tr>
+      <tr>
+        <td><label for="phone">휴대폰 번호 <sup style="color: red">*</sup></label>
+        </td>
+        <td><input type="text" name="user_phone" id="phone"
+                   placeholder="ex) 010-1234-5678"
+                   th:field="*{phone}"></td>
+        <td></td>
+        <td th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></td>
+      </tr>
+      <tr>
+        <td><label for="birth">생년월일</label></td>
+        <td class="birth-box"><input type="text" id="birth" name="user_birth"
+                                     placeholder="8자 ex) 19880808"
+                                     th:field="*{birth}"></td>
+        <td></td>
+        <td th:if="${#fields.hasErrors('birth')}" th:errors="*{birth}"></td>
+      </tr>
+
+      <tr class="e-mail">
+        <td><label for="email">이메일</label></td>
+        <td><input type="text" placeholder="ex) xxx@xxx.com" id="email"
+                   th:field="*{email}" name="email">
+        </td>
+        <td></td>
+        <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
+      </tr>
+
+
+      <tr style="border-bottom: none;">
+        <td style="border-bottom: none;"><label for="gender">성별</label></td>
+        <td style="border-bottom: none;"><label class="radiobox"><input
+            type="radio" name="gender"
+            id="gender" value="male"
+            style="width:15px;height:15px;cursor:pointer;"
+            th:field="*{gender}">
+          <span class="fm">남</span></label>
+          <label class="radiobox2"><input type="radio" name="gender"
+                                          value="female"
+                                          style="width:15px;height:15px;cursor:pointer;"
+                                          th:field="*{gender}">
+            <span class="fm">여</span></label>
+        </td>
+      </tr>
+
+    </table>
+
+
+    <div class="join-button">
+      <button type="reset">다시쓰기</button>
+      <button type="submit">제출하기</button>
+    </div>
+
+  </form>
+</div>
+<script>
+  function toggleCheckButton() {
+    // 아이디 입력 필드의 값을 가져옵니다.
+    var idValue = document.getElementById("userId").value;
+
+    // 중복 확인 버튼 엘리먼트를 가져옵니다.
+    var checkButton = document.getElementById("checkButton");
+
+    // 입력 필드의 내용이 비어있지 않으면 중복 확인 버튼을 활성화합니다.
+    // 그렇지 않으면 버튼을 비활성화합니다.
+    if (idValue.trim() !== "") {
+      checkButton.disabled = false;
+    } else {
+      checkButton.disabled = true;
+    }
+  }
+</script>
+
+<script>
+  function validatePassword() {
+    var password = document.getElementById("userPw").value;
+    var confirmPassword = document.getElementById("userPw_check").value;
+
+    if (password !== confirmPassword) {
+      alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+      return false;
+    }
+
+    return true;
+  }
+</script>
+
+<script>
+	function submitForm() {
+		var idValue = document.getElementById("userId").value;
+		var passwordValue = document.getElementById("userPw").value;
+		var confirmPasswordValue = document.getElementById("userPw_check").value;
+		var nameValue = document.getElementById("name").value;
+		var phoneValue = document.getElementById("phone").value;
+		var birthValue = document.getElementById("birth").value;
+		var emailValue = document.getElementById("email").value;
+
+		if (idValue.trim() === "" || passwordValue.trim() === "" || confirmPasswordValue.trim() === "" ||
+			nameValue.trim() === "" || phoneValue.trim() === "" || birthValue.trim() === "" || emailValue.trim() === "") {
+			alert("모든 필수 항목을 입력해주세요.");
+			return;
+		}
+
+		if (passwordValue !== confirmPasswordValue) {
+			alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+			return;
+		}
+
+	 alert("회원가입이 완료되었습니다. 로그인 해주세요.");
+	 location.href = "login";
+	}
+</script>
+
+<script>
+function checkId() {
+  var id = $('#userId').val();
+  if (id.trim() === "") {
+    alert("아이디를 입력하세요.");
+    return;
+  }
+
+  // 서버로 아이디 중복 확인 요청 보내기
+  $.ajax({
+    url: "/checkId",
+    data: {userId: id},
+    type: "POST",
+    success: function (result) {
+      var idCheckedMessage = document.getElementById("idCheckedMessage");
+      var idChecked_1 = document.getElementById("idChecked_1");
+      var idChecked_2 = document.getElementById("idChecked_2");
+      
+      if (result === "available") {
+        idCheckedMessage.innerText = "사용 가능한 아이디입니다.";
+        idCheckedMessage.style.color = "green";
+        idChecked_1.style.display = "block";
+        idChecked_2.style.display = "none";
+      } else if (result === "exists") {
+        idCheckedMessage.innerText = "이미 사용 중인 아이디입니다.";
+        idCheckedMessage.style.color = "red";
+        idChecked_1.style.display = "none";
+        idChecked_2.style.display = "block";
+      }
+    },
+    error: function (result) {
+      alert("에러입니다.");
+    }
+  });
+}
+</script>
+
+</body>
+<!--<th:block th:replace="fragments/footer :: footerFragment"></th:block> 푸터~-->
+
+</html>
