@@ -1,15 +1,11 @@
 package com.codingbox.group3.service;
 
-import jakarta.servlet.http.HttpSession;
-import java.util.List;
-
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.codingbox.group3.domain.Member;
 import com.codingbox.group3.repository.LoginRepository;
-
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor

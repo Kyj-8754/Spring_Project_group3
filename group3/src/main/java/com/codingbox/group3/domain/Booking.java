@@ -22,13 +22,14 @@ public class Booking {
 	private Long id;
 	private String day;
 	private int count;
+	private Long storeid;
 	
 	@ManyToOne
 	@JoinColumn(name = "MEMBER_ID")
 	private Member member;
 	
 	@ManyToOne
-	@JoinColumn(name = "STORE_ID")
+	@JoinColumn(name = "dummy_ID")
 	private Store store;
 	
 	@Enumerated(EnumType.STRING)

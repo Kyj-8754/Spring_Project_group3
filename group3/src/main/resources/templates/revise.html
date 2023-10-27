@@ -1,8 +1,10 @@
-<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<html xmlns:th="http://www.thymeleaf.org" lang="ko"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=3.0">
   <title>정보 수정</title>
 
 
@@ -117,7 +119,7 @@
       color: #bbb;
     }
 
-    .join-c>div {
+    .join-c > div {
       width: 1200px;
       margin: 50px auto;
     }
@@ -167,11 +169,11 @@
       background: #c97d50;
     }
 
-    .join-t2 tr> :nth-child(1) {
+    .join-t2 tr > :nth-child(1) {
       width: 150px;
     }
 
-    .join-t2 tr> :nth-child(2) {
+    .join-t2 tr > :nth-child(2) {
       width: 250px;
     }
 
@@ -207,7 +209,7 @@
     }
   </style>
 </head>
-
+<th:block th:replace="fragments/header :: headerFragment"></th:block>
 <body>
 <div class="join-container">
   <h2>나의 정보 수정하기</h2>
@@ -215,14 +217,20 @@
     <table class="join-t2">
       <tr>
         <td><label for="userId">아이디</label></td>
-        <td><input type="text" id="userId" name="uesrId" th:field="*{userId}" disabled>
+        <td><input type="text" id="userId" name="uesrId" th:field="*{userId}"
+                   th:value="*{userId}"
+                   disabled>
         <td th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}"></td>
       </tr>
       <tr>
         <td><label for="userPw">비밀번호</label></td>
-        <td><input type="password" id="userPw" name="uesrPw" th:field="*{userPw}"></td>
+        <td><input type="password" id="userPw"
+
+                   name="uesrPw" th:field="*{userPw}"
+                   th:value="*{userPw}"></td>
         <td></td>
-        <td th:if="${#fields.hasErrors('userPw')}" th:errors="*{userPw}"></td>
+        <td th:if="${#fields.hasErrors('userPw')}" th:errors="*{userPw}"
+        ></td>
       </tr>
       <tr>
         <td><label for="userPw_check">비밀번호 확인</label></td>
@@ -230,37 +238,54 @@
       </tr>
       <tr class="e-mail">
         <td><label for="email">이메일</label></td>
-        <td><input type="text" placeholder="ex) xxx@xxx.com" id="email" th:field="*{email}" name="email">
+        <td><input type="text" placeholder="ex) xxx@xxx.com" id="email"
+                   th:field="*{email}"
+                   th:value="*{email}"
+                   name="email">
         </td>
         <td></td>
         <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
       </tr>
       <tr>
         <td><label for="name">이름</label></td>
-        <td class="name-box"><input type="text" id "name" name="user_name" th:field="*{name}" disabled></td>
+        <td class="name-box"><input type="text" id="name" name="user_name"
+                                    th:field="*{name}"
+                                    th:value="*{name}"
+                                    disabled></td>
         <td></td>
         <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
       </tr>
       <tr>
         <td><label for="birth">생년월일</label></td>
-        <td class="birth-box"><input type="text" id="birth" name="user_birth"  th:field="*{birth}" disabled></td>
+        <td class="birth-box"><input type="text" id="birth" name="user_birth"
+                                     th:field="*{birth}"
+                                     th:value="*{birth}"
+                                     disabled></td>
         <td></td>
         <td th:if="${#fields.hasErrors('birth')}" th:errors="*{birth}"></td>
       </tr>
       <tr>
         <td><label for="gender">성별</label></td>
-        <td><label class="radiobox"><input type="radio" name="gender" id="gender" value="male"
-                                           style="width:15px;height:15px;cursor:pointer;" th:field="*{gender}">
+        <td><label class="radiobox"><input type="radio" name="gender"
+                                           id="gender" value="male"
+                                           style="width:15px;height:15px;cursor:pointer;"
+
+                                           th:field="*{gender}">
           <span class="fm">남</span></label>
-          <label class="radiobox2"><input type="radio" name="gender" value="female"
-                                          style="width:15px;height:15px;cursor:pointer;" th:field="*{gender}">
+          <label class="radiobox2"><input type="radio" name="gender"
+                                          value="female"
+                                          style="width:15px;height:15px;cursor:pointer;"
+
+                                          th:field="*{gender}">
             <span class="fm">여</span></label>
         </td>
       </tr>
       <tr class="tr-last" style="border-bottom: none;">
         <td><label for="phone">휴대폰 번호</label></td>
-        <td><input type="text" name="user_phone" id="phone" placeholder="ex) 010-1234-5678"
-                   th:field="*{phone}"></td>
+        <td><input type="text" name="user_phone" id="phone"
+                   placeholder="ex) 010-1234-5678"
+                   th:field="*{phone}"
+                   th:value="*{phone}"></td>
         <td></td>
         <td th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></td>
       </tr>

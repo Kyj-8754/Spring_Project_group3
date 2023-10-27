@@ -86,6 +86,12 @@
 
 
 /* 추천 목록에 대한 스타일 */
+.bodybox{
+	width: 100%;
+	position: relative;
+	margin:auto;
+	left: 52px;
+}
 .restaurant-list {
 	width: 1024px;
 	height: 280px;
@@ -94,11 +100,8 @@
 	padding-left: 10px;
 	padding-right: 80px;
 	margin: auto;
-	list-style: none;
 	display: flex;
-	/* 넘치는 내용을 가립니다 */
-	transition: transform 0.3s ease;
-	/* 좌우 움직임을 부드럽게 만듭니다 */
+	
 }
 
 
@@ -118,7 +121,7 @@
 	-webkit-box-pack: start;
 	justify-content: flex-start;
 	width: 1070px;
-	padding: 10px;
+	padding: 20px;
 
 }
 
@@ -193,6 +196,7 @@
 .slider {
 	flex: 1;
 	text-align: center;
+	margin: 10%
 }
 
 .card_span {
@@ -217,8 +221,10 @@
 }
 
 .slider-container .slides {
+	overflow: hidden;
 	display: flex;
-	transition: transform 0.5s ease-in-out;
+	list-style: none;
+	transition: transform 0.5s;
 }
 
 .slider-container .slides .slide {
@@ -226,6 +232,7 @@
 	/* 4개 아이템을 한 번에 보이도록 크기 조정 (4개 아이템이라면 100% / 4 = 25%) */
 	min-width: 100%;
 }
+
 
 .slider-container .slides .slide img {
 	width: 100%;

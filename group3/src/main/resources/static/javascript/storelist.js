@@ -1,3 +1,4 @@
+//document.addEventListener("DOMContentLoaded", function() {
 // 마커를 담을 배열입니다
 var markers = [];
 
@@ -118,14 +119,14 @@ function displayPlaces(places) {
 	map.setBounds(bounds);
 }
 
+
 // 이 함수 선언으로 리스트가 만들어지는중
 // 검색결과 항목을 Element로 반환하는 함수입니다
 function getListItem(index, places) {
 
 	var el = document.createElement('li'),
-		itemStr = '<span class="markerbg marker_' + (index + 1) + '"></span>' +
-			'<div class="info" id=store_info' + (index + 1) + ' onclick="redirectToStore(' + (index + 1) + ');\">' +
-			'   <h5><p id =store_name>' + places.place_name + '</p></h5>';
+		itemStr ='<div class="info" id=store_info' + (index + 1) + ' onclick="redirectToStore(' + (index + 1) + ');\">' +
+			'<h5><span id =store_name>' + places.place_name + '</span></h5>';
 
 	if (places.road_address_name) {
 		itemStr += '    <span id="store_road_addr">' + places.road_address_name + '</span>' +
@@ -220,6 +221,7 @@ function removeAllChildNods(el) {
 }
 
 
+//    }); // 최하단으로
 // 백단으로 넘기기위한 스크립트
 	function redirectToStore(storeId) {
         var storeName = document.getElementById('store_info' + storeId).querySelector('#store_name').textContent;

@@ -1,16 +1,12 @@
 /* header 파트*/
-.header {
-	width: 300px;
-	position: relative;
-}
 .logo_box{
 	position: relative;
 	margin: auto;
+	width: 1400px;
 }
 
 .logoimg {
 	position: relative;
-	left: 230px;
 	top: 10px;
 	width: 200px;
 	height: 70px;
@@ -30,7 +26,7 @@
 	height: 40px;
 	font-size: 25px;
 	border-radius: 30px;
-	border: 2px solid #ff7100;
+	border: 2px solid rgb(255, 171, 102);
 }
 
 .searchbox:focus {
@@ -79,12 +75,19 @@ a:hover {
 	/* border: 1px solid red; */
 	border: 1px;
 	height: 50px;
-	background-color: #ff7100;
-	color: white;
+	background-color: rgb(213, 213, 213);
+	color: black;
 	margin-top: 0px;
 	transition: all 0.3s;
-	border-radius: 5px;
 	z-index: 1;
+	width: 100%;
+}
+.navigationbox{
+	text-align: center;
+	position: relative;
+	margin: auto;
+	width: 1500px;
+	left: 150px;
 }
 
 .navigation2 {
@@ -96,6 +99,11 @@ a:hover {
 	background-color: rgb(255, 211, 129);
 	display: none;
 	transition: all 0.3s;
+}
+.navigationbox2{
+	position: relative;
+	width: 1500px;
+	left: 200px;
 }
 
 .navigation:hover .navigation2 {
@@ -112,6 +120,7 @@ a:hover {
 	height: 30px;
 	/* bottom: 30px; */
 	top: 3px;
+	text-align: center;
 }
 
 .allnavigationbox2 {
@@ -135,6 +144,7 @@ a:hover {
 	border: 1px;
 	height: 27px;
 	bottom: 26px;
+	text-align: center;
 }
 
 .addrnavigationbox2 {
@@ -155,6 +165,7 @@ a:hover {
 	border: 1px;
 	height: 25px;
 	bottom: 53px;
+	text-align: center;
 }
 
 .foodnavigationbox2 {
@@ -175,6 +186,7 @@ a:hover {
 	border: 1px;
 	height: 25px;
 	bottom: 79px;
+	text-align: center;
 }
 
 .moneynavigationbox2 {
@@ -195,6 +207,7 @@ a:hover {
 	border: 1px;
 	height: 25px;
 	bottom: 104px;
+	text-align: center;
 }
 
 .childmenu:hover {

@@ -23,11 +23,11 @@ public class Store {
 	@Id @GeneratedValue
 	@Column(name = "STORE_ID")
 	private Long id;
-	private String name;
-	private String phone;
-	private String addr;
+	
 	private String keyword;
-	private String info;
+	private String storeName;
+	private String storeAddr;
+	private String storeTel;
 	
 	@OneToMany(mappedBy = "store")
 	private List<Review> review = new ArrayList<>();
@@ -42,5 +42,11 @@ public class Store {
 	private Parking parking;
 	
 	@Enumerated(EnumType.STRING)
-	private Time time;
+	@Column(name = "START_TIME")
+	private Time start_time;
+
+	@Enumerated(EnumType.STRING)
+	@Column(name = "END_TIME")
+	private Time end_time;
+
 }

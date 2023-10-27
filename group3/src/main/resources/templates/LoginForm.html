@@ -4,12 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <title>로그인</title>
-  <!-- header -->
-  <div th:replace="/fragments/header.html :: header"></div>
   <style>
     body {
       background-color: #ffeded;
       font-family: 'Arial', sans-serif;
+      display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
@@ -120,8 +119,7 @@
 <body>
 <div class="login-container">
   <h2>로그인</h2>
-  <form class="login-form" action="/login" method="post"
-        th:object="${loginform}">
+  <form class="login-form" method="post" th:object="${loginForm}">
     <div class="form-group">
       <label for="username">아이디</label>
       <input type="text" id="username" th:name="userId"
@@ -147,6 +145,5 @@
   </form>
 </div>
 </body>
-<!-- footer -->
-<div th:replace="/fragments/footer.html :: footer"></div>
+
 </html>

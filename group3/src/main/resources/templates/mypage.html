@@ -1,5 +1,4 @@
-<html lang="ko">
-<html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
 <head>
   <meta charset="UTF-8">
   <title>Insert title here</title>
@@ -117,16 +116,21 @@
 <div class="mypage-container">
   <h1>My Page</h1>
   <div class="info">
-    <span class="info-label">이름:</span> <span id="name">이현지</span>
+    <span class="info-label">이름:</span> <span id="name"
+                                              th:text="${loginMember.name}">이현지
+  </span>
   </div>
   <div class="info">
-    <span class="info-label">이메일:</span> <span id="email">admin@naver.com</span>
+    <span class="info-label">이메일:</span> <span
+      id="email" th:text="${loginMember.email}">admin@naver.com</span>
   </div>
   <div class="info">
-    <span class="info-label">전화번호:</span> <span id="phone">010-1234-5678</span>
+    <span class="info-label">전화번호:</span> <span
+      id="phone" th:text="${loginMember.phone}">010-1234-5678</span>
   </div>
   <div class="info">
-    <span class="info-label">예약횟수:</span> <span id="reservation-count">3</span>
+    <span class="info-label">예약횟수:</span> <span
+      id="reservation-count">3</span>
   </div>
 
   <div class="button-container">
@@ -146,5 +150,6 @@
     </ul>
   </div>
 </div>
+
 </body>
 </html>

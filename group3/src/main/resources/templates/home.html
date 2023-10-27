@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head>
 	<meta charset="UTF-8">
 	<title>C&C 예약사이트</title>
 	<link rel="stylesheet" type="text/css" href="CSS/home.css">
 </head>
+<th:block th:replace="fragments/header :: headerFragment"></th:block>
 
 <body>
 	<!-- header -->
-	<div th:replace="/fragments/header.html :: header"></div>
 	<!-- 홈페이지 만드는중 -->
 	<div class="main-container">
 		<!-- 이미지 배너 -->
@@ -38,226 +38,543 @@
 		</div>
 
 		<!-- 지헌님 작업물 -->
-		<div class="bodybox">
-			<section class="section_card">
-				<div class="recommendations">
-					<div class="card_section_title_box">
-						<h1 class="card_section_title">#서울맛집</h1>
+		<div class="content">
+			<div class="bodybox">
+				<!-- 슬라이드 1 -->
+				<section class="section_card" style="margin-top: 100px;">
+					<div class="recommendations">
+						<div class="card_section_title_box">
+							<h1 class="card_section_title">#서울맛집</h1>
+						</div>
+						<span class="card_span"></span>
+						<div class="slider-container">
+							<button id="prev_1" class="slide-button" data-slide-index="-1">&lt;</button>
+							<ul class="slides">
+								<li class="slide">
+									<ul class="restaurant-list">
+										<li>
+											<a class="rest_card"
+												href="/store/1?storeName=버거킹 종로점&storeAddr=서울 종로구 종로 94&storeTel=02-2285-4838">
+												<div class="rest_card_img" id="store_info1">
+													<img class="restaurant_card_img" src="/img/김치찌개.jpg"
+														srcset="/img/김치찌개.jpg" sizes="238px">
+												</div>
+											</a>
+											<p id="store_name">시민식당</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/냉면.jpg"
+														srcset="/img/냉면.jpg" sizes="238px">
+												</div>
+											</a>
+											<p id="store_name">냉면</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/돈까스.jpg"
+														srcset="/img/돈까스.jpg" sizes="238px">
+												</div>
+											</a>
+											<p id="store_name">돈까스</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/떡국.jpg"
+														srcset="/img/떡국.jpg" sizes="238px">
+												</div>
+											</a>
+											<p id="store_name">떡국</p>
+										</li>
+									</ul>
+								</li>
+								<li class="slide">
+									<ul class="restaurant-list">
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/떡볶이.jpg"
+														srcset="/img/떡볶이.jpg" sizes="238px">
+												</div>
+											</a>
+											<p id="store_name">떡볶이</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/멸치국수.jpg"
+														srcset="/img/멸치국수.jpg" sizes="238px">
+												</div>
+											</a>
+											<p id="store_name">멸치국수</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/보쌈.jpg"
+														srcset="/img/보쌈.jpg" sizes="238px">
+												</div>
+											</a>
+											<p id="store_name">보쌈</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/볶음밥.jpg"
+														srcset="/img/볶음밥.jpg" sizes="238px">
+												</div>
+											</a>
+											<p id="store_name">볶음밥</p>
+										</li>
+									</ul>
+								</li>
+								<li class="slide">
+									<ul class="restaurant-list">
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/비빔밥.jpg"
+														srcset="/img/비빔밥.jpg" sizes="238px">
+												</div>
+											</a>
+											<p id="store_name">비빔밥</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/삼겹살.jpg"
+														srcset="/img/삼겹살.jpg" sizes="238px">
+												</div>
+											</a>
+											<p id="store_name">삼겹살</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/자장면.jpg"
+														srcset="/img/자장면.jpg" sizes="238px">
+												</div>
+											</a>
+											<p id="store_name">자장면</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/장어덮밥.jpg"
+														srcset="/img/장어덮밥.jpg" sizes="238px">
+												</div>
+											</a>
+											<p id="store_name">장어덮밥</p>
+										</li>
+									</ul>
+								</li>
+								<li class="slide">
+									<ul class="restaurant-list">
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/타코야끼.jpg"
+														srcset="/img/타코야끼.jpg" sizes="238px">
+												</div>
+											</a>
+											<p id="store_name">타코야끼</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/파스타.jpg"
+														srcset="/img/파스타.jpg" sizes="238px">
+												</div>
+											</a>
+											<p id="store_name">파스타</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/피자.jpg"
+														srcset="/img/피자.jpg" sizes="238px">
+												</div>
+											</a>
+											<p id="store_name">피자</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/훠궈.jpg"
+														srcset="/img/훠궈.jpg" sizes="238px">
+												</div>
+											</a>
+											<p id="store_name">훠궈</p>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<button id="next_1" class="slide-button" data-slide-index="1">&gt;</button>
+						</div>
 					</div>
-					<span class="card_span"></span>
-					<div class="slider-container" style="width: 1200px; margin:auto;">
-						<button id="prev1" class="slide-button" data-slide-index="-1">&lt;</button>
-						<!-- 추천 목록 종류 시작 -->
-						<ul class="slides">
-							<li class="slide">
-								<ul class="restaurant-list">
-									<li>
-										<a class="rest_card" href="/test" target="_blank">
-											<div class="rest_card_img">
-												<img class="restaurant_card_img" src="/img/recommned/recommned.jpg"
-													srcset="/img/166557187458549420.jpg" sizes="238px">
-											</div>
-										</a>
-										<p class="card_rest_name">레스토랑 1</p>
-									</li>
-									<li>
-										<a class="rest_card" href="/test" target="_blank">
-											<div class="rest_card_img">
-												<img class="restaurant_card_img"
-													src="/img/recommned/166557187458549420.jpg"
-													srcset="/img/20210107516500.jpg" sizes="238px">
-											</div>
-										</a>
-										<p class="card_rest_name">레스토랑 2</p>
-									</li>
-									<li>
-										<a class="rest_card" href="/test" target="_blank">
-											<div class="rest_card_img">
-												<img class="restaurant_card_img"
-													src="/img/recommned/166557187458549420.jpg"
-													srcset="/img/2255e427-d720-43e2-ae85-6a6719fafc03.jpg"
-													sizes="238px">
-											</div>
-										</a>
-										<p class="card_rest_name">레스토랑 3</p>
-									</li>
-									<li>
-										<a class="rest_card" href="/test" target="_blank">
-											<div class="rest_card_img">
-												<img class="restaurant_card_img"
-													src="img/recommned/166557187458549420.jpg"
-													srcset="/img/40d0fb3794229958bdd1e36520a4440f.jpg" sizes="238px">
-											</div>
-										</a>
-										<p class="card_rest_name">레스토랑 4</p>
-									</li>
-								</ul>
-							</li>
-							<li class="slide">
-								<ul class="restaurant-list">
-									<li>
-										<a class="rest_card" href="/test" target="_blank">
-											<div class="rest_card_img">
-												<img class="restaurant_card_img"
-													src="img/recommned/166557187458549420.jpg" srcset="/img/5보쌈.jpg"
-													sizes="238px">
-											</div>
-										</a>
-										<p class="card_rest_name">레스토랑 5</p>
-									</li>
-									<li>
-										<a class="rest_card" href="/test" target="_blank">
-											<div class="rest_card_img">
-												<img class="restaurant_card_img"
-													src="img/recommned/166557187458549420.jpg"
-													srcset="/img/67b89d56-aee3-4307-a633-38c6de199271.jpg"
-													sizes="238px">
-											</div>
-										</a>
-										<p class="card_rest_name">레스토랑 6</p>
-									</li>
-									<li>
-										<a class="rest_card" href="/test" target="_blank">
-											<div class="rest_card_img">
-												<img class="restaurant_card_img"
-													src="img/recommned/166557187458549420.jpg"
-													srcset="/img/69068_2873_1455.jpg" sizes="238px">
-											</div>
-										</a>
-										<p class="card_rest_name">레스토랑 7</p>
-									</li>
-									<li>
-										<a class="rest_card" href="/test" target="_blank">
-											<div class="rest_card_img">
-												<img class="restaurant_card_img"
-													src="img/recommned/166557187458549420.jpg"
-													srcset="/img/99DE4D375ECFB46901.jpg" sizes="238px">
-											</div>
-										</a>
-										<p class="card_rest_name">레스토랑 8</p>
-									</li>
-								</ul>
-							</li>
-							<li class="slide">
-								<ul class="restaurant-list">
-									<li>
-										<a class="rest_card" href="/test" target="_blank">
-											<div class="rest_card_img">
-												<img class="restaurant_card_img"
-													src="img/recommned/166557187458549420.jpg"
-													srcset="/img/cheesy-tokbokki-korean-traditional-food-on-black-board-background-lunch-dish_1150-42992.jpg"
-													sizes="238px">
-											</div>
-										</a>
-										<p class="card_rest_name">레스토랑 9</p>
-									</li>
-									<li>
-										<a class="rest_card" href="/test" target="_blank">
-											<div class="rest_card_img">
-												<img class="restaurant_card_img"
-													src="img/recommned/166557187458549420.jpg"
-													srcset="/img/Dduk-Guk-500x500.jpg" sizes="238px">
-											</div>
-										</a>
-										<p class="card_rest_name">레스토랑 10</p>
-									</li>
-									<li>
-										<a class="rest_card" href="/test" target="_blank">
-											<div class="rest_card_img">
-												<img class="restaurant_card_img"
-													src="img/recommned/166557187458549420.jpg"
-													srcset="/img/download.jpg" sizes="238px">
-											</div>
-										</a>
-										<p class="card_rest_name">레스토랑 11</p>
-									</li>
-									<li>
-										<a class="rest_card" href="/test" target="_blank">
-											<div class="rest_card_img">
-												<img class="restaurant_card_img"
-													src="img/recommned/166557187458549420.jpg" srcset="/img/images.jpg"
-													sizes="238px">
-											</div>
-										</a>
-										<p class="card_rest_name">레스토랑 12</p>
-									</li>
-								</ul>
-							</li>
-							<li class="slide">
-								<ul class="restaurant-list">
-									<li>
-										<a class="rest_card" href="/test" target="_blank">
-											<div class="rest_card_img">
-												<img class="restaurant_card_img"
-													src="img/recommned/166557187458549420.jpg"
-													srcset="/img/IMG_5649のコピー.jpg" sizes="238px">
-											</div>
-										</a>
-										<p class="card_rest_name">레스토랑 13</p>
-									</li>
-									<li>
-										<a class="rest_card" href="/test" target="_blank">
-											<div class="rest_card_img">
-												<img class="restaurant_card_img"
-													src="img/recommned/166557187458549420.jpg"
-													srcset="/img/img3.daumcdn.jpg" sizes="238px">
-											</div>
-										</a>
-										<p class="card_rest_name">레스토랑 14</p>
-									</li>
-									<li>
-										<a class="rest_card" href="/test" target="_blank">
-											<div class="rest_card_img">
-												<img class="restaurant_card_img"
-													src="img/recommned/166557187458549420.jpg"
-													srcset="/img/shutterstock_1068672764.jpg" sizes="238px">
-											</div>
-										</a>
-										<p class="card_rest_name">레스토랑 15</p>
-									</li>
-									<li>
-										<a class="rest_card" href="/test" target="_blank">
-											<div class="rest_card_img">
-												<img class="restaurant_card_img"
-													src="img/recommned/166557187458549420.jpg"
-													srcset="/img/t2.daumcdn.jpg" sizes="238px">
-											</div>
-										</a>
-										<p class="card_rest_name">레스토랑 16</p>
-									</li>
-								</ul>
-								<!-- 추천 목록 종류 종료 -->
-							</li>
-						</ul>
-						<button id="next1" class="slide-button" data-slide-index="1">&gt;</button>
+				</section>
+				<!-- 슬라이드 2 -->
+				<section class="section_card">
+					<div class="recommendations">
+						<div class="card_section_title_box">
+							<h1 class="card_section_title">#SNS</h1>
+						</div>
+						<span class="card_span"></span>
+						<div class="slider-container">
+							<button id="prev_2" class="slide-button" data-slide-index="-1">&lt;</button>
+							<ul class="slides_2">
+								<li class="slide">
+									<ul class="restaurant-list">
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/김치찌개.jpg"
+														srcset="/img/김치찌개.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">김치찌개</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/냉면.jpg"
+														srcset="/img/냉면.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">냉면</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/돈까스.jpg"
+														srcset="/img/돈까스.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">돈까스</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/떡국.jpg"
+														srcset="/img/떡국.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">떡국</p>
+										</li>
+									</ul>
+								</li>
+								<li class="slide">
+									<ul class="restaurant-list">
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/떡볶이.jpg"
+														srcset="/img/떡볶이.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">떡볶이</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/멸치국수.jpg"
+														srcset="/img/멸치국수.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">멸치국수</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/보쌈.jpg"
+														srcset="/img/보쌈.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">보쌈</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/볶음밥.jpg"
+														srcset="/img/볶음밥.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">볶음밥</p>
+										</li>
+									</ul>
+								</li>
+								<li class="slide">
+									<ul class="restaurant-list">
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/비빔밥.jpg"
+														srcset="/img/비빔밥.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">비빔밥</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/삼겹살.jpg"
+														srcset="/img/삼겹살.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">삼겹살</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/자장면.jpg"
+														srcset="/img/자장면.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">자장면</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/장어덮밥.jpg"
+														srcset="/img/장어덮밥.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">장어덮밥</p>
+										</li>
+									</ul>
+								</li>
+								<li class="slide">
+									<ul class="restaurant-list">
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/타코야끼.jpg"
+														srcset="/img/타코야끼.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">타코야끼</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/파스타.jpg"
+														srcset="/img/파스타.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">파스타</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/피자.jpg"
+														srcset="/img/피자.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">피자</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/훠궈.jpg"
+														srcset="/img/훠궈.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">훠궈</p>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<button id="next_2" class="slide-button" data-slide-index="1">&gt;</button>
+						</div>
 					</div>
-				</div>
-		</div>
+				</section>
 
-		<div class="recommendations">
-			<h2>#SNS 맛집</h2>
-			<!-- SNS 맛집 목록 -->
-			<ul class="restaurant-list">
-				<li onclick="location.href='레스토랑1'">인스타그램 맛집 1</li>
-				<li onclick="location.href='레스토랑1'">페이스북 맛집 2</li>
-				<li onclick="location.href='레스토랑1'">트위터 맛집 3</li>
-				<!-- SNS 맛집 목록 추가 -->
-			</ul>
-		</div>
-		<div class="recommendations" style="margin-bottom: 100px;">
-			<h2>#20,30대 추천 맛집</h2>
-			<!-- 20,30대 추천 맛집 목록 -->
-			<ul class="restaurant-list">
-				<li onclick="location.href='레스토랑1'"><img src="" />20대 추천 맛집 1</li>
-				<li onclick="location.href='레스토랑1'">30대 추천 맛집 2</li>
-				<li onclick="location.href='레스토랑1'">20,30대 공동 추천 맛집 3</li>
-				<!-- 20,30대 추천 맛집 목록 추가 -->
-			</ul>
+				<!-- 슬라이드 3 -->
+				<section class="section_card" style="margin-bottom: 50px;">
+					<div class="recommendations">
+						<div class="card_section_title_box">
+							<h1 class="card_section_title">#추천맛집</h1>
+						</div>
+						<span class="card_span"></span>
+						<div class="slider-container">
+							<button id="prev_3" class="slide-button" data-slide-index="-1">&lt;</button>
+							<ul class="slides_3">
+								<li class="slide">
+									<ul class="restaurant-list">
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/김치찌개.jpg"
+														srcset="/img/김치찌개.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">김치찌개</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/냉면.jpg"
+														srcset="/img/냉면.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">냉면</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/돈까스.jpg"
+														srcset="/img/돈까스.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">돈까스</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/떡국.jpg"
+														srcset="/img/떡국.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">떡국</p>
+										</li>
+									</ul>
+								</li>
+								<li class="slide">
+									<ul class="restaurant-list">
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/떡볶이.jpg"
+														srcset="/img/떡볶이.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">떡볶이</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/멸치국수.jpg"
+														srcset="/img/멸치국수.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">멸치국수</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/보쌈.jpg"
+														srcset="/img/보쌈.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">보쌈</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/볶음밥.jpg"
+														srcset="/img/볶음밥.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">볶음밥</p>
+										</li>
+									</ul>
+								</li>
+								<li class="slide">
+									<ul class="restaurant-list">
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/비빔밥.jpg"
+														srcset="/img/비빔밥.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">비빔밥</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/삼겹살.jpg"
+														srcset="/img/삼겹살.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">삼겹살</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/자장면.jpg"
+														srcset="/img/자장면.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">자장면</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/장어덮밥.jpg"
+														srcset="/img/장어덮밥.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">장어덮밥</p>
+										</li>
+									</ul>
+								</li>
+								<li class="slide">
+									<ul class="restaurant-list">
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/타코야끼.jpg"
+														srcset="/img/타코야끼.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">타코야끼</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/파스타.jpg"
+														srcset="/img/파스타.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">파스타</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/피자.jpg"
+														srcset="/img/피자.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">피자</p>
+										</li>
+										<li>
+											<a class="rest_card" href="/test" target="_blank">
+												<div class="rest_card_img">
+													<img class="restaurant_card_img" src="/img/훠궈.jpg"
+														srcset="/img/훠궈.jpg" sizes="238px">
+												</div>
+											</a>
+											<p class="card_rest_name">훠궈</p>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<button id="next_3" class="slide-button" data-slide-index="1">&gt;</button>
+						</div>
+					</div>
+				</section>
+			</div>
 		</div>
 	</div>
+	<!-- 지헌님 작업물 -->
+	
 	<!-- footer -->
-	<div th:replace="/fragments/footer.html :: footer"></div>
 </body>
+<th:block th:replace="fragments/footer :: footerFragment"></th:block>
 <script src="javascript/home.js"></script>
 
 </html>

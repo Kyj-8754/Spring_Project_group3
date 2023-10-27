@@ -3,6 +3,8 @@ package com.codingbox.group3.controller;
 import com.codingbox.group3.domain.Member;
 import com.codingbox.group3.dto.MemberForm;
 import com.codingbox.group3.service.Joinservice;
+import com.codingbox.group3.service.PageService;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import java.time.LocalDateTime;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @RequiredArgsConstructor
 public class PageController {
   private final Joinservice joinservice;
+  private final PageService pageService;
 
   @GetMapping("reservation_list")
   public String ReservationList(Model model) {
@@ -25,7 +28,13 @@ public class PageController {
   }
 
   @GetMapping("/revise")
-  public String Revise(Model model) {
+  public String reviseForm(Model model, HttpSession session) {
+
+    Member userid = (Member) session.getAttribute("loginMember");
+
+    Long logimMemberId = userid.getId();
+    Member memberForm = pageService.findloginMemberById(logimMemberId);
+    model.addAttribute("userform", memberForm);
 
     return "revise";
   }
@@ -40,7 +49,7 @@ public class PageController {
     member.setGender(form.getGender());
     member.setPhone(form.getPhone());
     member.setEmail(form.getEmail());
-    member.setReg_date(LocalDateTime.now());
+    member.setReg_date(LocalDateTime.now()); // 수정일자?
 
     joinservice.saveMember(member);
     return "redirect:/";
@@ -53,8 +62,14 @@ public class PageController {
   }
 
   @GetMapping("mypage")
-  public String mypage(Model model) {
+  public String logimMember(HttpSession session, Model model) {
 
+    Member userid = (Member) session.getAttribute("loginMember");
+
+    Long logimMemberId = userid.getId();
+    Member loginMember = pageService.findloginMemberById(logimMemberId);
+    System.out.println(loginMember.toString());
+    model.addAttribute("loginMember", loginMember);
     return "mypage";
   }
 }

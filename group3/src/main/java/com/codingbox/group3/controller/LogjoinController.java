@@ -28,20 +28,15 @@ public class LogjoinController {
   private final Loginservice loginservice;
   private final Joinservice joinservice;
 
-  //  @GetMapping("login")
-  //  public String Login(Model model) {
-  //    model.addAttribute("loginform", new LoginForm());
-  //    return "LoginForm";
-  //  }
   @GetMapping("login")
-  public String Login(@ModelAttribute("loginform") LoginForm form) {
+  public String Login(@ModelAttribute("loginForm") LoginForm form) {
 
     return "LoginForm";
   }
 
   @PostMapping("login")
   public String loginV3(
-      @ModelAttribute("loginForm") LoginForm form,
+      @ModelAttribute LoginForm form,
       Model model,
       RedirectAttributes redirectAttrs,
       HttpServletRequest request,
@@ -71,36 +66,28 @@ public class LogjoinController {
     return "joinForm";
   }
 
+
   @PostMapping("join")
   public String addjoin(
-      @ModelAttribute("userform") @Valid MemberForm userform, BindingResult result, Model model) {
+      @ModelAttribute("userform") @Valid MemberForm userform, BindingResult result) {
 
-    if (result.hasErrors()) {
-      return "joinForm";
-    }
-    Member member = new Member();
-    member.setUserId(userform.getUserId());
-    member.setUserPw(userform.getUserPw());
-    member.setName(userform.getName());
-    member.setBirth(userform.getBirth());
-    member.setGender(userform.getGender());
-    member.setPhone(userform.getPhone());
-    member.setEmail(userform.getEmail());
-    member.setReg_date(LocalDateTime.now());
+      if (result.hasErrors()) {
+          return "joinForm";
+      }
+      Member member = new Member();
+      member.setUserId(userform.getUserId());
+      member.setUserPw(userform.getUserPw());
+      member.setName(userform.getName());
+      member.setBirth(userform.getBirth());
+      member.setGender(userform.getGender());
+      member.setPhone(userform.getPhone());
+      member.setEmail(userform.getEmail());
+      member.setReg_date(LocalDateTime.now());
 
-    joinservice.saveMember(member);
-    model.addAttribute("loginform", new LoginForm());
-    return "LoginForm";
-  }
+      joinservice.saveMember(member);
 
-  @ResponseBody
-  public String checkId(@RequestParam String userId) {
-    boolean isIdAvailable = isUserIdAvailable(userId);
-    if (isIdAvailable) {
-      return "available";
-    } else {
-      return "exists";
-    }
+      
+      return "redirect:/login";
   }
 
   @PostMapping("logout")
@@ -113,6 +100,18 @@ public class LogjoinController {
     return "redirect:/";
   }
 
+  @PostMapping("checkId")
+  @ResponseBody
+  public String checkId(@RequestParam String userId) {
+    boolean isIdAvailable = isUserIdAvailable(userId);
+    if (isIdAvailable) {
+      return "available";
+    } else {
+      return "exists";
+    }
+  }
+
+  // 아이디 중복 확인 메서드는 이제 컨트롤러에서 처리합니다.
   private boolean isUserIdAvailable(String userId) {
     Member existingMember = joinservice.findMemberByUserId(userId);
     return existingMember == null;

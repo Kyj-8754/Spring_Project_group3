@@ -35,9 +35,9 @@ public class Controllerapi {
 		return "storeList";
 	}
 	
-	@GetMapping("/store")
-	public String test2(@RequestParam("addrsearch") String address, Model model) {
-		model.addAttribute("address",address);
-		return "storedetail";
-	}
+//	@GetMapping("/store")
+//	public String test2(@RequestParam("addrsearch") String address, Model model) {
+//		model.addAttribute("address",address);
+//		return "storedetail";
+//	}
 }
