@@ -33,11 +33,11 @@ public class LogjoinController {
   //    model.addAttribute("loginform", new LoginForm());
   //    return "LoginForm";
   //  }
-  //  @GetMapping("login")
-  //  public String Login(@ModelAttribute("loginform") LoginForm form) {
-  //
-  //    return "LoginForm";
-  //  }
+  @GetMapping("login")
+  public String Login(@ModelAttribute("loginform") LoginForm form) {
+
+    return "LoginForm";
+  }
 
   @PostMapping("login")
   public String loginV3(
