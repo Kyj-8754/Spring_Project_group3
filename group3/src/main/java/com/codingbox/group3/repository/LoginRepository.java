@@ -25,7 +25,7 @@ public class LoginRepository {
     System.out.println("memberId : " + memberId);
     query.setParameter("memberId", memberId);
     List<Member> results = query.getResultList();
-
+//세환씨 작업 2023-10-27
     if (!results.isEmpty()) {
       Member loginMember = results.get(0); // 첫 번째 결과 사용
       session.setAttribute("loginMember", loginMember);
