@@ -33,15 +33,15 @@ public class LogjoinController {
   //    model.addAttribute("loginform", new LoginForm());
   //    return "LoginForm";
   //  }
-  @GetMapping("login")
-  public String Login(@ModelAttribute("loginForm") LoginForm form) {
-
-    return "LoginForm";
-  }
+  //  @GetMapping("login")
+  //  public String Login(@ModelAttribute("loginform") LoginForm form) {
+  //
+  //    return "LoginForm";
+  //  }
 
   @PostMapping("login")
   public String loginV3(
-      @ModelAttribute LoginForm form,
+      @ModelAttribute("loginForm") LoginForm form,
       Model model,
       RedirectAttributes redirectAttrs,
       HttpServletRequest request,
@@ -73,7 +73,7 @@ public class LogjoinController {
 
   @PostMapping("join")
   public String addjoin(
-      @ModelAttribute("userform") @Valid MemberForm userform, BindingResult result) {
+      @ModelAttribute("userform") @Valid MemberForm userform, BindingResult result, Model model) {
 
     if (result.hasErrors()) {
       return "joinForm";
@@ -89,10 +89,10 @@ public class LogjoinController {
     member.setReg_date(LocalDateTime.now());
 
     joinservice.saveMember(member);
+    model.addAttribute("loginform", new LoginForm());
     return "LoginForm";
   }
 
-  @PostMapping("checkId")
   @ResponseBody
   public String checkId(@RequestParam String userId) {
     boolean isIdAvailable = isUserIdAvailable(userId);

@@ -15,7 +15,8 @@
 
 <div class="join-container">
   <h2>회원가입</h2>
-  <form class="join-c" id="submit" method="post" th:object="${userform}">
+  <form class="join-c" id="submit" action="/join"
+        method="post" th:object="${userform}">
     <table class="join-t2">
       <tr>
         <td><label for="userId">아이디 <sup style="color: red">*</sup></label></td>
@@ -170,6 +171,7 @@
 </script>
 <script>
   function submitForm() {
+
     var idValue = document.getElementById("userId").value;
     var passwordValue = document.getElementById("userPw").value;
     var confirmPasswordValue = document.getElementById("userPw_check").value;
@@ -190,9 +192,8 @@
       alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
       return;
     }
-
-    alert("회원가입이 완료되었습니다. 로그인 해주세요.");
     document.getElementById('submit').submit();
+    alert("회원가입이 완료되었습니다. 로그인 해주세요.");
     // location.href = "login";
   }
 </script>
