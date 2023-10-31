@@ -15,6 +15,7 @@ public class Controllerapi {
 	@GetMapping("/")
 	public String home() {
 		return "home";
+		//임시 커밋
 	}
 
 	@GetMapping("/store/{storeid}")
