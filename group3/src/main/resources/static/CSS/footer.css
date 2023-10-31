@@ -14,7 +14,6 @@
 
 		/* 푸터 박스에 대한 스타일 */
 		.footer-box {
-			display: flex;
 			flex-direction: column;
 			align-items: center;
 			margin-bottom: 20px;

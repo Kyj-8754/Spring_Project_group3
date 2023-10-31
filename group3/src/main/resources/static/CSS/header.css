@@ -4,10 +4,13 @@
 	margin: auto;
 	width: 1400px;
 }
-
+.logo_a{
+	width: 100%;
+	height: 100%;
+}
 .logoimg {
 	position: relative;
-	top: 10px;
+	top: 20px;
 	width: 200px;
 	height: 70px;
 }
@@ -15,7 +18,6 @@
 .search {
 	position: relative;
 	margin: auto;
-	bottom: 50px;
 	width: 500px;
 	height: 50px;
 	padding-left: 15px;
@@ -26,28 +28,8 @@
 	height: 40px;
 	font-size: 25px;
 	border-radius: 30px;
-	border: 2px solid rgb(255, 171, 102);
+	border: 2px solid #ff6b6b;
 }
-
-.searchbox:focus {
-	outline: 0.5px solid #ff7100;
-}
-
-.login {
-	position: relative;
-	margin: auto;
-	width: 300px;
-	left: 750px;
-	bottom: 110px;
-}
-
-.loginline {
-	position: relative;
-	border: 1px solid rgb(179, 179, 179);
-	height: 16px;
-	top: 1px;
-}
-
 .searchbutton {
 	position: absolute;
 	top: 0px;
@@ -56,61 +38,84 @@
 	color: #ffffff;
 	line-height: 48px;
 	border-radius: 50px;
-	background-color: #ff7100;
-	height: 46px;
+	background-color: #ff6b6b;
+	height: 43px;
 	border: white;
 	font-size: 17px;
+}
+.searchbutton:focus{
+	outline: 0px solid #ff6b6b;
+}
+.searchbox:focus{
+	outline: 0.5px solid #ff6b6b;
+}
+.login {
+	position: relative;
+	margin: auto;
+	width: 500px;
+	left: 750px;
+	bottom: 90px;
+	height: 27px;
+}
+.loginline {
+	position: relative;
+	height: 16px;
+	top: 1px;
+	width: 0.5px;
+	background-color: rgb(179, 179, 179);
+}
+.logintable{
+	position: relative;
+	height: 27px auto;
 }
 
 a {
 	text-decoration: none;
-	color: darksalmon;
+	color: #ff6b6b;
 }
 
 a:hover {
-	color: #ff7100;
+	color: darksalmon;
 }
 
 .navigation {
 	/* border: 1px solid red; */
 	border: 1px;
 	height: 50px;
-	background-color: rgb(213, 213, 213);
-	color: black;
+	background-color: #ff6b6b;
+	color: white;
 	margin-top: 0px;
-	transition: all 0.3s;
-	z-index: 1;
-	width: 100%;
+	position: relative;
+	bottom: 30px;
 }
 .navigationbox{
-	text-align: center;
 	position: relative;
-	margin: auto;
 	width: 1500px;
 	left: 150px;
+	height: 100%;
 }
 
 .navigation2 {
-	position: relative;
-	/* border: 1px solid red; */
+	position: absolute;
 	border: 1px;
-	bottom: 82px;
-	height: 200px;
-	background-color: rgb(255, 211, 129);
-	display: none;
+	bottom: 0px;
+	height: 50px;
 	transition: all 0.3s;
+	width: 100%;
 }
 .navigationbox2{
 	position: relative;
 	width: 1500px;
 	left: 200px;
 }
-
-.navigation:hover .navigation2 {
+.navigation:hover .foodnavigationbox2 {
 	display: block;
 	z-index: 2;
 }
-
+.navigation:hover .addrnavigationbox2 {
+	display: block;
+	z-index: 2;
+}
 .allnavigationbox {
 	position: relative;
 	left: 500px;
@@ -119,8 +124,8 @@ a:hover {
 	border: 1px;
 	height: 30px;
 	/* bottom: 30px; */
-	top: 3px;
 	text-align: center;
+	height: 100%;
 }
 
 .allnavigationbox2 {
@@ -142,19 +147,22 @@ a:hover {
 	width: 148px;
 	/* border: 1px solid black; */
 	border: 1px;
-	height: 27px;
-	bottom: 26px;
+	height: 100%;
+	bottom: 50px;
 	text-align: center;
+/*	background-color: aqua;*/
 }
 
 .addrnavigationbox2 {
 	position: relative;
-	left: 650px;
+	left: 800px;
 	width: 148px;
-	/* border: 1px solid black; */
 	border: 1px;
-	height: 200px;
-	bottom: 27px;
+	height: 210px;
+	background-color: darksalmon;
+	top: 25px;
+	text-align: center;
+	display: none;
 }
 
 .foodnavigationbox {
@@ -163,19 +171,23 @@ a:hover {
 	width: 148px;
 	/* border: 1px solid black; */
 	border: 1px;
-	height: 25px;
-	bottom: 53px;
+	height: 100%;
+	bottom: 100px;
 	text-align: center;
+/*	background-color: aquamarine;*/
 }
 
 .foodnavigationbox2 {
 	position: relative;
-	left: 800px;
+	left: 950px;
 	width: 148px;
 	/* border: 1px solid black; */
 	border: 1px;
-	height: 200px;
-	bottom: 227px;
+	height: 210px;
+	background-color: darksalmon;
+	text-align: center;
+	display: none;
+	bottom: 185px;
 }
 
 .moneynavigationbox {
@@ -185,8 +197,10 @@ a:hover {
 	/* border: 1px solid black; */
 	border: 1px;
 	height: 25px;
-	bottom: 79px;
+	bottom: 150px;
 	text-align: center;
+/*	background-color: aqua;*/
+	height: 100%;
 }
 
 .moneynavigationbox2 {
@@ -206,12 +220,13 @@ a:hover {
 	/* border: 1px solid black; */
 	border: 1px;
 	height: 25px;
-	bottom: 104px;
+	bottom: 200px;
 	text-align: center;
+	height: 100%;
 }
 
-.childmenu:hover {
-	background-color: beige;
+.chlidmenu2:hover {
+	background-color: khaki;
 }
 
 ul {
@@ -219,9 +234,38 @@ ul {
 }
 
 .childmenu {
-	height: 30px;
+	height: 40px;
+	font-size: 20px;
+}
+
+.chlidmenu2{
+	width: 148px;
+	border: 1px;
+	height: 40px;
+	background-color: darksalmon;
+	text-align: center;
+	font-size: 20px;
+	color: white;
 }
 
 .br {
 	height: 10px;
+}
+td{
+	width: 65px;
+}
+.join{
+	position: relative;
+	right: 47px;
+	height: 27px;
+}
+.logintd{
+	height: 27px;
+/*	width: 300px;*/
+}
+.form{
+	position: relative;
+	bottom: 40px;
+	width: 800px;
+	margin: 0 auto;
 }
