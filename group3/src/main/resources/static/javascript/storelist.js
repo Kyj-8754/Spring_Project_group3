@@ -229,7 +229,7 @@ function redirectToStore(storeId) {
 	var storeName = document.getElementById('store_info' + storeId).querySelector('#store_name').textContent;
 	var storeAddr = document.getElementById('store_info' + storeId).querySelector('#store_road_addr').textContent;
 	var storeTel = document.getElementById('store_info' + storeId).querySelector('#store_tel').textContent;
-	location.href = 'store/' + storeId + '?storeName=' + storeName + '&storeAddr=' + storeAddr + '&storeTel=' + storeTel;
+	location.href = storeId + '?storeName=' + storeName + '&storeAddr=' + storeAddr + '&storeTel=' + storeTel;
 }
 
 

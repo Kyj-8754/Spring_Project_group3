@@ -34,9 +34,6 @@ public class Review {
 	@JoinColumn(name = "MEMBER_ID")
 	private Member member;
 	
-	@ManyToOne
-	@JoinColumn(name = "STORE_ID")
-	private Store store;
 	
 	@Enumerated(EnumType.STRING)
 	private Score score;

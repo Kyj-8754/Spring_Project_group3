@@ -15,10 +15,9 @@ public class Controllerapi {
 	@GetMapping("/")
 	public String home() {
 		return "home";
-		//임시 커밋
 	}
 
-	@GetMapping("/store/{storeid}")
+	@GetMapping("/{storeid}")
 	public String Store(@PathVariable String storeid, @RequestParam String storeName, @RequestParam String storeAddr,
 			@RequestParam String storeTel, Model model) {
 		StoreForm storeForm = new StoreForm();

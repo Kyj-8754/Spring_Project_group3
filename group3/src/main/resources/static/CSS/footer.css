@@ -1,14 +1,16 @@
 /* footer 파트*/
 		.footer {
-			background-color: #333;
+			/* 색깔 약하게 한번 해봤습니답 */
+			background-color: #fff;
 			/* 원하는 배경 색상 설정 */
-			color: #fff;
+			color: black;
 			/* 텍스트 색상 설정 */
 			padding: 20px;
 			/* 필요에 따라 조정 */
 			text-align: center;
 			width: 100%;
-    		margin-top: auto;
+    		margin-top: 100px;
+    		background-color: black;
 			
 		}
 
@@ -29,6 +31,7 @@
 
 		/* 푸터 제목에 대한 스타일 */
 		.footer-title {
+			color: #fff;
 			margin-bottom: 10px;
 		}
 
@@ -60,6 +63,7 @@
 		.footer-info-area span {
 			display: block;
 			margin-bottom: 5px;
+			color: #fff;
 		}
 
 		/* 푸터 내의 링크에 대한 스타일 */

@@ -23,4 +23,5 @@ public class PageRepository {
         .setParameter("memberId", logimMemberId)
         .getSingleResult();
   }
+
 }
