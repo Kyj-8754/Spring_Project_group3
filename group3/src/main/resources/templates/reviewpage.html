@@ -1,45 +1,48 @@
-
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  	<th:block th:replace="fragments/header :: headerFragment"></th:block>
-  <title>Review Page</title>
- <link rel="stylesheet" type="text/css" href="/CSS/reviewpage.css">
-</head>
-<body>
 
-<div class="container">
-	<div class="header">
-  		<h1>My Review Page</h1>
+<head>
+	<meta charset="UTF-8">
+	<th:block th:replace="fragments/header :: headerFragment"></th:block>
+	<title>Review Page</title>
+	<link rel="stylesheet" type="text/css" href="/CSS/review.css">
+</head>
+
+<body>
+	<div class="body">
+		<div class="container" style="margin-top: 50px;">
+			<div class="header">
+				<h1>My Review Page</h1>
+			</div>
+			<h2>Review List</h2>
+			<ul class="review-list">
+				<li class="review-item">
+					<h3>가게 이름 : xx </h3>
+					<p>존맛존맛~</p>
+					<div class="review-actions">
+						<button class="action-button">삭제</button>
+						<button class="action-button">수정</button>
+					</div>
+				</li>
+				<li class="review-item">
+					<h3>가게 이름 : xx</h3>
+					<p>나쁘지 않음!</p>
+					<div class="review-actions">
+						<button class="action-button">삭제</button>
+						<button class="action-button">수정</button>
+					</div>
+				</li>
+				<li class="review-item">
+					<h3>가게 이름 : xx</h3>
+					<p>최고최고~</p>
+					<div class="review-actions">
+						<button class="action-button">삭제</button>
+						<button class="action-button">수정</button>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</div>
-  <h2>Review List</h2>
-  <ul class="review-list">
-    <li class="review-item">
-      <h3>가게 이름 : xx </h3>
-      <p>존맛존맛~</p>
-      <div class="review-actions">
-        <button class="action-button">삭제</button>
-        <button class="action-button">수정</button>
-      </div>
-    </li>
-    <li class="review-item">
-      <h3>가게 이름 : xx</h3>
-      <p>나쁘지 않음!</p>
-      <div class="review-actions">
-        <button class="action-button">삭제</button>
-        <button class="action-button">수정</button>
-      </div>
-    </li>
-    <li class="review-item">
-      <h3>가게 이름 : xx</h3>
-      <p>최고최고~</p>
-      <div class="review-actions">
-        <button class="action-button">삭제</button>
-        <button class="action-button">수정</button>
-      </div>
-    </li>
-  </ul>
-</div>
 </body>
 <th:block th:replace="fragments/footer :: footerFragment"></th:block>
+
 </html>

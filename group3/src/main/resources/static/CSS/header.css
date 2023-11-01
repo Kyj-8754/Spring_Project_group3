@@ -1,8 +1,9 @@
 /* header 파트*/
 .header_logo_box {
 	position: relative;
-	margin: auto;
-	width: 1400px;
+/*	margin: auto;*/
+	width: 100%;
+	height: 70px;
 }
 
 .header_logo_a {
@@ -30,13 +31,13 @@
 
 .header_searchbox {
 	position: relative;
-	left: 10px;
+	left: 15px;
 	width: 400px;
-	margin: auto;
-	height: 30px;
+	margin: 0;
+	height: 40px;
 	font-size: 25px;
 	border: 0;
-	top: 3px;
+	padding: 0;
 }
 
 .header_searchbutton {
@@ -45,7 +46,7 @@
 	right: -1px;
 	width: 110px;
 	color: #ffffff;
-/*	line-height: 48px;*/
+	/*	line-height: 48px;*/
 	border-radius: 50px;
 	background-color: #ff6b6b;
 	height: 43px;
@@ -60,7 +61,8 @@
 .header_search:focus {
 	outline: 3px solid #ff6b6b;
 }
-.header_searchbox{
+
+.header_searchbox {
 	outline: 0px;
 	border: 0;
 }
@@ -73,10 +75,12 @@
 	bottom: 100px;
 	height: 27px;
 }
-.header_loginMember{
+
+.header_loginMember {
 	width: 180px;
 	height: 27px;
 }
+
 .header_loginline {
 	position: relative;
 	height: 16px;
@@ -99,12 +103,15 @@
 .header_a:hover {
 	color: darksalmon;
 }
+.header_b{
+	color: #ff6b6b;
+}
 
 .header_navigation {
 	/* border: 1px solid red; */
 	border: 1px;
 	height: 50px;
-/*	background-color: #ff6b6b;*/
+	/*	background-color: #ff6b6b;*/
 	color: #ff6b6b;
 	position: relative;
 	bottom: 30px;
@@ -113,8 +120,10 @@
 
 .header_navigationbox {
 	position: relative;
-	justify-content: center; /* 텍스트를 수평 중앙 정렬 */
-    align-items: center; /* 텍스트를 수직 중앙 정렬 */
+	justify-content: center;
+	/* 텍스트를 수평 중앙 정렬 */
+	align-items: center;
+	/* 텍스트를 수직 중앙 정렬 */
 	width: 750px;
 	height: 100%;
 	margin: auto;
@@ -122,12 +131,13 @@
 
 .header_navigationbox2 {
 	position: relative;
-	justify-content: center; /* 텍스트를 수평 중앙 정렬 */
-    align-items: center; /* 텍스트를 수직 중앙 정렬 */
+	justify-content: center;
+	/* 텍스트를 수평 중앙 정렬 */
+	align-items: center;
+	/* 텍스트를 수직 중앙 정렬 */
 	width: 1500px;
 	height: 150px;
 }
-
 
 
 .header_addrnavigationbox:hover .header_addrnavigationbox2 {
@@ -140,7 +150,6 @@
 	z-index: 2;
 }
 
-
 .header_allnavigationbox {
 	position: relative;
 	width: 148px;
@@ -150,6 +159,15 @@
 	/* bottom: 30px; */
 	text-align: center;
 	height: 100%;
+}
+
+.header_allnavigationbox2 {
+	position: relative;
+	left: 500px;
+	width: 148px;
+	/* border: 1px solid black; */
+	border: 1px;
+	height: 25px;
 }
 
 .header_title {
@@ -172,8 +190,8 @@
 	width: 148px;
 	border: 1px;
 	height: 210px;
-/*	background-color: antiquewhite;*/
-	top: 75px;
+	/*	background-color: antiquewhite;*/
+	top: 50px;
 	text-align: center;
 	display: none;
 }
@@ -196,7 +214,7 @@
 	/* border: 1px solid black; */
 	border: 1px;
 	height: 210px;
-/*	background-color: antiquewhite;*/
+	/*	background-color: antiquewhite;*/
 	text-align: center;
 	display: none;
 	top: 50px;
@@ -217,8 +235,10 @@
 
 .header_reviewnavigationbox {
 	position: relative;
-	justify-content: center; /* 텍스트를 수평 중앙 정렬 */
-    align-items: center; /* 텍스트를 수직 중앙 정렬 */
+	justify-content: center;
+	/* 텍스트를 수평 중앙 정렬 */
+	align-items: center;
+	/* 텍스트를 수직 중앙 정렬 */
 	left: 600px;
 	width: 148px;
 	/* border: 1px solid black; */
@@ -229,15 +249,6 @@
 	height: 100%;
 }
 
-.header_chlidmenu2:hover {
-/*	background-color: khaki;*/
-}
-
-
-ul {
-	list-style: none;
-}
-
 .header_childmenu {
 	height: 40px;
 	font-size: 20px;
@@ -245,15 +256,18 @@ ul {
 }
 
 .header_chlidmenu2 {
-	justify-content: center; /* 텍스트를 수평 중앙 정렬 */
-    align-items: center; /* 텍스트를 수직 중앙 정렬 */
+	justify-content: center;
+	/* 텍스트를 수평 중앙 정렬 */
+	align-items: center;
+	/* 텍스트를 수직 중앙 정렬 */
 	width: 148px;
 	border: 1px;
 	height: 40px;
 	background-color: white;
 	text-align: center;
 	font-size: 20px;
-	color: black;
+	color: #ff6b6b;
+	border-bottom: 1px solid #ff6b6b;
 }
 
 .header_br {
@@ -271,35 +285,51 @@ ul {
 	width: 800px;
 	margin: 0 auto;
 }
-.header_logout{
+
+.header_logout {
 	height: 27px;
 	width: 100%;
 	position: relative;
-	bottom: 175px;
+	bottom: 177px;
 	color: #ff6b6b;
 	background-color: white;
 	border: 0;
 	font-size: 16px;
 	right: 19px;
 }
-.header_logout:hover{
+
+.header_logout:hover {
 	color: #ff6b2a;
 	cursor: pointer;
 }
-.header_logoutbox{
+
+.header_logoutbox {
 	position: relative;
 	width: 100px;
 	top: 175px;
 	height: 27px;
 }
 
-hr {
-  border: 0;
-  border-top: 1px solid #ff6b6b;
-  margin: 0;
-  padding: 0;
+.header_hr {
+	width: 100%;
+	height: 2px;
+	background-color: #ff6b6b;
 }
 
-hr + div {
-  margin-top: 80px; /* 원하는 여백 크기로 조정 */
+.header_reservations {
+	border: 0;
+	color: #ff6b6b;
+	background-color: white;
+	font-size: 30px;
+}
+
+.header_smallbox {
+	height: 30px;
+}
+.header_logform{
+	margin : 0;
+}
+.header_join{
+	position: relative;
+	right : 5px;
 }

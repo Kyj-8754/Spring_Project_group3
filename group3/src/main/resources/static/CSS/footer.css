@@ -10,7 +10,6 @@
 			text-align: center;
 			width: 100%;
     		margin-top: 100px;
-    		background-color: black;
 			
 		}
 
@@ -31,7 +30,6 @@
 
 		/* 푸터 제목에 대한 스타일 */
 		.footer-title {
-			color: #fff;
 			margin-bottom: 10px;
 		}
 
@@ -54,7 +52,7 @@
 		}
 
 		.footer-logo a {
-			color: #fff;
+			color: black;
 			/* 링크 텍스트 색상 설정 */
 			text-decoration: none;
 		}
@@ -63,7 +61,6 @@
 		.footer-info-area span {
 			display: block;
 			margin-bottom: 5px;
-			color: #fff;
 		}
 
 		/* 푸터 내의 링크에 대한 스타일 */

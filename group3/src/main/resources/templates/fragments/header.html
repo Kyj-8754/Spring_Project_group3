@@ -2,101 +2,110 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <th:block th:fragment="headerFragment">
 
-   <head>
-      <meta charset="UTF-8">
-      <title>Insert title here</title>
-      <link rel="stylesheet" type="text/css" href="/CSS/header.css">
-      <div>
-         <div class="header_logo_box">
-            <a href="/" class="header_logo_a">
-               <img src="/img/LOGO.jpg" id="logoimg" class="header_logoimg">
-            </a>
-         </div>
-         <form method="post" action="/storeList">
-            <div class="header_form">
-               <div class="header_search">
-                  <input type="text" name="searchbox" class="header_searchbox" placeholder="   검색어를 입력해주세요"> 
-                  <button type="submit" class="header_searchbutton">검색</button>
-               </div>
-            </div>
-         </form>
-         <div class="header_login">
-            <table class="header_logintd">
-               <tr th:object="${loginForm}">
-                  <td class="header_logintd">
-                     <div th:if="${session.loginMember == null}" class="header_logintd">
-                        <a href="login" class="header_a">로그인</a>
-                     </div>
-                     <div th:if="${session.loginMember != null}" class="header_loginMember">
-                        <a class="header_a" th:text="'환영합니다 ' + ${session.loginMember?.name ?: '사용자 이름 없음'} + '님'">로그인 사용자
-                           이름</a>
-                     </div>
-                  </td>
-                  <td class="header_logintd">
-                     <div class="header_loginline"></div>
-                  </td>
-                  <td>
-                     <div th:if="${session.loginMember == null}" class="header_logintd">
-                        <a class="header_a" href="join">회원가입</a>
-                     </div>
-                     <form method="post" action="logout">
-                        <div th:if="${session.loginMember != null}" class="header_logoutbox">
-                           <input type="submit" class="header_logout" name="logout" value="로그아웃">
-                        </div>
-                     </form>
-                  </td>
-                  <td>
-                     <div class="header_loginline"><!-- 구분선 --></div>
-                  </td>
-                  <td>
-                     <div class="header_logintd">
-                        <a class="header_a" href="mypage">마이페이지</a>
-                     </div>
-                  </td>
-               </tr>
-            </table>
-         </div>
-         <form method="post" action="/storeList">
-            <div class="header_navigation">
-               <div class="header_navigationbox">
-                  <div class="header_allnavigationbox">
-                     <span class="header_title">메뉴</span> <!-- 전체 메뉴화면을 만들게 되면 필요할거 같아 만들어봄-->
-                     <div class="header_allnavigationbox2"></div> <!-- 메뉴 아래는 나올게 없기에 자리 정렬용 빈 박스 -->
-                  </div>
-                  <div class="header_addrnavigationbox" id="addrnavigationbox">
-                     <span class="header_title">지역</span> <!-- 지역별 메뉴검색 -->
-                     <div class="header_addrnavigationbox2">
-                        <input type="submit" name="searchbox" class="header_chlidmenu2" value="서울">
-                        <input type="submit" name="searchbox" class="header_chlidmenu2" value="인천">
-                        <input type="submit" name="searchbox" class="header_chlidmenu2" value="경기">
-                        <input type="submit" name="searchbox" class="header_chlidmenu2" value="부산">
-                        <input type="submit" name="searchbox" class="header_chlidmenu2" value="대전">
-                     </div>
-                  </div>
-                  <div class="header_foodnavigationbox">
-                     <span class="header_title">음식종류</span> <!-- 음식별 메뉴검색 -->
-                     <div class="header_foodnavigationbox2">
-                        <div class="header_header_br"><!-- br대용 --></div>
-                        <input type="submit" name="searchbox" class="header_chlidmenu2" value="한식">
-                        <input type="submit" name="searchbox" class="header_chlidmenu2" value="중식">
-                        <input type="submit" name="searchbox" class="header_chlidmenu2" value="일식">
-                        <input type="submit" name="searchbox" class="header_chlidmenu2" value="양식">
-                        <input type="submit" name="searchbox" class="header_chlidmenu2" value="패스트푸드">
-                     </div>
-                  </div>
-                  <div class="header_moneynavigationbox"> <!-- 가격대별 메뉴검색 -->
-                     <span class="header_title">예약</span>
-                  </div>
-                  <div class="header_reviewnavigationbox"> <!-- 별점(리뷰)별 메뉴검색 -->
-                     <span class="header_title">리뷰</span>
-                  </div>
-               </div>
-               <div class="header_navigationbox2">
-               </div>
-            </div>
-         </form>
-      </div>
-   </head>
+	<head>
+		<div>
+			<meta charset="UTF-8">
+			<title>Insert title here</title>
+			<link rel="stylesheet" type="text/css" href="/CSS/header.css">
+			<div>
+				<div class="header_logo_box">
+					<a href="/" class="header_logo_a">
+						<img src="/img/LOGO.jpg" id="logoimg" class="header_logoimg">
+					</a>
+				</div>
+				<form method="post" action="/storeList" class="header_logform">
+					<div class="header_form">
+						<div class="header_search">
+							<input type="text" name="searchbox" class="header_searchbox" placeholder="   검색어를 입력해주세요">
+							<button type="submit" class="header_searchbutton">검색</button>
+						</div>
+					</div>
+				</form>
+				<div class="header_login">
+					<table class="header_logintd">
+						<tr th:object="${loginForm}">
+							<td class="header_logintd">
+								<div th:if="${session.loginMember == null}" class="header_logintd">
+									<a href="login" class="header_a">로그인</a>
+								</div>
+								<div th:if="${session.loginMember != null}" class="header_loginMember">
+									<span class="header_b"
+										th:text="'환영합니다 ' + ${session.loginMember?.name ?: '사용자 이름 없음'} + '님'">로그인 사용자
+										이름</span>
+								</div>
+							</td>
+							<td class="header_logintd">
+								<div class="header_loginline"></div>
+							</td>
+							<td>
+								<div th:if="${session.loginMember == null}" class="header_logintd">
+									<span class="header_join"><a class="header_a" href="join">회원가입</a></span>
+								</div>
+								<form method="post" action="logout" class="header_logform">
+									<div th:if="${session.loginMember != null}" class="header_logoutbox">
+										<input type="submit" class="header_logout" name="logout" value="로그아웃">
+									</div>
+								</form>
+							</td>
+							<td>
+								<div class="header_loginline"><!-- 구분선 --></div>
+							</td>
+							<td>
+								<div class="header_logintd">
+									<a class="header_a" href="mypage">마이페이지</a>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<form method="post" action="/storeList">
+					<div class="header_navigation">
+						<div class="header_navigationbox">
+							<div class="header_allnavigationbox">
+								<span class="header_title">메뉴</span> <!-- 전체 메뉴화면을 만들게 되면 필요할거 같아 만들어봄-->
+								<div class="header_allnavigationbox2"></div> <!-- 메뉴 아래는 나올게 없기에 자리 정렬용 빈 박스 -->
+							</div>
+							<div class="header_addrnavigationbox" id="addrnavigationbox">
+								<span class="header_title">지역</span> <!-- 지역별 메뉴검색 -->
+								<div class="header_addrnavigationbox2">
+									<div class="header_header_br"><!-- br대용--></div>
+									<input type="submit" name="searchbox" class="header_chlidmenu2" value="서울">
+									<input type="submit" name="searchbox" class="header_chlidmenu2" value="인천">
+									<input type="submit" name="searchbox" class="header_chlidmenu2" value="경기">
+									<input type="submit" name="searchbox" class="header_chlidmenu2" value="부산">
+									<input type="submit" name="searchbox" class="header_chlidmenu2" value="대전">
+								</div>
+							</div>
+				</form>
+				<div class="header_foodnavigationbox">
+					<span class="header_title">음식종류</span> <!-- 음식별 메뉴검색 -->
+					<div class="header_foodnavigationbox2">
+						<div class="br"><!-- br대용 --></div>
+						<input type="submit" name="searchbox" class="header_chlidmenu2" value="한식">
+						<input type="submit" name="searchbox" class="header_chlidmenu2" value="중식">
+						<input type="submit" name="searchbox" class="header_chlidmenu2" value="일식">
+						<input type="submit" name="searchbox" class="header_chlidmenu2" value="양식">
+						<input type="submit" name="searchbox" class="header_chlidmenu2" value="패스트푸드">
+					</div>
+				</div>
+				<div class="header_moneynavigationbox"> <!-- 가격대별 메뉴검색 -->
+					<form method="get" action="reservation_list" id="reservation_list">
+						<button type="button" id="reservation" class="header_reservations">예약</span>
+					</form>
+				</div>
+				<div class="header_reviewnavigationbox"> <!-- 별점(리뷰)별 메뉴검색 -->
+					<form method="get" action="reviewpage" id="reviewpage">
+						<button type="button" id="reviewButton" class="header_reservations">리뷰</span>
+					</form>
+				</div>
+			</div>
+			<div class="header_smallbox">
+				<!-- 1 TAP 느낌은 작은 빈 공간을 확보하기 위한 용도 -->
+			</div>
+			<div class="header_hr"></div>
+		</div>
+	</head>
+	<script src="javascript/header.js"></script>
 </th:block>
 
 </html>

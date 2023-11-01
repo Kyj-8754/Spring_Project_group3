@@ -1,4 +1,4 @@
-body {
+.body {
 			background-color: #ffffff;
 			font-family: 'Arial', sans-serif;
 
@@ -83,7 +83,7 @@ body {
 			color: red;
 		}
 
-		button {
+		.button {
 			text-transform: uppercase;
 			transition: 0.3s;
 			background-color: #ff6b6b;
@@ -95,7 +95,7 @@ body {
 			cursor: pointer;
 		}
 
-		button:hover {
+		.button:hover {
 			color: white;
 			cursor: pointer;
 			background-color: #e55b5b;

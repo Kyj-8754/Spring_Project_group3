@@ -1,20 +1,23 @@
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<html lang="ko">
 
 <head>
 	<meta charset="UTF-8">
 	<th:block th:replace="fragments/header :: headerFragment"></th:block>
-	<title>C&C 예약사이트</title>
-		<link rel="stylesheet" type="text/css" href="/CSS/reservation_list.css">
+	<link rel="stylesheet" href="/CSS/reservation_list.css">
+	<title>마이 페이지</title>
+
 </head>
 
 <body>
-				<div class="container">
-					<div class="header">
-		<h1>My Reservation List</h1>
-	</div>
-	<div id="reservationList">
-		<div>
+
+
+	<div class="container" style="margin-top: 50px;">
+		<div class="header">
+			<h1>My Reservation List</h1>
+		</div>
+		<div id="reservationList">
 			<div>
+				<div>
 					<h2>식당 예약</h2>
 					<div th:each="booking, iterStat : ${bookings}" th:remove="tag" th:attr="data-id=${booking.id}">
 						<div th:if="${booking.status.name() == 'COMPLETE'}">
@@ -39,27 +42,45 @@
 					</div>
 				</div>
 			</div>
-			
-				<h2>이전 예약 목록</h2>
-				<div th:each="booking, iterStat : ${bookings}" th:remove="tag" th:attr="data-id=${booking.id}">
-					<div th:if="${booking.status.name() == 'CANCEL'}">
-						<div>
-							<ul class="reservation-list">
-								<li class="reservation-list-item">
-									<h3 th:text="${booking.store_name}">식당 이름 : xxx</h3>
-									<p
-										th:text="${booking.year} + '년 ' + ${booking.month} + '월 ' + ${booking.day} + '일'">
-										날짜:
-										2023-10-20</p>
-									<p th:text="${booking.time}">시간: 18:30</p>
-								</li>
-							</ul>
-						</div>
+
+			<h2>이전 예약 목록</h2>
+			<div th:each="booking, iterStat : ${bookings}" th:remove="tag" th:attr="data-id=${booking.id}">
+				<div th:if="${booking.status.name() == 'CANCEL'}">
+					<div>
+						<ul class="reservation-list">
+							<li class="reservation-list-item">
+								<h3 th:text="${booking.store_name}">식당 이름 : xxx</h3>
+								<p th:text="${booking.year} + '년 ' + ${booking.month} + '월 ' + ${booking.day} + '일'">
+									날짜:
+									2023-10-20</p>
+								<p th:text="${booking.time}">시간: 18:30</p>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<script>
+		function cancelReservation(index) {
+			var row = document.getElementById('reservation-' + index);
+			if (row) {
+				row.remove();
+			}
+		}
+
+	</script>
+	<script>
+		function cancel(id) {
+			let form = document.createElement("form");
+			form.setAttribute("method", "post");
+			form.setAttribute("action", "/reservation_list/" + id + "/cancel");
+			document.body.appendChild(form);
+			form.submit();
+		}   
+	</script>
 </body>
 <th:block th:replace="fragments/footer :: footerFragment"></th:block>
-<script src="javascript/reservation_list.js"></script>
+
 </html>
