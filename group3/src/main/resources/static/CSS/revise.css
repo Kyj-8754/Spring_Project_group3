@@ -1,5 +1,5 @@
-body {
-      background-color: #ffeded;
+.body {
+      background-color: white;
       font-family: 'Arial', sans-serif;
       display: flex;
       justify-content: center;
@@ -83,7 +83,7 @@ body {
       color: red;
     }
 
-    button {
+    .button {
       text-transform: uppercase;
       transition: 0.3s;
       background-color: #ff6b6b;
@@ -95,7 +95,7 @@ body {
       cursor: pointer;
     }
 
-    button:hover {
+    .button:hover {
 
       color: white;
       cursor: pointer;
@@ -109,7 +109,7 @@ body {
     }
 
     .join-c > div {
-      width: 1200px;
+      width: 100%;
       margin: 50px auto;
     }
 
@@ -183,7 +183,7 @@ body {
       vertical-align: 3px;
     }
 
-    div.join-button {
+    .join-button {
       width: 700px;
     }
 

@@ -13,6 +13,7 @@
 
 <body>
    <!--   <th:block th:replace="fragments/header :: headerFragment"></th:block> 헤더~-->
+  <div class="body">
    <div class="join-container">
       <h2>회원가입</h2>
       <form class="join-c" id="submitform" method="post" th:object="${userform}">
@@ -23,9 +24,9 @@
                   <input type="text" id="userId" name="userId" th:field="*{userId}" oninput="toggleCheckButton()">
                </td>
                <td>
-                  <button id="checkButton" type="button" onclick="checkId()" disabled>
-                     중복확인
-                  </button>
+                 <button class="button" id="checkButton" type="button" onclick="checkId()" disabled>
+								중복확인
+				</button>
                   <!-- 중복 확인 결과를 표시할 스팬 추가 -->
                   <span id="idCheckedMessage" style="color: red; margin-left: 20px;"></span>
                </td>
@@ -91,11 +92,12 @@
 
 
          <div class="join-button">
-            <button type="reset" onclick="resetCheckMessage()">다시쓰기</button>
-            <button type="button" onclick="submitForm()">제출하기</button>
+            <button class="button" type="reset" onclick="resetCheckMessage()">다시쓰기</button>
+			<button class="button" type="submit" onclick="return validatePassword();">제출하기</button>
          </div>
       </form>
    </div>
+  </div>
    <script>
       function toggleCheckButton() {
          // 아이디 입력 필드의 값을 가져옵니다.
@@ -176,8 +178,8 @@
    <script>
       function checkId() {
          var id = $('#userId').val();
-         if (id.trim() === "") {
-            alert("아이디를 입력하세요.");
+         if (id.trim() === ""||id.length<=4) {
+            alert("아이디를 5글자 이상 입력하세요.");
             return;
          }
 
