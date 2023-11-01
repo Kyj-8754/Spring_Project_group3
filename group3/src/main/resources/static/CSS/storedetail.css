@@ -1,4 +1,7 @@
 /*section 파트*/
+		html, body {
+		     min-height: 100%;
+		}
 		body{
 			background-color: white;
 		}
@@ -29,13 +32,12 @@
             margin: auto;
             width: 800px;
         }
-        .info{
+        th{
             width: 200px;
             height: 50px;
             text-align: left;
-            padding: 3px;
-            border-width: 1px;
         }
+        
         .store_menu{
             display: -moz-flex;
             display: -ms-flexbox;
@@ -52,8 +54,7 @@
             margin-bottom: 4px;
         }
         .emsp{
-			position: absolute;
-            width: 200px;
+            width: 100px;
         }
         #reservationButton{
             font-size: 30px;
@@ -92,28 +93,310 @@
             position: relative;
             left: 75px;
         }
+        .info{
+            padding: 3px;
+            border-width: 1px;
+        }
         .line{
             position: relative;
             margin: auto;
             background-color: rgb(192, 192, 192) ;
             height: 1px;
         }
+        .addrposition{
+            position: relative;
+            margin: auto;
+            left: 200px;
+            bottom: 300px;
+            width: 300px;
+        }
+        .reviewTable{
+            padding: 5px;
+        }
         .reviewTable{
             border: 1px solid rgb(192, 192, 192) ;
             border-right: none;
             border-left: none;
-            padding: 5px;
         }
         .reviewAllTable{
             border: 1px solid rgb(192, 192, 192) ;
         }
-        #scrollToTopButton {
+          #scrollToTopButton {
         position: fixed;
         bottom: 150px;
         right: 10%; /* 가운데 정렬을 위해 50% 위치로 이동 */
         transform: translate(50%); /* 정렬 기준점을 가운데로 이동 */
         z-index: 1000; /* 다른 요소 위에 표시하기 위한 z-index 설정 */
     	}
+    	header{
+        position: fixed;
+        width: 1900px;
+        height: 100px;
+        /* border: 1px solid red; */
+    }
+    .header{
+        width: 300px;
+    }
+    .logoimg{
+        position: relative;
+        left: 230px;
+        top: 10px;
+        width: 200px;
+        height: 70px;
+    }
+    .search{
+        position: relative;
+        margin: auto;
+        bottom: 50px;
+        width: 500px;
+        height: 50px;
+    }
+    .searchbox{
+        width: 442px;
+        height: 40px;
+        font-size: 25px;
+        border-radius: 30px;
+        border: 2px solid #ff7100;
+    }
+    .searchbox:focus{
+        outline: 0.5px solid #ff7100;
+    }
+    /* .searchbutton{
+        display: block;
+        position: absolute;
+        margin: auto;
+        width: 50px;
+        height: 46px;
+        font-size: 17px;
+        left: 450px;
+        bottom: 46px;
+        color: #ffffff;
+        border-radius: 50px;
+        background-color: #ff7100;
+    } */
+    .login{
+        position: relative;
+        margin: auto;
+        width: 300px;
+        left: 750px;
+        bottom: 110px;
+    }
+    .loginline{
+        position: relative;
+        border: 1px solid rgb(179, 179, 179);
+        height: 16px;
+        top: 1px;
+    }
+    .searchbutton {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    width: 110px;
+    color: #ffffff;
+    line-height: 48px;
+    border-radius: 50px;
+    background-color: #ff7100;
+    height: 46px;
+    border: white;
+    font-size: 17px;
+    }
+    a{
+        text-decoration: none;
+        color: darksalmon;
+    }
+    a:hover{
+        color: #ff7100;
+    }
+    .navigation{
+        position: relative;
+        /* border: 1px solid red; */
+        border: 1px;
+        bottom: 52px;
+        height: 50px;
+        background-color: #ff7100;
+        color: white;
+        margin-top: 0px;
+        transition: all 0.3s;
+        border-radius: 5px;
+    }
+    .navigation2{
+        position: relative;
+        /* border: 1px solid red; */
+        border: 1px;
+        bottom: 82px;
+        height: 200px;
+        background-color: rgb(255, 211, 129);
+        display: none;
+        transition: all 0.3s;
+    }
+    .navigation:hover .navigation2{
+        display: block;
+    }
+    .allnavigationbox{
+        position: relative;
+        left: 500px;
+        width:148px;
+        /* border: 1px solid black; */
+        border: 1px;
+        height: 30px;
+        /* bottom: 30px; */
+        top : 3px;
+    }
+    .allnavigationbox2{
+        position: relative;
+        left: 500px;
+        width:148px;
+        /* border: 1px solid black; */
+        border: 1px;
+        height: 25px;
+    }
+    .title{
+        font-size: 30px;
+    }
+    .addrnavigationbox{
+        position: relative;
+        left: 650px;
+        width: 148px;
+        /* border: 1px solid black; */
+        border: 1px;
+        height: 27px;
+        bottom: 26px;
+    }
+    .addrnavigationbox2{
+        position: relative;
+        left: 650px;
+        width: 148px;
+        /* border: 1px solid black; */
+        border: 1px;
+        height: 200px;
+        bottom: 27px;
+    }
+    .foodnavigationbox{
+        position: relative;
+        left: 800px;
+        width: 148px;
+        /* border: 1px solid black; */
+        border: 1px;
+        height: 25px;
+        bottom: 53px;
+    }
+    .foodnavigationbox2{
+        position: relative;
+        left: 800px;
+        width: 148px;
+        /* border: 1px solid black; */
+        border: 1px;
+        height: 200px;
+        bottom: 227px;
+    }
+    .moneynavigationbox{
+        position: relative;
+        left: 950px;
+        width: 148px;
+        /* border: 1px solid black; */
+        border: 1px;
+        height: 25px;
+        bottom: 79px;
+    }
+    .moneynavigationbox2{
+        position: relative;
+        left: 950px;
+        width: 148px;
+        /* border: 1px solid black; */
+        border: 1px;
+        height: 200px;
+        bottom: 427px;
+    }
+    .reviewnavigationbox{
+        position: relative;
+        left: 1100px;
+        width: 148px;
+        /* border: 1px solid black; */
+        border: 1px;
+        height: 25px;
+        bottom: 104px;
+    }
+    .childmenu:hover{
+        background-color: beige;
+    }
+    ul{
+        list-style:none;
+    }
+    .childmenu{
+        height: 30px;
+    }
+    .br{
+        height: 10px;
+        /* border: 1px solid black; */
+    }
+    .footer {
+		  background-color: #333; /* 원하는 배경 색상 설정 */
+		  color: #fff; /* 텍스트 색상 설정 */
+		  padding: 20px; /* 필요에 따라 조정 */
+		  text-align: center;
+		}
+		
+		/* 푸터 박스에 대한 스타일 */
+		.footer-box {
+		  display: flex;
+		  flex-direction: column;
+		  align-items: center;
+		  margin-bottom: 20px;
+		}
+		
+		/* 푸터 알림 컨테이너에 대한 스타일 */
+		.footer-notice {
+		  display: flex;
+		  flex-direction: column;
+		  align-items: center;
+		  margin-bottom: 20px;
+		}
+		
+		/* 푸터 제목에 대한 스타일 */
+		.footer-title {
+		  margin-bottom: 10px;
+		}
+		
+		.footer-title span {
+		  margin-right: 20px;
+		  font-weight: bold;
+		}
+		
+		/* 푸터 로고에 대한 스타일 */
+		.footer-logo img {
+		  width: 200px; /* 필요에 따라 너비 조정 */
+		  height: 70px; /* 필요에 따라 높이 조정 */
+		  margin-bottom: 10px;
+		}
+		
+		.footer-logo li {
+		  list-style: none;
+		}
+		
+		.footer-logo a {
+		  color: #fff; /* 링크 텍스트 색상 설정 */
+		  text-decoration: none;
+		}
+		
+		/* 푸터 정보 영역에 대한 스타일 */
+		.footer-info-area span {
+		  display: block;
+		  margin-bottom: 5px;
+		}
+		
+		/* 푸터 내의 링크에 대한 스타일 */
+		.footer-info-area a {
+		  color: #fff; /* 링크 텍스트 색상 설정 */
+		  text-decoration: none;
+		}
+		.navigation:hover .navigation2 {
+         display: block;
+         z-index: 2;
+      }
+      #menuinfo{
+        position: relative;
+        vertical-align: top;
+      }
       .times{
         position: relative;
         /* border: 1px solid black; */
@@ -150,12 +433,12 @@
 	    border-radius:5px;
 	    box-shadow:0px 40px 30px -20px rgba(0,0,0,0.3);
 	}
-/*	td {*/
-/*	    position: relative;*/
-/*	    margin: 0 auto;*/
-/*	    width: 150px;*/
-/*	    height: 50px;*/
-/*	}*/
+	td {
+	    position: relative;
+	    margin: 0 auto;
+	    width: 50px;
+	    height: 50px;
+	}
 	
 	.Calendar {
 	    text-align: center;
@@ -205,21 +488,7 @@
 	.futureDay:hover{
 	    background:#eee;
 	}
-	.selectbox{
-		width: 270px;
-		height: 100%;
-	}
-	.people{
-		width: 150px;
-		height: 100%;
-	}
-	.selectbox2{
-		width: 270px;
-		position: relative;
-		left: 250px;
-		height: 100%;
-		bottom: 70px;
-	}
+	
 	.futureDay.choiceDay,
 	.today.choiceDay {
 	    background: #0A174E;
@@ -229,6 +498,32 @@
 	}
 	.smallbox{
 	    height: 20px;
+	}
+	.people, .time{
+		position: relative;
+		left: 70px;
+		margin: 0 auto;
+	    width: 100px;
+	    height: 30px;
+	    border-radius: 5px;
+	    border: 0;
+	}
+	.time{
+	    position: relative;
+	    left: 50px;
+	}
+	.selectbox{
+	    position: relative;
+	    top: 5px;
+	    width: 250px;
+	    height: auto;
+	}
+	.selectbox2{
+	    position: relative;
+	    bottom: 51px;
+	    left: 200px;
+	    width: 250px;
+	    height: auto;
 	}
 	.box3{
 	    font-size: 20px;
@@ -247,11 +542,11 @@
 	    font-size: 20px;
 	    background-color: rgb(255, 211, 129);
 	}
-	.reviewth{
-		position: relative;
-		width: 100%;
-		height: 100%;
-		text-align: center;
+	#time{
+	    position: relative;
+	    left: 40px;
 	}
-	
-	
+	.page-content {
+	    margin-top: 0;
+	    transition: margin-top 0.5s ease; /* 부드러운 이동 효과를 위한 트랜지션 */
+	}

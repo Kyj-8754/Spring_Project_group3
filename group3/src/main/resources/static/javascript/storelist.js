@@ -81,7 +81,7 @@ function displayPlaces(places) {
 		// 마커를 생성하고 지도에 표시합니다
 		var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),
 			marker = addMarker(placePosition, i),
-			itemEl = getListItem(i, places[i]);
+			itemEl = getListItem(i, places[i]); // 검색 결과 항목 Element를 생성합니다
 
 		// 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
 		// LatLngBounds 객체에 좌표를 추가합니다
@@ -109,7 +109,6 @@ function displayPlaces(places) {
 		})(marker, places[i].place_name);
 
 		fragment.appendChild(itemEl);
-
 	}
 
 	// 검색결과 항목들을 검색결과 목록 Element에 추가합니다
@@ -126,8 +125,8 @@ function displayPlaces(places) {
 function getListItem(index, places) {
 
 	var el = document.createElement('li'),
-		itemStr = '<div class="info" id=store_info' + (index + 1) + ' onclick="redirectToStore(' + (index + 1) + ');\">' +
-			'<span id =store_name>' + places.place_name + '</span>';
+		itemStr ='<div class="info" id=store_info' + (index + 1) + ' onclick="redirectToStore(' + (index + 1) + ');\">' +
+			'<h5><span id =store_name>' + places.place_name + '</span></h5>';
 
 	if (places.road_address_name) {
 		itemStr += '    <span id="store_road_addr">' + places.road_address_name + '</span>' +
@@ -138,8 +137,7 @@ function getListItem(index, places) {
 
 	itemStr += '  <span class="tel" id ="store_tel">' + places.phone + '</span>' +
 		'</div>';
-	
-	itemStr += '<span style="position: relative; text-align: right;" onclick="openPopup(\' ' + places.place_url + ' \');\"> 상세 페이지 </span>'
+
 	el.innerHTML = itemStr;
 	el.className = 'item';
 
@@ -225,20 +223,9 @@ function removeAllChildNods(el) {
 
 //    }); // 최하단으로
 // 백단으로 넘기기위한 스크립트
-function redirectToStore(storeId) {
-	var storeName = document.getElementById('store_info' + storeId).querySelector('#store_name').textContent;
-	var storeAddr = document.getElementById('store_info' + storeId).querySelector('#store_road_addr').textContent;
-	var storeTel = document.getElementById('store_info' + storeId).querySelector('#store_tel').textContent;
-	location.href = 'store/' + storeId + '?storeName=' + storeName + '&storeAddr=' + storeAddr + '&storeTel=' + storeTel;
-}
-
-
-function openPopup(url) {
-  // 팝업 창을 열어 URL을 표시
-  var popup = window.open(url, 'PopupWindow', 'width=950, height=1000');
-  if (popup) {
-    popup.focus();
-  } else {
-    alert('팝업 창이 차단되었습니다. 브라우저 설정을 확인하세요.');
-  }
-}
+	function redirectToStore(storeId) {
+        var storeName = document.getElementById('store_info' + storeId).querySelector('#store_name').textContent;
+        var storeAddr = document.getElementById('store_info' + storeId).querySelector('#store_road_addr').textContent;
+        var storeTel = document.getElementById('store_info' + storeId).querySelector('#store_tel').textContent;
+        location.href = 'store/' + storeId + '?storeName=' + storeName + '&storeAddr=' + storeAddr+ '&storeTel='+storeTel;
+    }

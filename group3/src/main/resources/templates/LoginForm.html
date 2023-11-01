@@ -8,15 +8,14 @@
     body {
       background-color: #ffeded;
       font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 100vh;
-     
+      margin: 0;
     }
 
     .login-container {
-		 margin: auto;
-	display: flex;
-	justify-content: center;
-      align-items: center;
       background-color: #ffffff;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -118,8 +117,6 @@
 </head>
 
 <body>
-	<!-- header -->
-	<th:block th:replace="fragments/header :: headerFragment"></th:block>
 <div class="login-container">
   <h2>로그인</h2>
   <form class="login-form" method="post" th:object="${loginForm}">

@@ -13,7 +13,7 @@
 	<div class="map_wrap">
 		<!-- 맵 크기 설정구간-->
 		<div id="map" style=" margin-top:50px; width:1200px;height:500px;"></div>
-		<div id="menu_wrap" class="bg_white">
+		<div id="menu_wrap" class="bg_white" style="width: 1200px; margin-bottom: 50px;">
 			<div class="option">
 				<div>
 					<!-- 키워드 입력 구간 -->
@@ -23,16 +23,12 @@
 					</form>
 				</div>
 			</div>
-			<div id="list_scroll">
-				<div class="list_title" style="font-size: xx-large; margin-top: 50px; text-align: center;">
-					검색 결과
-					<hr />
-				</div>
-				<br />
-				<ul id="placesList"></ul>
-				<div id="pagination"></div>
-				<hr>
+			<div class="list_title">
+				가게 리스트
 			</div>
+			<ul id="placesList"></ul>
+			<div id="pagination"></div>
+			<hr>
 		</div>
 		<!-- footer -->
 		<footer th:include="fragments/footer :: footerFragment"></footer>
