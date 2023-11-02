@@ -1,0 +1,257 @@
+/*section 파트*/
+		body{
+			background-color: white;
+		}
+        #rs_view{
+            position: relative;
+            margin: auto;
+            width: 1000px;
+            background-color: white;
+            box-shadow:0px 40px 30px -20px rgba(0,0,0,0.3);
+        }
+        .imgbox{
+            position: relative;
+            margin: auto;
+            right: 0px;
+            width: 1000px;
+            left: 15px;
+            
+        }
+		.urlandir{
+            position: relative;
+            margin: auto;
+            left: 780px;
+            width: 30px;
+            height: 30px;
+        }
+        .storeInfo{
+            position: relative;
+            margin: auto;
+            width: 800px;
+        }
+        .info{
+            width: 200px;
+            height: 50px;
+            text-align: left;
+            padding: 3px;
+            border-width: 1px;
+        }
+        .store_menu{
+            display: -moz-flex;
+            display: -ms-flexbox;
+            display: flex;
+            display: -webkit-box;
+            display: -webkit-flex;
+            -moz-flex-direction: row;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -webkit-flex-direction: row;
+            -webkit-box-direction: normal;
+            -webkit-box-orient: horizontal;
+            border-bottom: 1px solid #e9e9e9;
+            margin-bottom: 4px;
+        }
+        .emsp{
+			position: absolute;
+            width: 200px;
+        }
+        #reservationButton{
+            font-size: 30px;
+            position: relative;
+            left: 300px;
+            width: 200px;
+            height: 50px;
+            color: white;
+            border-radius: 20px;
+            background-color: #ff6b6b;
+            cursor: pointer;
+            border: 0;
+        }
+        #reservationButton:hover{
+            font-size: 30px;
+            color: ghostwhite;
+            background-color: rgb(255, 211, 129);
+        }
+        .box{
+            height: 50px;
+        }
+        .mapAPI{
+            width: 400px;
+            height: 300px;
+            border: 1px solid black;
+        }
+        .smallbox{
+            height: 30px;
+        }
+        tbody{
+            width: 200px;
+            height: 30px;
+        }
+        .center{
+            font-size: 15px;
+            position: relative;
+            left: 75px;
+        }
+        .line{
+            position: relative;
+            margin: auto;
+            background-color: rgb(192, 192, 192) ;
+            height: 1px;
+        }
+        .reviewTable{
+            border: 1px solid rgb(192, 192, 192) ;
+            border-right: none;
+            border-left: none;
+            padding: 5px;
+        }
+        .reviewAllTable{
+            border: 1px solid rgb(192, 192, 192) ;
+        }
+        #scrollToTopButton {
+        position: fixed;
+        bottom: 150px;
+        right: 10%; /* 가운데 정렬을 위해 50% 위치로 이동 */
+        transform: translate(50%); /* 정렬 기준점을 가운데로 이동 */
+        z-index: 1000; /* 다른 요소 위에 표시하기 위한 z-index 설정 */
+    	}
+      .times{
+        position: relative;
+        /* border: 1px solid black; */
+        top: 210px;
+        left: 320px;
+        font-size: 15px;
+      }
+      #storeaddr{
+		  position: relative;
+	  }
+	.mainbox {
+	    background-color : white;
+	    height: auto;
+	    width: 500px;
+	    margin: 0px;
+	    padding: 20px;
+	    margin: 0 auto;
+	    border-radius:5px;
+	    box-shadow:0px 40px 30px -20px rgba(0,0,0,0.3);
+	}
+	.box {
+	    background-color : white;
+	    height: 70px;
+	    width: 540px;
+	    margin: 0 auto;
+	    border-radius:5px;
+	    box-shadow:0px 40px 30px -20px rgba(0,0,0,0.3);
+	}
+	.box2 {
+	    background-color : white;
+	    height: 50px;
+	    width: 540px;
+	    margin: 0 auto;
+	    border-radius:5px;
+	    box-shadow:0px 40px 30px -20px rgba(0,0,0,0.3);
+	}
+/*	td {*/
+/*	    position: relative;*/
+/*	    margin: 0 auto;*/
+/*	    width: 150px;*/
+/*	    height: 50px;*/
+/*	}*/
+	
+	.Calendar {
+	    text-align: center;
+	    position: relative;
+	    margin: 0 auto;
+	    right: 10px;
+	}
+	
+	.Calendar>thead>tr:first-child>td {
+	    font-family: 'Questrial', sans-serif;
+	    font-size: 1.1em;
+	    font-weight: bold;
+	}
+	
+	.Calendar>thead>tr:last-child>td {
+	    font-family: 'Questrial', sans-serif;
+	    font-weight: 600;     
+	}
+	
+	.Calendar>tbody>tr>td>p {
+	    font-family: 'Montserrat', sans-serif;
+	    height: 45px;
+	    width: 65px;
+	    border-radius: 45px;
+	    transition-duration: .2s;
+	    line-height: 45px;
+	    margin: 2.5px;
+	    display: block;
+	    text-align: center;
+	}        
+	
+	.pastDay {
+	    color: lightgray;
+	}
+	
+	.today {
+	    background-color: #F5D042;            
+	    color: #fff;
+	    font-weight: 600;
+	    cursor: pointer;
+	}
+	
+	.futureDay {
+	    background-color: #FFFFFF;
+	    cursor: pointer;
+	}
+	.futureDay:hover{
+	    background:#eee;
+	}
+	.selectbox{
+		width: 270px;
+		height: 100%;
+	}
+	.people{
+		width: 150px;
+		height: 100%;
+	}
+	.selectbox2{
+		width: 270px;
+		position: relative;
+		left: 250px;
+		height: 100%;
+		bottom: 70px;
+	}
+	.futureDay.choiceDay,
+	.today.choiceDay {
+	    background: #0A174E;
+	    color: #fff;
+	    font-weight: 600;
+	    cursor: pointer;
+	}
+	.smallbox{
+	    height: 20px;
+	}
+	.box3{
+	    font-size: 20px;
+	    position: relative;
+	    background-color: #ff6b6b;
+	    height: 50px;
+	    width: 540px;
+	    margin: auto;
+	    color: white;
+        border-radius: 20px;
+
+	    border: 0;
+	    box-shadow:0px 40px 30px -20px rgba(0,0,0,0.3);
+	}
+	.box3:hover{
+	    font-size: 20px;
+	    background-color: rgb(255, 211, 129);
+	}
+	.reviewth{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+	}
+	
+	

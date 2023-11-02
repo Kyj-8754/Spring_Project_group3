@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<meta charset="UTF-8">
+	<title>C&C 예약사이트</title>
+	<link rel="stylesheet" type="text/css" href="/CSS/home.css">
+</head>
+	<!-- header -->
+<th:block th:replace="fragments/header :: headerFragment"></th:block>
+
+<body>
+	<!-- 홈페이지 만드는중 -->
+	<div class="main-container">
+		<!-- 이미지 배너 -->
+		<div class="banner" style="margin-top: 50px;">
+			<div class="image-slideshow">
+				<div class="slide">
+					<a
+						href="https://kr.freepik.com/free-vector/set-of-delicious-food-banners_1041849.htm#query=%EC%9D%8C%EC%8B%9D%20%EB%B0%B0%EB%84%88%20%EB%94%94%EC%9E%90%EC%9D%B8%20png&position=45&from_view=keyword&track=ais">
+						<img src="img/banner1.jpg" alt="Banner 1">
+					</a>
+				</div>
+				<div class="slide">
+					<a
+						href="https://kr.freepik.com/free-vector/set-of-delicious-food-banners_1041849.htm#query=%EC%9D%8C%EC%8B%9D%20%EB%B0%B0%EB%84%88%20%EB%94%94%EC%9E%90%EC%9D%B8%20png&position=45&from_view=keyword&track=ais">
+						<img src="img/banner2.jpg" alt="Banner 2">
+					</a>
+				</div>
+				<div class="slide">
+					<a
+						href="https://kr.freepik.com/free-vector/set-of-delicious-food-banners_1041849.htm#query=%EC%9D%8C%EC%8B%9D%20%EB%B0%B0%EB%84%88%20%EB%94%94%EC%9E%90%EC%9D%B8%20png&position=45&from_view=keyword&track=ais">
+						<img src="img/banner3.jpg" alt="Banner 3">
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- 지헌님 작업물 -->
+		<div class="content">
+			<div class="bodybox">
+				<!-- 슬라이드 1 -->
+				<section class="section_card">
+					<div class="section_header">
+						<h2 class="section_title">
+							서울 맛집
+							<small>서울 맛집을 경험하고 즐겨보세요</small>
+						</h2>
+					</div>
+					<hr>
+					<div class="section_body">
+						<button class="slick_prev">&LT;</button>
+						<div class="slick_wrapper">
+							<div class="slick_track">
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/16?storeName=랭맥&storeAddr=서울특별시 강남구 강남대로78길 8&storeTel=02-501-2129">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/술집1.JPG" alt="랭맥">
+													<div class="text-over-image">
+														<h3>랭맥</h3>
+														<p>쏘야 15000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/17?storeName=강남 따로 국밥&storeAddr=서울특별시 서초구 잠원동 신반포로47길 118&storeTel=02-543-2527">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/국밥3.jpg" alt="맛있는 국밥 이미지">
+													<div class="text-over-image">
+														<h3>강남 따로 국밥</h3>
+														<p>따로 국밥 10000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/18?storeName=보배반점&storeAddr=서울특별시 강남구 강남대로94길 19&storeTel=02-3452-7773">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/중식1.jpg" alt="맛있는 중식 이미지">
+													<div class="text-over-image">
+														<h3>보배반점</h3>
+														<p>보배 자장면 6500원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/19?storeName=고쿠텐 강남역점&storeAddr=서울특별시 강남구 역삼1동 테헤란로4길 32&storeTel=070-4647-2022">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/일식1.jpg" alt="맛있는 텐동 이미지">
+													<div class="text-over-image">
+														<h3>고쿠텐 강남역점</h3>
+														<p>고쿠텐동 12000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/20?storeName=버거킹 강남대로점&storeAddr=서울특별시 강남구 강남대로 406&storeTel=02-566-0332">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/양식1.jpg" alt="맛있는 햄버거 이미지">
+													<div class="text-over-image">
+														<h3>버거킹 강남역점</h3>
+														<p>와퍼 3500원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/21?storeName=설빙 강남역점&storeAddr=서울특별시 강남구 테헤란로1길 42&storeTel=02-558-7708">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/설빙1.jpg" alt="맛있는 설빙 이미지">
+													<div class="text-over-image">
+														<h3>설빙 강남역점</h3>
+														<p>인절미 설빙 7900원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/22?storeName=죠스떡볶이 강남 중앙점&storeAddr=서울특별시 강남구 테헤란로1길 20&storeTel=02-539-5399">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/한식4.jpg" alt="맛있는 떡볶이 이미지">
+													<div class="text-over-image">
+														<h3>죠스떡볶이 강남 중앙점</h3>
+														<p>죠스떡볶이 3000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/23?storeName=갓덴스시 강남점&storeAddr=서울특별시 강남구 테헤란로 109&storeTel=02-2051-1477">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/일식4.jpg" alt="맛있는 초밥 이미지">
+													<div class="text-over-image">
+														<h3>갓덴스시 강남점</h3>
+														<p>참돔 5500원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/24?storeName=중경마라탕 강남역점&storeAddr=서울특별시 강남구 역삼동 테헤란로1길 44&storeTel=02-558-5988">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/중식4.jpg" alt="맛있는 마라탕 이미지">
+													<div class="text-over-image">
+														<h3>중경마라탕 강남역점</h3>
+														<p>마라탕 100g 1700원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/25?storeName=프리모바치오바치&storeAddr=서울특별시 강남구 강남대로 416&storeTel=02-501-0885">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/양식4.jpg" alt="맛있는 파스타 이미지">
+													<div class="text-over-image">
+														<h3>프리모바치오바치</h3>
+														<p>까르보나라 12000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/26?storeName=센야 본점&storeAddr=서울특별시 강남구 역삼1동 753-1&storeTel=02-538-5827">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/술집4.jpg" alt="맛있는 안주 이미지">
+													<div class="text-over-image">
+														<h3>센야 본점</h3>
+														<p>모츠나베 35000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<button class="slick_next">&GT;</button>
+					</div>
+				</section>
+
+				<!-- 슬라이드 2 -->
+				<section class="section_card">
+					<div class="section_header">
+						<h2 class="section_title">
+							SNS 맛집
+							<small>SNS에서 인기있는 맛집을 즐겨보세요</small>
+						</h2>
+					</div>
+					<hr>
+					<div class="section_body">
+						<button class="slick_prev">&LT;</button>
+						<div class="slick_wrapper">
+							<div class="slick_track">
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/21?storeName=설빙 강남역점&storeAddr=서울특별시 강남구 테헤란로1길 42&storeTel=02-558-7708">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/설빙1.jpg" alt="맛있는 설빙 이미지">
+													<div class="text-over-image">
+														<h3>설빙 강남역점</h3>
+														<p>인절미 설빙 7900원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/23?storeName=갓덴스시 강남점&storeAddr=서울특별시 강남구 테헤란로 109&storeTel=02-2051-1477">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/일식4.jpg" alt="맛있는 초밥 이미지">
+													<div class="text-over-image">
+														<h3>갓덴스시 강남점</h3>
+														<p>참돔 5500원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/22?storeName=죠스떡볶이 강남 중앙점&storeAddr=서울특별시 강남구 테헤란로1길 20&storeTel=02-539-5399">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/한식4.jpg" alt="맛있는 떡볶이 이미지">
+													<div class="text-over-image">
+														<h3>죠스떡볶이 강남 중앙점</h3>
+														<p>죠스떡볶이 3000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/16?storeName=랭맥&storeAddr=서울특별시 강남구 강남대로78길 8&storeTel=02-501-2129">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/술집1.JPG" alt="랭맥">
+													<div class="text-over-image">
+														<h3>랭맥</h3>
+														<p>쏘야 15000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/24?storeName=중경마라탕 강남역점&storeAddr=서울특별시 강남구 역삼동 테헤란로1길 44&storeTel=02-558-5988">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/중식4.jpg" alt="맛있는 마라탕 이미지">
+													<div class="text-over-image">
+														<h3>중경마라탕 강남역점</h3>
+														<p>마라탕 100g 1700원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/25?storeName=프리모바치오바치&storeAddr=서울특별시 강남구 강남대로 416&storeTel=02-501-0885">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/양식4.jpg" alt="맛있는 파스타 이미지">
+													<div class="text-over-image">
+														<h3>프리모바치오바치</h3>
+														<p>까르보나라 12000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/19?storeName=고쿠텐 강남역점&storeAddr=서울특별시 강남구 역삼1동 테헤란로4길 32&storeTel=070-4647-2022">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/일식1.jpg" alt="맛있는 텐동 이미지">
+													<div class="text-over-image">
+														<h3>고쿠텐 강남역점</h3>
+														<p>고쿠텐동 12000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/17?storeName=강남 따로 국밥&storeAddr=서울특별시 서초구 잠원동 신반포로47길 118&storeTel=02-543-2527">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/국밥3.jpg" alt="맛있는 국밥 이미지">
+													<div class="text-over-image">
+														<h3>강남 따로 국밥</h3>
+														<p>따로 국밥 10000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/18?storeName=보배반점&storeAddr=서울특별시 강남구 강남대로94길 19&storeTel=02-3452-7773">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/중식1.jpg" alt="맛있는 중식 이미지">
+													<div class="text-over-image">
+														<h3>보배반점</h3>
+														<p>보배 자장면 6500원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/20?storeName=버거킹 강남대로점&storeAddr=서울특별시 강남구 강남대로 406&storeTel=02-566-0332">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/양식1.jpg" alt="맛있는 햄버거 이미지">
+													<div class="text-over-image">
+														<h3>버거킹 강남역점</h3>
+														<p>와퍼 3500원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/26?storeName=센야 본점&storeAddr=서울특별시 강남구 역삼1동 753-1&storeTel=02-538-5827">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/술집4.jpg" alt="맛있는 안주 이미지">
+													<div class="text-over-image">
+														<h3>센야 본점</h3>
+														<p>모츠나베 35000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<button class="slick_next">&GT;</button>
+					</div>
+				</section>
+
+				<!-- 슬라이드 3 -->
+				<section class="section_card">
+					<div class="section_header">
+						<h2 class="section_title">
+							추천 맛집
+							<small>추천하는 맛집을 경험하고 즐겨보세요</small>
+						</h2>
+					</div>
+					<hr>
+					<div class="section_body">
+						<button class="slick_prev">&LT;</button>
+						<div class="slick_wrapper">
+							<div class="slick_track">
+
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/20?storeName=버거킹 강남대로점&storeAddr=서울특별시 강남구 강남대로 406&storeTel=02-566-0332">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/양식1.jpg" alt="맛있는 햄버거 이미지">
+													<div class="text-over-image">
+														<h3>버거킹 강남역점</h3>
+														<p>와퍼 3500원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/24?storeName=중경마라탕 강남역점&storeAddr=서울특별시 강남구 역삼동 테헤란로1길 44&storeTel=02-558-5988">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/중식4.jpg" alt="맛있는 마라탕 이미지">
+													<div class="text-over-image">
+														<h3>중경마라탕 강남역점</h3>
+														<p>마라탕 100g 1700원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/26?storeName=센야 본점&storeAddr=서울특별시 강남구 역삼1동 753-1&storeTel=02-538-5827">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/술집4.jpg" alt="맛있는 안주 이미지">
+													<div class="text-over-image">
+														<h3>센야 본점</h3>
+														<p>모츠나베 35000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/25?storeName=프리모바치오바치&storeAddr=서울특별시 강남구 강남대로 416&storeTel=02-501-0885">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/양식4.jpg" alt="맛있는 파스타 이미지">
+													<div class="text-over-image">
+														<h3>프리모바치오바치</h3>
+														<p>까르보나라 12000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/21?storeName=설빙 강남역점&storeAddr=서울특별시 강남구 테헤란로1길 42&storeTel=02-558-7708">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/설빙1.jpg" alt="맛있는 설빙 이미지">
+													<div class="text-over-image">
+														<h3>설빙 강남역점</h3>
+														<p>인절미 설빙 7900원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/22?storeName=죠스떡볶이 강남 중앙점&storeAddr=서울특별시 강남구 테헤란로1길 20&storeTel=02-539-5399">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/한식4.jpg" alt="맛있는 떡볶이 이미지">
+													<div class="text-over-image">
+														<h3>죠스떡볶이 강남 중앙점</h3>
+														<p>죠스떡볶이 3000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/16?storeName=랭맥&storeAddr=서울특별시 강남구 강남대로78길 8&storeTel=02-501-2129">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/술집1.JPG" alt="랭맥">
+													<div class="text-over-image">
+														<h3>랭맥</h3>
+														<p>쏘야 15000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/23?storeName=갓덴스시 강남점&storeAddr=서울특별시 강남구 테헤란로 109&storeTel=02-2051-1477">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/일식4.jpg" alt="맛있는 초밥 이미지">
+													<div class="text-over-image">
+														<h3>갓덴스시 강남점</h3>
+														<p>참돔 5500원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/17?storeName=강남 따로 국밥&storeAddr=서울특별시 서초구 잠원동 신반포로47길 118&storeTel=02-543-2527">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/국밥3.jpg" alt="맛있는 국밥 이미지">
+													<div class="text-over-image">
+														<h3>강남 따로 국밥</h3>
+														<p>따로 국밥 10000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/19?storeName=고쿠텐 강남역점&storeAddr=서울특별시 강남구 역삼1동 테헤란로4길 32&storeTel=070-4647-2022">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/일식1.jpg" alt="맛있는 텐동 이미지">
+													<div class="text-over-image">
+														<h3>고쿠텐 강남역점</h3>
+														<p>고쿠텐동 12000원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="slick_slide">
+									<div>
+										<a class="list_item_link"
+											href="/18?storeName=보배반점&storeAddr=서울특별시 강남구 강남대로94길 19&storeTel=02-3452-7773">
+											<div class="list_item_header">
+												<div class="image-container">
+													<img src="img/recommned/중식1.jpg" alt="맛있는 중식 이미지">
+													<div class="text-over-image">
+														<h3>보배반점</h3>
+														<p>보배 자장면 6500원</p>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button class="slick_next">&GT;</button>
+					</div>
+				</section>
+				<!-- 지헌님 작업물 -->
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+<th:block th:replace="fragments/footer :: footerFragment"></th:block>
+</body>
+<script src="javascript/home.js"></script>
+</html>

@@ -1,0 +1,71 @@
+
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+  <meta charset="UTF-8">
+  	<th:block th:replace="fragments/header :: headerFragment"></th:block>
+  <link rel="stylesheet" href="/CSS/mypage.css">
+  <title>Insert title here</title>
+</head>
+</html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My Page</title>
+  
+</head>
+
+<body>
+<div>
+<div class="mypage-container" style="margin-top: 50px;">
+  <h1>My Page</h1>
+  <div class="info">
+    <span class="info-label">이름:</span> <span id="name"
+                                              th:text="${loginMember.name}">이현지
+  </span>
+  </div>
+  <div class="info">
+    <span class="info-label">이메일:</span> <span
+      id="email" th:text="${loginMember.email}">admin@naver.com</span>
+  </div>
+  <div class="info">
+    <span class="info-label">전화번호:</span> <span
+      id="phone" th:text="${loginMember.phone}">010-1234-5678</span>
+  </div>
+  <div class="info">
+    <span class="info-label">예약횟수:</span> <span
+      id="reservation-count">3</span>
+  </div>
+
+  <div class="button-container">
+    <button class="button" onclick="location.href='revise'">수정</button>
+    <button class="button" onclick="location.href='reservation_list'">예약리스트
+    </button>
+    <button class="button" onclick="location.href='reviewpage'">리뷰리스트</button>
+  </div>
+   <div class="reser_container">
+               <h2>식당 예약</h2>
+               <div th:each="booking, iterStat : ${bookings}" th:remove="tag" th:attr="data-id=${booking.id}">
+                  <div th:if="${booking.status.name() == 'COMPLETE'}">
+                     <ul class="reservation-list">
+                        <li class="reservation-list-item">
+                           <h2 th:text="${booking.store_name}"></h2>
+                           <p
+                              th:text="${booking.year} + '년 ' + ${booking.month} + '월 ' + ${booking.day} + '일'">
+                           </p>
+                           <p th:text="${booking.time}">시간: 19:00</p>
+                           
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+</div>
+</div>
+
+
+</body>
+<th:block th:replace="fragments/footer :: footerFragment"></th:block>
+
+</html>
+

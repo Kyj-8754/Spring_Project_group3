@@ -1,0 +1,335 @@
+/* header 파트*/
+.header_logo_box {
+	position: relative;
+/*	margin: auto;*/
+	width: 100%;
+	height: 70px;
+}
+
+.header_logo_a {
+	width: 100%;
+	height: 100%;
+}
+
+.header_logoimg {
+	position: relative;
+	top: 20px;
+	width: 200px;
+	height: 70px;
+}
+
+.header_search {
+	position: relative;
+	margin: auto;
+	width: 442px;
+	height: 40px;
+	font-size: 25px;
+	padding-left: 10px;
+	border-radius: 30px;
+	border: 4px solid #ff6b6b;
+}
+
+.header_searchbox {
+	position: relative;
+	left: 15px;
+	width: 400px;
+	margin: 0;
+	height: 40px;
+	font-size: 25px;
+	border: 0;
+	padding: 0;
+}
+
+.header_searchbutton {
+	position: absolute;
+	top: -1px;
+	right: -1px;
+	width: 110px;
+	color: #ffffff;
+	/*	line-height: 48px;*/
+	border-radius: 50px;
+	background-color: #ff6b6b;
+	height: 43px;
+	border: white;
+	font-size: 17px;
+}
+
+.header_searchbutton:focus {
+	outline: 0.5px solid #ff6b6b;
+}
+
+.header_search:focus {
+	outline: 3px solid #ff6b6b;
+}
+
+.header_searchbox {
+	outline: 0px;
+	border: 0;
+}
+
+.header_login {
+	position: relative;
+	margin: auto;
+	width: 500px;
+	left: 750px;
+	bottom: 100px;
+	height: 27px;
+}
+
+.header_loginMember {
+	width: 180px;
+	height: 27px;
+}
+
+.header_loginline {
+	position: relative;
+	height: 16px;
+	top: 1px;
+	width: 0.5px;
+	background-color: rgb(179, 179, 179);
+	right: 20px;
+}
+
+.header_logintable {
+	position: relative;
+	height: 27px auto;
+}
+
+.header_login .header_a {
+	text-decoration: none;
+	color: #ff6b6b;
+}
+
+.header_a:hover {
+	color: darksalmon;
+}
+.header_b{
+	color: #ff6b6b;
+}
+
+.header_navigation {
+	/* border: 1px solid red; */
+	border: 1px;
+	height: 50px;
+	/*	background-color: #ff6b6b;*/
+	color: #ff6b6b;
+	position: relative;
+	bottom: 30px;
+	margin: auto;
+}
+
+.header_navigationbox {
+	position: relative;
+	justify-content: center;
+	/* 텍스트를 수평 중앙 정렬 */
+	align-items: center;
+	/* 텍스트를 수직 중앙 정렬 */
+	width: 600px;
+	height: 100%;
+	margin: auto;
+}
+
+.header_navigationbox2 {
+	position: relative;
+	justify-content: center;
+	/* 텍스트를 수평 중앙 정렬 */
+	align-items: center;
+	/* 텍스트를 수직 중앙 정렬 */
+	width: 1500px;
+	height: 150px;
+}
+
+
+.header_addrnavigationbox:hover .header_addrnavigationbox2 {
+	display: block;
+	z-index: 2;
+}
+
+.header_chlidmenu2:hover {
+	background-color: #ff6b6b;
+	color: #ffffff;
+}
+.header_addrnavigationbox:hover{
+	background-color: #ff6b6b;
+	color: #ffffff;
+}
+
+.header_foodnavigationbox:hover{
+	background-color: #ff6b6b;
+	color: #ffffff;
+}
+
+.header_foodnavigationbox:hover .header_foodnavigationbox2 {
+	display: block;
+	z-index: 2;
+}
+
+.header_title {
+	font-size: 30px;
+}
+
+.header_addrnavigationbox {
+	position: relative;
+	left: 0px;
+	width: 148px;
+	/* border: 1px solid black; */
+	border: 1px;
+	height: 100%;
+	text-align: center;
+}
+
+.header_addrnavigationbox2 {
+	position: absolute;
+	width: 148px;
+	border: 1px;
+	height: 210px;
+	/*	background-color: antiquewhite;*/
+	top: 50px;
+	text-align: center;
+	display: none;
+}
+
+.header_foodnavigationbox {
+	position: relative;
+	left: 150px;
+	width: 148px;
+	/* border: 1px solid black; */
+	border: 1px;
+	height: 100%;
+	bottom: 50px;
+	text-align: center;
+	/*	background-color: aquamarine;*/
+}
+
+.header_foodnavigationbox2 {
+	position: absolute;
+	width: 148px;
+	/* border: 1px solid black; */
+	border: 1px;
+	height: 210px;
+	/*	background-color: antiquewhite;*/
+	text-align: center;
+	display: none;
+	top: 50px;
+}
+
+.header_moneynavigationbox {
+	position: relative;
+	left: 300px;
+	width: 148px;
+	/* border: 1px solid black; */
+	border: 1px;
+	height: 25px;
+	bottom: 100px;
+	text-align: center;
+	/*	background-color: aqua;*/
+	height: 100%;
+}
+
+.header_reservations:hover{
+	background-color: #ff6b6b;
+	color: #ffffff;
+}
+
+.header_reviewnavigationbox {
+	position: relative;
+	justify-content: center;
+	/* 텍스트를 수평 중앙 정렬 */
+	align-items: center;
+	/* 텍스트를 수직 중앙 정렬 */
+	left: 450px;
+	width: 148px;
+	/* border: 1px solid black; */
+	border: 1px;
+	height: 25px;
+	bottom: 150px;
+	text-align: center;
+	height: 100%;
+}
+
+.header_childmenu {
+	height: 40px;
+	font-size: 20px;
+	color: white;
+}
+
+.header_chlidmenu2 {
+	justify-content: center;
+	/* 텍스트를 수평 중앙 정렬 */
+	align-items: center;
+	/* 텍스트를 수직 중앙 정렬 */
+	width: 148px;
+	border: 1px;
+	height: 40px;
+	background-color: white;
+	text-align: center;
+	font-size: 20px;
+	color: #ff6b6b;
+	border-bottom: 1px solid #ff6b6b;
+}
+
+.header_br {
+	height: 10px;
+}
+
+.header_logintd {
+	height: 27px;
+	width: 90px;
+}
+
+.header_form {
+	position: relative;
+	bottom: 40px;
+	width: 800px;
+	margin: 0 auto;
+}
+
+.header_logout {
+	height: 27px;
+	width: 100%;
+	position: relative;
+	bottom: 177px;
+	color: #ff6b6b;
+	background-color: white;
+	border: 0;
+	font-size: 16px;
+	right: 19px;
+}
+
+.header_logout:hover {
+	color: #ff6b2a;
+	cursor: pointer;
+}
+
+.header_logoutbox {
+	position: relative;
+	width: 100px;
+	top: 175px;
+	height: 27px;
+}
+
+.header_hr {
+	width: 100%;
+	height: 2px;
+	background-color: #ff6b6b;
+}
+
+.header_reservations {
+	border: 1px;
+	color: #ff6b6b;
+	background-color: white;
+	font-size: 30px;
+	width: 148px;
+	height: 100%;
+}
+
+.header_smallbox {
+	height: 30px;
+}
+.header_logform{
+	margin : 0;
+}
+.header_join{
+	position: relative;
+	right : 5px;
+}

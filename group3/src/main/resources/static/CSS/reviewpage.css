@@ -1,0 +1,67 @@
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #ff6b6b;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #ff6b6b;
+    }
+
+    .review-list {
+      list-style: none;
+      padding: 0;
+    }
+	.container{
+	        background-color: #fff;
+	        width: 1200px;
+	        margin: 0 auto; /* 좌우 중앙 정렬 */
+	        border-radius: 8px;
+	        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	
+	    }
+    .review-item {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #f9f9f9;
+    }
+
+    .review-item h3 {
+      color: #ff6b6b;
+    }
+
+    .review-actions {
+      margin-top: 10px;
+    }
+
+    .action-button {
+      background-color: #ff6b6b;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background-color: #e55b5b;
+    }
